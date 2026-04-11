@@ -21,7 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -63,7 +63,7 @@
                 People
               </button>
               <div class="dropdown">
-                <a href="#harun-venkatesan">Harun Venkatesan</a>
+                <a href="harun-venkatesan.html">Harun Venkatesan</a>
                 <a href="#postdoctoral-scholars">Postdoctoral Scholars</a>
                 <a href="#phd-graduate-students">Ph.D. Graduate Students</a>
                 <a href="#masters-undergraduate-students">Masters and Undergraduates</a>
@@ -232,9 +232,7 @@
                 </p>
                 <a
                   class="bio-link"
-                  href="https://textile.iitd.ac.in/faculty-profile/22"
-                  target="_blank"
-                  rel="noreferrer"
+                  href="harun-venkatesan.html"
                 >
                   <span class="bio-link-label">Know More</span>
                   <span class="bio-link-icon" aria-hidden="true">
@@ -253,6 +251,12 @@
         <section id="current-research" class="section current-research-section">
           <div class="container">
             <div class="research-stage">
+
+              <!-- Decorative glowing orbs -->
+              <div class="research-stage-orb research-stage-orb-1" aria-hidden="true"></div>
+              <div class="research-stage-orb research-stage-orb-2" aria-hidden="true"></div>
+              <div class="research-stage-orb research-stage-orb-3" aria-hidden="true"></div>
+
               <div class="section-heading">
                 <span class="eyebrow">Current Research</span>
                 <h2>Current research projects across advanced aerogel and textile systems.</h2>
@@ -262,27 +266,48 @@
                 </p>
               </div>
 
-              <div class="research-grid">
-              <article class="content-card research-project" id="smart-hemostatic-aerogels">
-                <div class="research-project-media research-project-media-poster">
-                  <img src="images/research-poster-1.png" alt="Research poster for smart hemostatic aerogels project" />
-                  <div
-                    class="research-media-zoom"
-                    aria-hidden="true"
-                  >
-                    <span class="research-media-zoom-icon" aria-hidden="true">
-                      <svg viewBox="0 0 24 24">
-                        <circle cx="11" cy="11" r="5.5" />
-                        <path d="M20 20l-4.2-4.2" />
-                        <path d="M11 8.5v5" />
-                        <path d="M8.5 11h5" />
-                      </svg>
-                    </span>
-                  </div>
+              <!-- Research metrics strip -->
+              <div class="research-metrics" aria-label="Research at a glance">
+                <div class="research-metric">
+                  <span class="research-metric-num">3</span>
+                  <span class="research-metric-label">Projects</span>
                 </div>
+                <div class="research-metric-divider" aria-hidden="true"></div>
+                <div class="research-metric">
+                  <span class="research-metric-num">2</span>
+                  <span class="research-metric-label">Funding Bodies</span>
+                </div>
+                <div class="research-metric-divider" aria-hidden="true"></div>
+                <div class="research-metric">
+                  <span class="research-metric-num">2</span>
+                  <span class="research-metric-label">Ongoing</span>
+                </div>
+              </div>
+
+              <div class="research-grid">
+
+                <!-- Project 01 — Featured (full-width horizontal) -->
+                <article class="content-card research-project research-project--featured" id="smart-hemostatic-aerogels">
+                  <div class="research-project-num" aria-hidden="true">01</div>
+                  <div class="research-project-media research-project-media-poster">
+                    <img src="images/research-poster-1.png" alt="Research poster for smart hemostatic aerogels project" />
+                    <div class="research-media-zoom" aria-hidden="true">
+                      <span class="research-media-zoom-badge" aria-hidden="true">
+                        <span class="research-media-zoom-icon" aria-hidden="true">
+                          <svg viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="5.5" />
+                            <path d="M20 20l-4.2-4.2" />
+                            <path d="M11 8.5v5" />
+                            <path d="M8.5 11h5" />
+                          </svg>
+                        </span>
+                        <span class="research-media-zoom-label">Zoom</span>
+                      </span>
+                    </div>
+                  </div>
                   <div class="research-project-copy">
                     <div class="research-project-meta">
-                      <span class="research-status">Ongoing</span>
+                      <span class="research-status research-status--ongoing">Ongoing</span>
                     </div>
                     <h3>Smart Hemostatic Aerogels Based On Silk And Cellulose Composites For Complex Shaped Wounds</h3>
                     <div class="research-funders" aria-label="Funding organizations">
@@ -297,13 +322,13 @@
                           <span class="research-funder-name">Department of Health Research</span>
                           <a
                             class="research-funder-link"
-                          href="https://dhr.gov.in/sites/all/themes/health/images/emblem-dark.png"
-                          target="_blank"
-                          rel="noreferrer"
-                          aria-label="Open Department of Health Research logo"
-                        >
-                          <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-                        </a>
+                            href="https://dhr.gov.in/sites/all/themes/health/images/emblem-dark.png"
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label="Open Department of Health Research logo"
+                          >
+                            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                          </a>
                         </div>
                         <div class="research-funder">
                           <img
@@ -314,39 +339,41 @@
                           <span class="research-funder-name">Indian Council of Medical Research (ICMR)</span>
                           <a
                             class="research-funder-link"
-                          href="https://www.icmr.gov.in/icmrobject/static/icmr/dist/images/logos/main_logo.svg"
-                          target="_blank"
-                          rel="noreferrer"
-                          aria-label="Open Indian Council of Medical Research logo"
-                        >
-                          <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-                        </a>
+                            href="https://www.icmr.gov.in/icmrobject/static/icmr/dist/images/logos/main_logo.svg"
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label="Open Indian Council of Medical Research logo"
+                          >
+                            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                          </a>
                         </div>
                       </div>
                     </div>
                   </div>
                 </article>
 
+                <!-- Project 02 -->
                 <article class="content-card research-project" id="aerogels-based-textile-materials">
+                  <div class="research-project-num" aria-hidden="true">02</div>
                   <div class="research-project-media">
                     <img src="images/research-placeholder-uniform.svg" alt="Placeholder poster for aerogel textile mission project" />
-                    <div
-                      class="research-media-zoom"
-                      aria-hidden="true"
-                    >
-                      <span class="research-media-zoom-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24">
-                          <circle cx="11" cy="11" r="5.5" />
-                          <path d="M20 20l-4.2-4.2" />
-                          <path d="M11 8.5v5" />
-                          <path d="M8.5 11h5" />
-                        </svg>
+                    <div class="research-media-zoom" aria-hidden="true">
+                      <span class="research-media-zoom-badge" aria-hidden="true">
+                        <span class="research-media-zoom-icon" aria-hidden="true">
+                          <svg viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="5.5" />
+                            <path d="M20 20l-4.2-4.2" />
+                            <path d="M11 8.5v5" />
+                            <path d="M8.5 11h5" />
+                          </svg>
+                        </span>
+                        <span class="research-media-zoom-label">Zoom</span>
                       </span>
                     </div>
                   </div>
                   <div class="research-project-copy">
                     <div class="research-project-meta">
-                      <span class="research-status">Completed</span>
+                      <span class="research-status research-status--completed">Completed</span>
                     </div>
                     <h3>Mission for Developing Aerogels Based Textile Material for Civilian, Industrial and Defense Applications.</h3>
                     <div class="research-funders" aria-label="Funding organizations">
@@ -361,26 +388,28 @@
                   </div>
                 </article>
 
+                <!-- Project 03 -->
                 <article class="content-card research-project" id="sustainable-aerogel-textile">
+                  <div class="research-project-num" aria-hidden="true">03</div>
                   <div class="research-project-media">
                     <img src="images/research-placeholder-uniform.svg" alt="Placeholder poster for sustainable aerogel textile project" />
-                    <div
-                      class="research-media-zoom"
-                      aria-hidden="true"
-                    >
-                      <span class="research-media-zoom-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24">
-                          <circle cx="11" cy="11" r="5.5" />
-                          <path d="M20 20l-4.2-4.2" />
-                          <path d="M11 8.5v5" />
-                          <path d="M8.5 11h5" />
-                        </svg>
+                    <div class="research-media-zoom" aria-hidden="true">
+                      <span class="research-media-zoom-badge" aria-hidden="true">
+                        <span class="research-media-zoom-icon" aria-hidden="true">
+                          <svg viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="5.5" />
+                            <path d="M20 20l-4.2-4.2" />
+                            <path d="M11 8.5v5" />
+                            <path d="M8.5 11h5" />
+                          </svg>
+                        </span>
+                        <span class="research-media-zoom-label">Zoom</span>
                       </span>
                     </div>
                   </div>
                   <div class="research-project-copy">
                     <div class="research-project-meta">
-                      <span class="research-status">Ongoing</span>
+                      <span class="research-status research-status--ongoing">Ongoing</span>
                     </div>
                     <h3>Development of Sustainable Aerogel Textile for Cold Weather Clothing</h3>
                     <div class="research-funders" aria-label="Funding organizations">
@@ -394,10 +423,12 @@
                     </div>
                   </div>
                 </article>
+
               </div>
             </div>
           </div>
         </section>
+
 
         <section id="news" class="section">
           <div class="container">

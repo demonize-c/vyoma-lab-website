@@ -184,31 +184,45 @@
       .site-header {
         position: sticky;
         top: 0;
-        z-index: 30;
-        backdrop-filter: blur(24px) saturate(1.4);
-        background: rgba(245, 251, 255, 0.88);
+        z-index: 1000;
+        backdrop-filter: blur(20px) saturate(160%);
+        background: rgba(255, 255, 255, 0.72);
         border-bottom: 1px solid rgba(15, 92, 133, 0.08);
-        box-shadow: 0 1px 0 rgba(15, 92, 133, 0.04), 0 2px 16px rgba(7, 32, 47, 0.04);
+        box-shadow: 
+          0 1px 0 rgba(15, 92, 133, 0.02),
+          0 8px 32px rgba(7, 32, 47, 0.03);
+        transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .site-header:hover {
+        background: rgba(255, 255, 255, 0.82);
       }
 
       .nav-wrap {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 1rem;
-        min-height: 5rem;
+        gap: 1.5rem;
+        min-height: 5.5rem;
+        padding: 0.5rem 0;
       }
 
       .brand {
         display: inline-flex;
         align-items: center;
-        gap: 0.85rem;
+        gap: 1.1rem;
         min-width: 0;
         font-family: "Space Grotesk", sans-serif;
-        font-weight: 700;
-        font-size: 1.12rem;
-        letter-spacing: -0.01em;
+        font-weight: 800;
+        font-size: 1.18rem;
+        letter-spacing: -0.02em;
         color: var(--navy-900);
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        white-space: nowrap;
+      }
+
+      .brand:hover {
+        transform: scale(1.02);
       }
 
       .brand > span:last-child {
@@ -266,7 +280,7 @@
       .nav-menu {
         display: flex;
         align-items: center;
-        gap: 0.25rem;
+        gap: 0.4rem;
       }
 
       .nav-item {
@@ -277,26 +291,69 @@
       .nav-trigger {
         display: inline-flex;
         align-items: center;
-        gap: 0.35rem;
-        padding: 0.7rem 0.95rem;
+        gap: 0.65rem;
+        padding: 0.75rem 1.15rem;
         border: 0;
         background: transparent;
         color: var(--slate-700);
         font-family: "Manrope", sans-serif;
-        font-size: var(--fs-sm);
+        font-size: 0.92rem;
         font-weight: 700;
         letter-spacing: 0.01em;
         cursor: pointer;
-        border-radius: 10px;
-        transition: color 150ms ease, background 150ms ease;
+        border-radius: 14px;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        white-space: nowrap;
+        position: relative;
+      }
+
+      .nav-link::after,
+      .nav-trigger::after {
+        content: "";
+        position: absolute;
+        bottom: 0.4rem;
+        left: 1.15rem;
+        right: 1.15rem;
+        height: 2px;
+        background: var(--sky-500);
+        border-radius: 2px;
+        transform: scaleX(0);
+        transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        transform-origin: right;
+      }
+
+      .nav-link:hover::after,
+      .nav-trigger:hover::after,
+      .nav-item.open .nav-trigger::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+
+      .nav-link i,
+      .nav-trigger i {
+        font-size: 0.95rem;
+        opacity: 0.55;
+        color: var(--sky-600);
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
       }
 
       .nav-link:hover,
       .nav-link:focus-visible,
       .nav-trigger:hover,
       .nav-trigger:focus-visible {
-        color: var(--sky-700);
-        background: rgba(15, 92, 133, 0.06);
+        color: var(--navy-900);
+        background: transparent;
+      }
+
+      .nav-link:hover i,
+      .nav-trigger:hover i {
+        opacity: 1;
+        transform: translateY(-1px) scale(1.1);
+      }
+
+      .nav-item.open .nav-trigger {
+        background: transparent;
+        color: var(--sky-800);
       }
 
       .nav-item.open .dropdown {
@@ -307,60 +364,111 @@
 
       .dropdown {
         position: absolute;
-        top: calc(100% + 0.7rem);
+        top: calc(100% + 0.8rem);
         left: 0;
-        min-width: 18rem;
-        padding: 0.75rem;
-        border-radius: var(--radius-md);
+        transform: translateY(12px);
+        min-width: 20rem;
+        padding: 1rem;
+        border-radius: 24px;
         background: rgba(255, 255, 255, 0.98);
-        box-shadow: 0 16px 48px rgba(7, 32, 47, 0.14), 0 4px 16px rgba(15, 92, 133, 0.08);
-        border: 1px solid rgba(15, 92, 133, 0.1);
+        box-shadow: 
+          0 20px 60px rgba(7, 32, 47, 0.16),
+          0 4px 16px rgba(15, 92, 133, 0.05);
+        border: 1px solid rgba(15, 92, 133, 0.08);
         opacity: 0;
         visibility: hidden;
-        transform: translateY(8px);
-        transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
+        transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        pointer-events: none;
+      }
+
+      .nav-item.open .dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
       }
 
       .dropdown a,
       .dropdown-subtrigger {
-        display: block;
-        padding: 0.72rem 0.9rem;
-        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        padding: 0.85rem 1rem;
+        border-radius: 16px;
         color: var(--slate-700);
         background: transparent;
         border: 0;
         width: 100%;
         text-align: left;
         font-family: "Manrope", sans-serif;
-        font-size: var(--fs-sm);
+        font-size: 0.92rem;
         font-weight: 600;
-        transition: background 140ms ease, color 140ms ease;
+        transition: all 0.2s ease;
+        gap: 0.75rem;
+        position: relative;
+      }
+
+      .dropdown a::after,
+      .dropdown-subtrigger::after {
+        content: "";
+        position: absolute;
+        bottom: 0.5rem;
+        left: 1rem;
+        right: 1rem;
+        height: 1.5px;
+        background: var(--sky-400);
+        border-radius: 1px;
+        transform: scaleX(0);
+        transition: transform 0.2s ease;
+        transform-origin: right;
+      }
+
+      .dropdown a:hover::after,
+      .dropdown-subtrigger:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
       }
 
       .dropdown-subtrigger {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-start;
         cursor: pointer;
       }
 
-      .nav-trigger::after,
+      .nav-trigger::before,
       .dropdown-subtrigger::after {
-        content: "";
-        width: 0.42rem;
-        height: 0.42rem;
-        border-right: 2px solid currentColor;
-        border-bottom: 2px solid currentColor;
-        transform: rotate(45deg);
-        transform-origin: center;
-        transition: transform 180ms ease;
-        flex: 0 0 auto;
-        opacity: 0.7;
+        content: "\f107";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        font-size: 0.8rem;
+        margin-left: 0.2rem;
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        opacity: 0.6;
       }
 
-      .nav-item.open .nav-trigger::after,
-      .dropdown-subgroup.open .dropdown-subtrigger::after {
-        transform: rotate(225deg);
+      .nav-trigger::before {
+        order: 3;
+      }
+
+      .dropdown-subtrigger::before {
+        content: "\f105";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        font-size: 0.8rem;
+        margin-left: auto;
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        opacity: 0.6;
+        order: 3;
+      }
+
+      .nav-item.open .nav-trigger::before {
+        transform: rotate(180deg);
+        opacity: 1;
+      }
+
+      .dropdown-subgroup.open .dropdown-subtrigger::before {
+        transform: rotate(90deg);
+        opacity: 1;
       }
 
       .dropdown-submenu {
@@ -398,7 +506,7 @@
       .dropdown a:focus-visible,
       .dropdown-subtrigger:hover,
       .dropdown-subtrigger:focus-visible {
-        background: var(--sky-050);
+        background: transparent;
         color: var(--sky-700);
       }
 
@@ -568,13 +676,48 @@
 
       /* ─── Hero Bottom Panel ─── */
       .hero-bottom-panel {
-        margin: 2.4rem auto 0;
-        padding: 2.6rem 2.8rem;
-        border-radius: 32px;
-        background:
-          linear-gradient(145deg, rgba(15, 92, 133, 0.1), rgba(255, 255, 255, 0.96)),
-          rgba(255, 255, 255, 0.96);
+        margin: 2.8rem auto 0;
+        padding: clamp(2.5rem, 5vw, 4rem);
+        border-radius: 48px;
+        background: linear-gradient(135deg, #ffffff 0%, #f7fcff 100%);
         border: 1px solid rgba(15, 92, 133, 0.1);
+        position: relative;
+        overflow: hidden;
+        box-shadow: 
+          0 30px 60px -12px rgba(7, 32, 47, 0.08),
+          0 10px 30px -10px rgba(15, 92, 133, 0.05),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+      }
+
+      .hero-bottom-panel::before {
+        content: "";
+        position: absolute;
+        top: -15%;
+        right: -10%;
+        width: 32rem;
+        height: 32rem;
+        background: radial-gradient(circle, rgba(122, 211, 247, 0.22) 0%, transparent 70%);
+        border-radius: 50%;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      .hero-bottom-panel::after {
+        content: "";
+        position: absolute;
+        bottom: -10%;
+        left: -5%;
+        width: 24rem;
+        height: 24rem;
+        background: radial-gradient(circle, rgba(15, 92, 133, 0.06) 0%, transparent 70%);
+        border-radius: 50%;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      .hero-bottom-panel > * {
+        position: relative;
+        z-index: 1;
       }
 
       .hero-bottom-panel .eyebrow {
@@ -582,20 +725,25 @@
       }
 
       .hero-bottom-panel h2 {
-        margin: 0 0 1rem;
+        margin: 0.5rem 0 1.5rem;
         font-family: "Space Grotesk", sans-serif;
-        font-size: clamp(1.9rem, 4vw, 2.8rem);
-        font-weight: 700;
-        line-height: var(--lh-tight);
-        letter-spacing: -0.03em;
+        font-size: clamp(3rem, 8vw, 5.2rem);
+        font-weight: 800;
+        line-height: 1.05;
+        letter-spacing: -0.04em;
+        background: linear-gradient(135deg, var(--navy-900) 0%, var(--sky-700) 50%, var(--sky-500) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
         color: var(--navy-900);
       }
 
       .hero-bottom-panel p {
-        max-width: 62rem;
-        font-size: var(--fs-md);
-        color: var(--slate-500);
-        line-height: var(--lh-loose);
+        max-width: 58rem;
+        font-size: var(--fs-lg);
+        color: var(--slate-700);
+        line-height: 1.7;
+        font-weight: 500;
       }
 
       /* ─── Strip Card ─── */
@@ -1244,8 +1392,8 @@
       .current-research-section .research-grid {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 1.5rem;
-        margin-top: 1.5rem;
+        gap: 2.5rem;
+        margin-top: 2.5rem;
       }
 
       /* ─── Animations ─── */
@@ -1259,21 +1407,47 @@
         50%       { opacity: 0.4; transform: scale(0.72); }
       }
 
-      /* ─── Research Project Cards ─── */
+      /* ─── Faculty Profile Specific Projects ─── */
+      .faculty-projects-section {
+        margin-top: 4.5rem;
+        width: 100%;
+      }
+
+      .faculty-projects-section .eyebrow {
+        margin-bottom: 2.5rem;
+      }
+
+      .faculty-projects-section .research-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      /* On Harun's profile, we stack them or use 2 columns if appropriate */
+      @media (min-width: 981px) {
+        .faculty-projects-section .research-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2.4rem;
+        }
+
+        .faculty-projects-section .research-project--featured {
+          grid-column: 1 / -1;
+        }
+      }
+
       .research-project {
         position: relative;
         overflow: hidden;
         display: flex;
         flex-direction: row;
         align-items: stretch;
-        gap: 2rem;
-        padding: 1.65rem;
+        gap: 3.5rem;
+        padding: 2.8rem;
         background: var(--white);
-        border: 1px solid rgba(15, 92, 133, 0.18);
-        border-radius: 24px;
+        border: 1px solid rgba(15, 92, 133, 0.12);
+        border-radius: 32px;
         box-shadow: 
-          0 12px 48px rgba(7, 32, 47, 0.12),
-          0 4px 16px rgba(15, 92, 133, 0.08);
+          0 15px 55px rgba(7, 32, 47, 0.08),
+          0 5px 20px rgba(15, 92, 133, 0.05);
         transition: transform 260ms ease, box-shadow 260ms ease, border-color 260ms ease;
       }
 
@@ -1288,13 +1462,13 @@
       /* Large decorative project number */
       .research-project-num {
         position: absolute;
-        top: -1rem;
-        right: 1.5rem;
+        top: -1.5rem;
+        right: 2.5rem;
         font-family: "Space Grotesk", sans-serif;
-        font-size: 9rem;
+        font-size: 10rem;
         font-weight: 800;
         line-height: 1;
-        color: rgba(15, 92, 133, 0.08);
+        color: rgba(15, 92, 133, 0.05);
         pointer-events: none;
         user-select: none;
         letter-spacing: -0.06em;
@@ -1320,6 +1494,30 @@
         border: 1px solid rgba(255, 255, 255, 0.6);
         box-shadow: 0 8px 32px rgba(7, 32, 47, 0.05);
         z-index: 1;
+      }
+
+      /* Premium Shine Effect */
+      .research-project-media::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -150%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(
+          to right,
+          transparent,
+          rgba(255, 255, 255, 0.6),
+          transparent
+        );
+        transform: skewX(-25deg);
+        z-index: 3;
+        pointer-events: none;
+      }
+
+      .research-project-media:hover::before {
+        left: 200%;
+        transition: left 800ms cubic-bezier(0.23, 1, 0.32, 1);
       }
 
       .research-project-media::after {
@@ -1376,13 +1574,13 @@
         padding: 0.62rem;
         border-radius: 999px;
         background:
-          linear-gradient(145deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.08)),
-          rgba(7, 32, 47, 0.54);
-        border: 1px solid rgba(255, 255, 255, 0.24);
+          linear-gradient(145deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1)),
+          rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.32);
         box-shadow:
-          0 18px 40px rgba(7, 32, 47, 0.28),
-          inset 0 1px 0 rgba(255, 255, 255, 0.18);
-        backdrop-filter: blur(14px);
+          0 18px 40px rgba(7, 32, 47, 0.18),
+          inset 0 1px 0 rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(20px);
         transform: translateY(10px) scale(0.92);
         transform-origin: bottom right;
         transition:
@@ -1399,10 +1597,10 @@
         place-items: center;
         border-radius: 999px;
         background:
-          linear-gradient(145deg, rgba(255, 255, 255, 0.26), rgba(255, 255, 255, 0.08)),
-          rgba(20, 128, 176, 0.48);
-        box-shadow: 0 10px 22px rgba(7, 32, 47, 0.24);
-        backdrop-filter: blur(10px);
+          linear-gradient(135deg, var(--sky-500), var(--sky-700));
+        color: var(--white);
+        box-shadow: 0 10px 22px rgba(15, 92, 133, 0.24);
+        border: 1px solid rgba(255, 255, 255, 0.2);
       }
 
       .research-media-zoom-icon svg {
@@ -1418,13 +1616,13 @@
       .research-project-media:hover img,
       .research-project-media:focus-within img {
         transform: scale(1.05);
-        filter: brightness(0.66);
+        filter: brightness(1.05) contrast(1.02);
       }
 
       .research-project-media:hover::after,
       .research-project-media:focus-within::after {
-        background: linear-gradient(180deg, rgba(7, 32, 47, 0.02), rgba(7, 32, 47, 0.34));
-        border-color: rgba(255, 255, 255, 0.2);
+        background: linear-gradient(to top, rgba(7, 32, 47, 0.05), transparent 60%);
+        border-color: rgba(255, 255, 255, 0.4);
       }
 
       .research-project-media:hover .research-media-zoom,
@@ -1436,10 +1634,10 @@
       .research-project-media:focus-within .research-media-zoom-badge {
         transform: translateY(0) scale(1);
         background:
-          linear-gradient(145deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.12)),
-          rgba(20, 128, 176, 0.58);
-        border-color: rgba(255, 255, 255, 0.34);
-        box-shadow: 0 22px 44px rgba(7, 32, 47, 0.34);
+          linear-gradient(145deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2)),
+          rgba(255, 255, 255, 0.25);
+        border-color: rgba(255, 255, 255, 0.5);
+        box-shadow: 0 22px 44px rgba(7, 32, 47, 0.22);
       }
 
       /* ─── Card copy area ─── */
@@ -1448,10 +1646,11 @@
         z-index: 1;
         display: flex;
         flex-direction: column;
-        gap: 0.85rem;
+        gap: 1.25rem;
         flex: 1;
         min-width: 0;
-        justify-content: center;
+        justify-content: flex-start;
+        padding-top: 0.5rem;
       }
 
       .research-project-copy h3 {
@@ -1506,18 +1705,18 @@
 
       .research-project-copy p {
         color: var(--slate-700);
-        font-size: 0.92rem;
-        line-height: 1.6;
-        margin: 0.25rem 0 0.5rem;
+        font-size: 0.95rem;
+        line-height: 1.75;
+        margin: 0.5rem 0 1rem;
       }
 
       /* ─── Funders section ─── */
       .research-funders {
         display: grid;
-        gap: 0.85rem;
-        margin-top: auto;
-        padding-top: 1rem;
-        border-top: 1px solid rgba(15, 92, 133, 0.08);
+        gap: 1.25rem;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(15, 92, 133, 0.06);
       }
 
       .research-funders-label {
@@ -1610,6 +1809,32 @@
       .research-funder-link:focus-visible {
         color: var(--sky-700);
         transform: translateY(-1px);
+      }
+
+      .funder-mini-logo {
+        height: 1.25rem;
+        width: auto;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 0.45rem;
+        border-radius: 4px;
+        background: white;
+        padding: 1px;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .funder-link {
+        color: var(--sky-600);
+        font-weight: 600;
+        transition: all 0.25s ease;
+        display: inline-flex;
+        align-items: center;
+        border-bottom: 2px solid transparent;
+      }
+
+      .funder-link:hover {
+        color: var(--sky-800);
+        border-bottom-color: rgba(23, 152, 205, 0.4);
       }
 
 
@@ -1791,10 +2016,13 @@
       .faculty-overview-card {
         position: relative;
         overflow: hidden;
-        padding: 2rem 2.2rem;
+        padding: clamp(2rem, 5vw, 3.2rem);
+        border-radius: 40px;
         background:
-          linear-gradient(148deg, rgba(15, 92, 133, 0.12), rgba(255, 255, 255, 0.98)),
-          rgba(255, 255, 255, 0.98);
+          radial-gradient(circle at 100% 0%, rgba(122, 211, 247, 0.12) 0%, transparent 45%),
+          rgba(255, 255, 255, 0.96);
+        border: 1px solid rgba(15, 92, 133, 0.12);
+        box-shadow: 0 32px 80px rgba(7, 32, 47, 0.08);
       }
 
       .faculty-overview-card::after {
@@ -1815,12 +2043,16 @@
       }
 
       .faculty-overview-card h1 {
-        margin: 0;
+        margin: 0.4rem 0 1.2rem;
         font-family: "Space Grotesk", sans-serif;
-        font-size: clamp(2.2rem, 4vw, 3.4rem);
-        font-weight: 700;
-        line-height: var(--lh-snug);
-        letter-spacing: -0.03em;
+        font-size: clamp(2.6rem, 6vw, 4.4rem);
+        font-weight: 800;
+        line-height: 1.05;
+        letter-spacing: -0.04em;
+        background: linear-gradient(135deg, var(--navy-900) 15%, var(--sky-600) 85%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
         color: var(--navy-900);
       }
 
@@ -2117,6 +2349,30 @@
         color: var(--slate-700);
         font-size: var(--fs-base);
         line-height: var(--lh-relaxed);
+        margin-bottom: 0.5rem;
+      }
+
+      .project-status-inline {
+        font-weight: 700;
+        font-size: 0.85em;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding: 0.15rem 0.5rem;
+        border-radius: 4px;
+        margin-left: 0.4rem;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .project-status-inline--ongoing {
+        background: rgba(20, 128, 176, 0.1);
+        color: var(--sky-700);
+      }
+
+      .project-status-inline--completed {
+        background: rgba(16, 185, 129, 0.1);
+        color: #059669;
+      }
       }
 
       .faculty-glass-card .citation-list {
@@ -2359,7 +2615,7 @@
       }
 
       /* ─── Responsive ─── */
-      @media (max-width: 980px) {
+      @media (max-width: 1024px) {
         .people-layout,
         .footer-card,
         .faculty-hero-layout,
@@ -2369,10 +2625,29 @@
           grid-template-columns: 1fr;
         }
 
-        /* Keep two columns for Prof Harun card on tablet */
+        /* Stack bio and summary card on tablet, but make summary card internal layout two columns */
         @media (min-width: 641px) {
-          .faculty-hero-layout {
-            grid-template-columns: minmax(280px, 0.4fr) 1fr;
+          .faculty-summary-card {
+            display: grid;
+            grid-template-columns: 0.82fr 1.18fr;
+            gap: 2.5rem;
+            align-items: center;
+            padding: 2.5rem;
+          }
+
+          .faculty-summary-card .profile-portrait {
+            margin-bottom: 0;
+            height: 100%;
+          }
+
+          .faculty-summary-card .profile-info-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+          }
+
+          .faculty-summary-card h3 {
+            margin-top: 0;
           }
         }
 
@@ -2387,11 +2662,49 @@
         .hero-frame {
           min-height: 38rem;
         }
-      }
 
-      @media (max-width: 820px) {
+        /* Funder list to one column in tablet view */
+        .research-funders {
+          gap: 0.9rem;
+          padding-top: 0.85rem;
+          padding-bottom: 0.6rem;
+        }
+
+        .research-funder-list {
+          grid-template-columns: 1fr;
+          gap: 0.95rem;
+          text-align: left;
+        }
+
+        .research-funder {
+          column-gap: 0.9rem;
+          max-width: 380px;
+        }
+
+        .research-funder-logo {
+          width: 2.6rem;
+          height: 2.6rem;
+          border-radius: 12px;
+        }
+
+        .research-funder-name {
+          max-width: 100%;
+          font-size: 0.95rem;
+          line-height: 1.4;
+          padding-right: 0.6rem;
+          text-align: left;
+        }
         .menu-toggle {
           display: inline-flex;
+        }
+
+        .brand {
+          gap: 0.75rem;
+          font-size: 1.1rem;
+        }
+
+        .brand small {
+          display: none; /* Hide tagline on smaller headers to save space */
         }
 
         .faculty-overview-card {
@@ -2472,54 +2785,40 @@
         }
 
         .research-project-copy h3 {
-          font-size: var(--fs-base);
+          font-size: var(--fs-xl);
           line-height: var(--lh-snug);
         }
 
-        .research-funders {
-          gap: 0.9rem;
-          padding-top: 0.85rem;
-          padding-bottom: 0.6rem;
-        }
-
-        .research-funder-list {
-          grid-template-columns: 1fr;
-          gap: 0.95rem;
-        }
-
-        .research-funder {
-          column-gap: 0.9rem;
-        }
-
-        .research-funder-logo {
-          width: 2.6rem;
-          height: 2.6rem;
-          border-radius: 12px;
-        }
-
         .research-funder-name {
-          max-width: 100%;
-          font-size: 0.95rem;
-          line-height: 1.4;
-          padding-right: 0.4rem;
+          text-align: left;
         }
 
         .nav-menu {
           position: fixed;
-          inset: 5rem 1rem auto;
-          display: none;
+          inset: 5.5rem 1rem auto;
+          display: flex;
           flex-direction: column;
           align-items: stretch;
           gap: 0;
-          padding: 0.85rem;
-          border-radius: 24px;
-          background: rgba(255, 255, 255, 0.99);
-          box-shadow: var(--shadow-soft);
+          padding: 1rem;
+          border-radius: 28px;
+          background: rgba(255, 255, 255, 0.98);
+          backdrop-filter: blur(12px);
+          box-shadow: 
+            0 24px 60px rgba(7, 32, 47, 0.2),
+            0 4px 16px rgba(15, 92, 133, 0.08);
           border: 1px solid rgba(15, 92, 133, 0.1);
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(10px) scale(0.98);
+          transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+          z-index: 1001;
         }
 
         .nav-menu.open {
-          display: flex;
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0) scale(1);
         }
 
         .nav-item {
@@ -2529,10 +2828,34 @@
         .nav-link,
         .nav-trigger {
           width: 100%;
-          justify-content: space-between;
-          padding: 1rem 0.85rem;
+          justify-content: flex-start;
+          gap: 1.25rem;
+          padding: 1rem 1.2rem;
           font-size: var(--fs-base);
           border-radius: 12px;
+        }
+
+        .nav-link i,
+        .nav-trigger i {
+          width: 1.2rem;
+          text-align: center;
+          opacity: 0.7;
+        }
+
+        .nav-trigger::before {
+          margin-left: auto;
+        }
+
+        .dropdown a,
+        .dropdown-subtrigger {
+          padding: 0.8rem 1rem;
+          gap: 1.25rem;
+        }
+
+        .dropdown a i,
+        .dropdown-subtrigger i {
+          width: 1.2rem;
+          text-align: center;
         }
 
         .dropdown {
@@ -2682,7 +3005,8 @@
         }
 
         .research-project {
-          padding: 1rem;
+          padding: 1.5rem;
+          border-radius: 28px;
         }
 
         .research-project-num {
@@ -2696,17 +3020,18 @@
         }
 
         .research-status {
-          padding: 0.34rem 0.68rem;
-          font-size: 0.7rem;
+          padding: 0.45rem 1rem;
+          font-size: 0.85rem;
         }
 
         .research-project-copy h3 {
-          font-size: var(--fs-base);
+          font-size: var(--fs-xl);
+          line-height: var(--lh-snug);
         }
 
         .research-funders-label {
-          padding: 0.32rem 0.68rem;
-          font-size: 0.7rem;
+          padding: 0.45rem 1rem;
+          font-size: 0.85rem;
         }
 
         .research-funders {
@@ -2715,7 +3040,7 @@
 
         .research-funder {
           grid-template-columns: auto 1fr auto;
-          column-gap: 0.85rem;
+          column-gap: 1.2rem;
         }
 
         .research-funder-logo {
@@ -2724,8 +3049,9 @@
         }
 
         .research-funder-name {
-          font-size: 0.92rem;
-          padding-right: 0.5rem;
+          font-size: 1.05rem;
+          padding-right: 0.75rem;
+          text-align: left;
         }
 
         .research-funder-link {

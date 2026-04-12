@@ -3,18 +3,26 @@ import re
 
 NAV_BLOCK_NEW = '''<nav id="nav-menu" class="nav-menu" aria-label="Primary">
             <div class="nav-item">
-              <a class="nav-link" href="index.html#home">Home</a>
+              <a class="nav-link" href="index.html#home">
+                <i class="fa-solid fa-house" aria-hidden="true"></i>
+                <span>Home</span>
+              </a>
             </div>
 
             <div class="nav-item has-dropdown">
               <button class="nav-trigger" type="button" aria-expanded="false">
-                People
+                <i class="fa-solid fa-users" aria-hidden="true"></i>
+                <span>People</span>
               </button>
               <div class="dropdown">
-                <a href="harun-venkatesan.html">Harun Venkatesan</a>
+                <a href="harun-venkatesan.html">
+                  <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
+                  <span>Harun Venkatesan</span>
+                </a>
                 <div class="dropdown-subgroup">
                   <button class="dropdown-subtrigger" type="button" aria-expanded="false">
-                    Alumni
+                    <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                    <span>Alumni</span>
                   </button>
                   <div class="dropdown-submenu" aria-label="Alumni groups">
                     <a class="dropdown-subitem" href="alumni-postdoc.html">Postdoctoral Scholars</a>
@@ -22,23 +30,34 @@ NAV_BLOCK_NEW = '''<nav id="nav-menu" class="nav-menu" aria-label="Primary">
                     <a class="dropdown-subitem" href="alumni-masters-ug.html">Masters & Undergraduates</a>
                   </div>
                 </div>
-                <a href="index.html#staff">Staff</a>
-                <a href="index.html#staff-photos">Photos</a>
+                <a href="index.html#staff">
+                  <i class="fa-solid fa-user-gear" aria-hidden="true"></i>
+                  <span>Staff</span>
+                </a>
+                <a href="index.html#staff-photos">
+                  <i class="fa-solid fa-camera-retro" aria-hidden="true"></i>
+                  <span>Photos</span>
+                </a>
               </div>
             </div>
 
             <div class="nav-item">
-              <a class="nav-link" href="index.html#current-research">Current Research</a>
+              <a class="nav-link" href="index.html#current-research">
+                <i class="fa-solid fa-flask-vial" aria-hidden="true"></i>
+                <span>Current Research</span>
+              </a>
             </div>
 
             <div class="nav-item has-dropdown">
               <button class="nav-trigger" type="button" aria-expanded="false">
-                Publications
+                <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                <span>Publications</span>
               </button>
               <div class="dropdown">
                 <div class="dropdown-subgroup">
                   <button class="dropdown-subtrigger" type="button" aria-expanded="false">
-                    Publications
+                    <i class="fa-solid fa-journal-whills" aria-hidden="true"></i>
+                    <span>Publications</span>
                   </button>
                   <div class="dropdown-submenu" aria-label="Publication years">
                     <a class="dropdown-subitem" href="publications.html">All Publications</a>
@@ -51,7 +70,8 @@ NAV_BLOCK_NEW = '''<nav id="nav-menu" class="nav-menu" aria-label="Primary">
                 </div>
                 <div class="dropdown-subgroup">
                   <button class="dropdown-subtrigger" type="button" aria-expanded="false">
-                    Book Chapters
+                    <i class="fa-solid fa-book" aria-hidden="true"></i>
+                    <span>Book Chapters</span>
                   </button>
                   <div class="dropdown-submenu" aria-label="Book Chapter years">
                     <a class="dropdown-subitem" href="book-chapters.html">All Chapters</a>
@@ -65,11 +85,17 @@ NAV_BLOCK_NEW = '''<nav id="nav-menu" class="nav-menu" aria-label="Primary">
             </div>
 
             <div class="nav-item">
-              <a class="nav-link" href="index.html#news">News</a>
+              <a class="nav-link" href="index.html#news">
+                <i class="fa-solid fa-newspaper" aria-hidden="true"></i>
+                <span>News</span>
+              </a>
             </div>
 
             <div class="nav-item">
-              <a class="nav-link" href="index.html#honours">Honours</a>
+              <a class="nav-link" href="index.html#honours">
+                <i class="fa-solid fa-award" aria-hidden="true"></i>
+                <span>Honours</span>
+              </a>
             </div>
           </nav>'''
 

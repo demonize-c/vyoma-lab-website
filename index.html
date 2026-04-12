@@ -8,7 +8,7 @@
       name="description"
       content="Vyoma Lab research website with sections for people, research, news, and honours."
     />
-    <link
+                            <link
       rel="apple-touch-icon"
       sizes="180x180"
       href="./images/favicon_io/apple-touch-icon.png?v=2"
@@ -55,7 +55,7 @@
 
           <nav id="nav-menu" class="nav-menu" aria-label="Primary">
             <div class="nav-item">
-              <a class="nav-link" href="#home">Home</a>
+              <a class="nav-link" href="index.html#home">Home</a>
             </div>
 
             <div class="nav-item has-dropdown">
@@ -64,16 +64,23 @@
               </button>
               <div class="dropdown">
                 <a href="harun-venkatesan.html">Harun Venkatesan</a>
-                <a href="alumni.html#postdoctoral-scholars">Postdoctoral Scholars</a>
-                <a href="alumni.html#phd-graduate-students">Ph.D. Graduate Students</a>
-                <a href="alumni.html#masters-undergraduate-students">Masters and Undergraduates</a>
-                <a href="#staff">Staff</a>
-                <a href="#staff-photos">Photos</a>
+                <div class="dropdown-subgroup">
+                  <button class="dropdown-subtrigger" type="button" aria-expanded="false">
+                    Alumni
+                  </button>
+                  <div class="dropdown-submenu" aria-label="Alumni groups">
+                    <a class="dropdown-subitem" href="alumni-postdoc.html">Postdoctoral Scholars</a>
+                    <a class="dropdown-subitem" href="alumni-phd.html">Ph.D. Graduates</a>
+                    <a class="dropdown-subitem" href="alumni-masters-ug.html">Masters & Undergraduates</a>
+                  </div>
+                </div>
+                <a href="index.html#staff">Staff</a>
+                <a href="index.html#staff-photos">Photos</a>
               </div>
             </div>
 
             <div class="nav-item">
-              <a class="nav-link" href="#current-research">Current Research</a>
+              <a class="nav-link" href="index.html#current-research">Current Research</a>
             </div>
 
             <div class="nav-item has-dropdown">
@@ -86,25 +93,35 @@
                     Publications
                   </button>
                   <div class="dropdown-submenu" aria-label="Publication years">
-                    <a class="dropdown-subitem" href="#publications-list">All publications</a>
-                    <a class="dropdown-subitem" href="#publications-2025">2025</a>
-                    <a class="dropdown-subitem" href="#publications-2024">2024</a>
-                    <a class="dropdown-subitem" href="#publications-2023">2023</a>
-                    <a class="dropdown-subitem" href="#publications-2022">2022</a>
-                    <a class="dropdown-subitem" href="#publications-2021">2021</a>
-                    <a class="dropdown-subitem" href="#publications-2020">2020</a>
+                    <a class="dropdown-subitem" href="publications.html">All Publications</a>
+                    <a class="dropdown-subitem" href="publications-2025.html">2025 Publications</a>
+                    <a class="dropdown-subitem" href="publications-2024.html">2024 Publications</a>
+                    <a class="dropdown-subitem" href="publications-2023.html">2023 Publications</a>
+                    <a class="dropdown-subitem" href="publications-2022.html">2022 Publications</a>
+                    <a class="dropdown-subitem" href="publications-2021.html">2021 Publications</a>
                   </div>
                 </div>
-                <a href="#book-chapters">Book chapters</a>
+                <div class="dropdown-subgroup">
+                  <button class="dropdown-subtrigger" type="button" aria-expanded="false">
+                    Book Chapters
+                  </button>
+                  <div class="dropdown-submenu" aria-label="Book Chapter years">
+                    <a class="dropdown-subitem" href="book-chapters.html">All Chapters</a>
+                    <a class="dropdown-subitem" href="book-chapters-2026.html">2026 Book Chapters</a>
+                    <a class="dropdown-subitem" href="book-chapters-2025.html">2025 Book Chapters</a>
+                    <a class="dropdown-subitem" href="book-chapters-2020.html">2020 Book Chapters</a>
+                    <a class="dropdown-subitem" href="book-chapters-2019.html">2019 Book Chapters</a>
+                  </div>
+                </div>
               </div>
             </div>
 
             <div class="nav-item">
-              <a class="nav-link" href="#news">News</a>
+              <a class="nav-link" href="index.html#news">News</a>
             </div>
 
             <div class="nav-item">
-              <a class="nav-link" href="#honours">Honours</a>
+              <a class="nav-link" href="index.html#honours">Honours</a>
             </div>
           </nav>
         </div>
@@ -168,42 +185,38 @@
                 </p>
                 <ul class="profile-meta">
                   <li>
-                    <strong>Phone</strong>
+                    <i class="fa-solid fa-phone" aria-hidden="true"></i>
                     <a class="profile-email" href="tel:+911126548717">01126548717</a>
                   </li>
                   <li>
-                    <strong>Email</strong>
+                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>
                     <div class="profile-contact-line">
                       <a class="profile-email" href="mailto:harun@itd.ac.in">harun@itd.ac.in</a>
-                      <a
-                        class="profile-inline-link"
-                        href="https://scholar.google.com.sg/citations?user=_R5JZskAAAAJ&amp;hl=en"
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-label="Google Scholar profile"
-                      >
-                        <span class="profile-inline-link-label">Google Scholar</span>
-                        <span class="bio-link-icon" aria-hidden="true">
-                          <svg viewBox="0 0 24 24">
-                            <path d="M7 17 17 7M9 7h8v8" />
-                          </svg>
-                        </span>
-                      </a>
-                      <a
-                        class="profile-inline-link"
-                        href="https://orcid.org/0000-0002-1200-6456"
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-label="ORCID profile"
-                      >
-                        <span class="profile-inline-link-label">ORCID</span>
-                        <span class="bio-link-icon" aria-hidden="true">
-                          <svg viewBox="0 0 24 24">
-                            <path d="M7 17 17 7M9 7h8v8" />
-                          </svg>
-                        </span>
-                      </a>
                     </div>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                    <a
+                      class="profile-inline-link"
+                      href="https://scholar.google.com.sg/citations?user=_R5JZskAAAAJ&amp;hl=en"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <span class="profile-inline-link-label">Google Scholar</span>
+                      <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true" style="font-size: 0.75rem; opacity: 0.7;"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <i class="fa-brands fa-orcid" aria-hidden="true"></i>
+                    <a
+                      class="profile-inline-link"
+                      href="https://orcid.org/0000-0002-1200-6456"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <span class="profile-inline-link-label">ORCID</span>
+                      <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true" style="font-size: 0.75rem; opacity: 0.7;"></i>
+                    </a>
                   </li>
                 </ul>
               </article>
@@ -628,36 +641,60 @@
 
       </main>
 
-      <footer class="footer">
+      <footer class="site-footer">
         <div class="container">
-          <div class="footer-card">
-            <div>
-              <span class="eyebrow">Home Page</span>
-              <h3>Vyoma Lab</h3>
+          <div class="footer-grid">
+            <div class="footer-brand">
+              <a class="brand" href="index.html#home" style="margin-bottom: 2rem; display: flex;">
+                <img class="brand-mark" src="images/logo-transparent.svg" alt="Vyoma Lab" style="filter: brightness(0) invert(1); width: 42px;">
+                <span style="color: white; margin-left: 0.75rem; font-weight: 700; font-size: 1.25rem;">Vyoma Lab</span>
+              </a>
               <p>
-                Vyoma Lab brings together chemistry, biology, and materials science to create ultra-light,
-                flexible aerogel materials for next-generation applications.
+                Leading research in advanced textiles, biomaterials, and energy-efficient cooling solutions. 
+                Pushing boundaries in multifunctional sensors and sustainable technology.
               </p>
-              <div class="footer-links">
-                <a href="#home">Home</a>
-                <a href="#people">People</a>
-                <a href="#current-research">Current Research</a>
-                <a href="#publications">Publications</a>
-                <a href="#news">News</a>
-                <a href="#honours">Honours</a>
-              </div>
             </div>
 
-            <div class="footer-note">
-              <div>
-                <strong>Contact</strong>
-                <p>
-                  Department of Textile and Fibre Engineering<br />
-                  IIT Campus, Hauz Khas, New Delhi, Delhi 110016<br />
-                  Hauz Khas, New Delhi-110016
-                </p>
-              </div>
-              <p>Copyright © Vyoma Lab</p>
+            <div class="footer-col">
+              <h4>Navigation</h4>
+              <ul class="footer-links-list">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="harun-venkatesan.html">Dr. Harun Venkatesan</a></li>
+                <li><a href="index.html#current-research">Current Research</a></li>
+                <li><a href="index.html#news">News & Events</a></li>
+                <li><a href="index.html#honours">Honours</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h4>Research</h4>
+              <ul class="footer-links-list">
+                <li><a href="publications.html">All Publications</a></li>
+                <li><a href="book-chapters.html">Book Chapters</a></li>
+                <li><a href="publications-2025.html">2025 Archive</a></li>
+                <li><a href="publications-2024.html">2024 Archive</a></li>
+                <li><a href="book-chapters-2026.html">2026 Book Chapters</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h4>People</h4>
+              <ul class="footer-links-list">
+                <li><a href="alumni-postdoc.html">Postdoctoral Scholars</a></li>
+                <li><a href="alumni-phd.html">Ph.D. Graduates</a></li>
+                <li><a href="alumni-masters-ug.html">Masters & Undergraduates</a></li>
+                <li><a href="index.html#staff">Staff Members</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <div class="footer-contact">
+              <strong>Department of Textile and Fibre Engineering</strong><br>
+              IIT Campus, Hauz Khas, New Delhi-110016
+            </div>
+            <div class="footer-copyright">
+              Copyright © 2026 Vyoma Lab. All rights reserved.
             </div>
           </div>
         </div>
@@ -665,6 +702,7 @@
     </div>
 
     <script>
+      // Navigation functionality
       const menuToggle = document.querySelector(".menu-toggle");
       const navMenu = document.querySelector(".nav-menu");
       const dropdownItems = Array.from(document.querySelectorAll(".has-dropdown"));

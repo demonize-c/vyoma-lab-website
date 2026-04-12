@@ -8,7 +8,7 @@
       name="description"
       content="Faculty profile for Harun Venkatesan at Vyoma Lab, featuring specialization, research interests, projects, patents, publications, conferences, and research highlights."
     />
-    <link
+                            <link
       rel="apple-touch-icon"
       sizes="180x180"
       href="./images/favicon_io/apple-touch-icon.png?v=2"
@@ -97,9 +97,16 @@
               </button>
               <div class="dropdown">
                 <a href="harun-venkatesan.html">Harun Venkatesan</a>
-                <a href="alumni.html#postdoctoral-scholars">Postdoctoral Scholars</a>
-                <a href="alumni.html#phd-graduate-students">Ph.D. Graduate Students</a>
-                <a href="alumni.html#masters-undergraduate-students">Masters and Undergraduates</a>
+                <div class="dropdown-subgroup">
+                  <button class="dropdown-subtrigger" type="button" aria-expanded="false">
+                    Alumni
+                  </button>
+                  <div class="dropdown-submenu" aria-label="Alumni groups">
+                    <a class="dropdown-subitem" href="alumni-postdoc.html">Postdoctoral Scholars</a>
+                    <a class="dropdown-subitem" href="alumni-phd.html">Ph.D. Graduates</a>
+                    <a class="dropdown-subitem" href="alumni-masters-ug.html">Masters & Undergraduates</a>
+                  </div>
+                </div>
                 <a href="index.html#staff">Staff</a>
                 <a href="index.html#staff-photos">Photos</a>
               </div>
@@ -119,16 +126,26 @@
                     Publications
                   </button>
                   <div class="dropdown-submenu" aria-label="Publication years">
-                    <a class="dropdown-subitem" href="#publications">All publications</a>
-                    <a class="dropdown-subitem" href="index.html#publications-2025">2025</a>
-                    <a class="dropdown-subitem" href="index.html#publications-2024">2024</a>
-                    <a class="dropdown-subitem" href="index.html#publications-2023">2023</a>
-                    <a class="dropdown-subitem" href="index.html#publications-2022">2022</a>
-                    <a class="dropdown-subitem" href="index.html#publications-2021">2021</a>
-                    <a class="dropdown-subitem" href="index.html#publications-2020">2020</a>
+                    <a class="dropdown-subitem" href="publications.html">All Publications</a>
+                    <a class="dropdown-subitem" href="publications-2025.html">2025 Publications</a>
+                    <a class="dropdown-subitem" href="publications-2024.html">2024 Publications</a>
+                    <a class="dropdown-subitem" href="publications-2023.html">2023 Publications</a>
+                    <a class="dropdown-subitem" href="publications-2022.html">2022 Publications</a>
+                    <a class="dropdown-subitem" href="publications-2021.html">2021 Publications</a>
                   </div>
                 </div>
-                <a href="#book-chapters">Book chapters</a>
+                <div class="dropdown-subgroup">
+                  <button class="dropdown-subtrigger" type="button" aria-expanded="false">
+                    Book Chapters
+                  </button>
+                  <div class="dropdown-submenu" aria-label="Book Chapter years">
+                    <a class="dropdown-subitem" href="book-chapters.html">All Chapters</a>
+                    <a class="dropdown-subitem" href="book-chapters-2026.html">2026 Book Chapters</a>
+                    <a class="dropdown-subitem" href="book-chapters-2025.html">2025 Book Chapters</a>
+                    <a class="dropdown-subitem" href="book-chapters-2020.html">2020 Book Chapters</a>
+                    <a class="dropdown-subitem" href="book-chapters-2019.html">2019 Book Chapters</a>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -146,7 +163,7 @@
       <main>
         <section class="section faculty-hero-section" id="overview">
           <div class="container">
-            <a class="page-kicker" href="index.html#harun-venkatesan">Back to People</a>
+            <a class="page-kicker" href="index.html">Home</a>
 
             <div class="faculty-hero-layout">
               <article class="content-card faculty-summary-card">
@@ -160,7 +177,7 @@
                 </p>
                 <ul class="profile-meta">
                   <li>
-                    <strong>Profile</strong>
+                    <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
                     <a
                       class="profile-email"
                       href="https://textile.iitd.ac.in/faculty-profile/22"
@@ -171,16 +188,40 @@
                     </a>
                   </li>
                   <li>
-                    <strong>Email</strong>
-                    <a class="profile-email" href="mailto:harun@textile.iitd.ac.in">harun@textile.iitd.ac.in</a>
+                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                    <div class="profile-contact-line">
+                      <a class="profile-email" href="mailto:harun@textile.iitd.ac.in">harun@textile.iitd.ac.in</a>
+                    </div>
                   </li>
                   <li>
-                    <strong>Phone</strong>
+                    <i class="fa-solid fa-phone" aria-hidden="true"></i>
                     <a class="profile-email" href="tel:+911126548717">01126548717</a>
                   </li>
                   <li>
-                    <strong>Address</strong>
-                    <span>TX-128</span>
+                    <i class="fa-solid fa-map-marker-alt" aria-hidden="true"></i>
+                    <span>Room TX-128, Block-TX</span>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                    <a
+                      class="profile-email"
+                      href="https://scholar.google.com.sg/citations?user=_R5JZskAAAAJ&hl=en"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Google Scholar
+                    </a>
+                  </li>
+                  <li>
+                    <i class="fa-brands fa-orcid" aria-hidden="true"></i>
+                    <a
+                      class="profile-email"
+                      href="https://orcid.org/0000-0002-1200-6456"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      ORCID Profile
+                    </a>
                   </li>
                 </ul>
               </article>
@@ -496,35 +537,60 @@
         </section>
       </main>
 
-      <footer class="footer">
+      <footer class="site-footer">
         <div class="container">
-          <div class="footer-card">
-            <div>
-              <span class="eyebrow">Faculty Page</span>
-              <h3>Harun Venkatesan</h3>
+          <div class="footer-grid">
+            <div class="footer-brand">
+              <a class="brand" href="index.html#home" style="margin-bottom: 2rem; display: flex;">
+                <img class="brand-mark" src="images/logo-transparent.svg" alt="Vyoma Lab" style="filter: brightness(0) invert(1); width: 42px;">
+                <span style="color: white; margin-left: 0.75rem; font-weight: 700; font-size: 1.25rem;">Vyoma Lab</span>
+              </a>
               <p>
-                Standalone faculty profile page for Vyoma Lab with specialization, research activity,
-                publications, conferences, and featured highlights.
+                Leading research in advanced textiles, biomaterials, and energy-efficient cooling solutions. 
+                Pushing boundaries in multifunctional sensors and sustainable technology.
               </p>
-              <div class="footer-links">
-                <a href="index.html">Vyoma Lab Home</a>
-                <a href="#overview">Overview</a>
-                <a href="#projects">Projects</a>
-                <a href="#publications">Publications</a>
-                <a href="#conferences">Conferences</a>
-                <a href="#highlights">Highlights</a>
-              </div>
             </div>
 
-            <div class="footer-note">
-              <div>
-                <strong>Contact</strong>
-                <p>
-                  Candidates interested in PhD or project opportunities may write to
-                  <a class="highlight-link" href="mailto:harun@itd.ac.in">harun@itd.ac.in</a>.
-                </p>
-              </div>
-              <p>Copyright © Vyoma Lab</p>
+            <div class="footer-col">
+              <h4>Navigation</h4>
+              <ul class="footer-links-list">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="harun-venkatesan.html">Dr. Harun Venkatesan</a></li>
+                <li><a href="index.html#current-research">Current Research</a></li>
+                <li><a href="index.html#news">News & Events</a></li>
+                <li><a href="index.html#honours">Honours</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h4>Research</h4>
+              <ul class="footer-links-list">
+                <li><a href="publications.html">All Publications</a></li>
+                <li><a href="book-chapters.html">Book Chapters</a></li>
+                <li><a href="publications-2025.html">2025 Archive</a></li>
+                <li><a href="publications-2024.html">2024 Archive</a></li>
+                <li><a href="book-chapters-2026.html">2026 Book Chapters</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h4>People</h4>
+              <ul class="footer-links-list">
+                <li><a href="alumni-postdoc.html">Postdoctoral Scholars</a></li>
+                <li><a href="alumni-phd.html">Ph.D. Graduates</a></li>
+                <li><a href="alumni-masters-ug.html">Masters & Undergraduates</a></li>
+                <li><a href="index.html#staff">Staff Members</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <div class="footer-contact">
+              <strong>Department of Textile and Fibre Engineering</strong><br>
+              IIT Campus, Hauz Khas, New Delhi-110016
+            </div>
+            <div class="footer-copyright">
+              Copyright © 2026 Vyoma Lab. All rights reserved.
             </div>
           </div>
         </div>
@@ -532,6 +598,7 @@
     </div>
 
     <script>
+      // Navigation functionality
       const menuToggle = document.querySelector(".menu-toggle");
       const navMenu = document.querySelector(".nav-menu");
       const dropdownItems = Array.from(document.querySelectorAll(".has-dropdown"));

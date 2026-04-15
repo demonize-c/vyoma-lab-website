@@ -3,8 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Publications 2025 | Vyoma Lab</title>
-                                <link
+    <title>Facilities | Vyoma Lab</title>
+    <meta
+      name="description"
+      content="Advanced research facilities and equipment available at Vyoma Lab."
+    />
+        <link
       rel="apple-touch-icon"
       sizes="180x180"
       href="./images/favicon_io/apple-touch-icon.png?v=2"
@@ -30,14 +34,25 @@
     <div class="site-shell">
       <header class="site-header">
         <div class="container nav-wrap">
-          <a class="brand" href="index.html#home">
-            <img class="brand-mark" src="images/logo-transparent.svg" alt="logo" />
-            <span>Vyoma Lab <small>Research & Discovery</small></span>
+          <a class="brand" href="index.html#home" aria-label="Vyoma Lab home">
+            <img class="brand-mark" src="images/logo-transparent.svg" alt="Vyoma Lab logo" />
+            <span>
+              Vyoma Lab
+              <small>Research & Discovery</small>
+            </span>
           </a>
-          <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="nav-menu"
+            aria-label="Open menu"
+          >
             <span class="menu-label">Menu</span>
             <span class="menu-icon" aria-hidden="true">☰</span>
           </button>
+
           <nav id="nav-menu" class="nav-menu" aria-label="Primary">
             <div class="nav-item">
               <a class="nav-link" href="index.html#home">Home</a>
@@ -115,75 +130,145 @@
           </nav>
         </div>
       </header>
+
       <main>
-        <section class="section publication-hero-section">
+        <div class="page-header section dark">
+            <div class="container">
+              <span class="eyebrow">Equipment</span>
+              <h1>Research Facilities</h1>
+              <p>State-of-the-art laboratory infrastructure for advanced material processing and characterization.</p>
+            </div>
+        </div>
+
+        <section class="section">
           <div class="container">
-            <div class="content-card publication-hero-card">
-              <span class="eyebrow">Research Publications 2025 Archive</span>
-              <h1>Research Publications 2025</h1>
-              <p>Explore Vyoma Lab's high-impact research contributions and scholarly breakthroughs from the 2025 academic cycle.</p>
+            <div class="facilities-grid">
+              
+              <article class="content-card facility-card">
+                <div class="facility-image">
+                  <img src="https://images.unsplash.com/photo-1628595354825-d979d39105ca?auto=format&fit=crop&q=80&w=800" alt="Supercritical Dryer" />
+                </div>
+                <div class="facility-info">
+                  <h3>Supercritical Dryer</h3>
+                  <p>Critical for aerogel synthesis, allowing for the removal of solvents without collapsing the highly porous structure of the material.</p>
+                </div>
+              </article>
+
+              <article class="content-card facility-card">
+                <div class="facility-image">
+                  <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=800" alt="Freeze Dryer" />
+                </div>
+                <div class="facility-info">
+                  <h3>Freeze Dryer</h3>
+                  <p>Enables lyophilization process for preserving biological samples and creating porous materials through ice sublimation.</p>
+                </div>
+              </article>
+
+              <article class="content-card facility-card">
+                <div class="facility-image">
+                  <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800" alt="Thermal Conductivity Meter" />
+                </div>
+                <div class="facility-info">
+                  <h3>Thermal Conductivity Meter</h3>
+                  <p>High-precision measurement systems to characterize the thermal insulation and transport properties of new materials.</p>
+                </div>
+              </article>
+
+              <article class="content-card facility-card">
+                <div class="facility-image">
+                  <img src="https://images.unsplash.com/photo-1532187875605-18347a599605?auto=format&fit=crop&q=80&w=800" alt="Density Meter" />
+                </div>
+                <div class="facility-info">
+                  <h3>Density Meter (Bulk & TAP)</h3>
+                  <p>Specialized equipment for measuring the bulk density and tapped density of powders and granules.</p>
+                </div>
+              </article>
+
+              <article class="content-card facility-card">
+                <div class="facility-image">
+                  <img src="https://images.unsplash.com/photo-1532187643603-ba119ca4109e?auto=format&fit=crop&q=80&w=800" alt="Gas Pycnometer" />
+                </div>
+                <div class="facility-info">
+                  <h3>Gas Pycnometer</h3>
+                  <p>Uses gas displacement to determine the true skeletal volume and density of solid materials and powders.</p>
+                </div>
+              </article>
+
+              <article class="content-card facility-card">
+                <div class="facility-image">
+                  <img src="https://images.unsplash.com/photo-1554110397-9bac083977c6?auto=format&fit=crop&q=80&w=800" alt="Scanning Electron Microscope" />
+                </div>
+                <div class="facility-info">
+                  <h3>Scanning Electron Microscope (SEM)</h3>
+                  <p>Advanced imaging for micro-structural analysis and topography of fiber networks and aerogel surfaces.</p>
+                </div>
+              </article>
+
+              <article class="content-card facility-card">
+                <div class="facility-image">
+                  <img src="https://images.unsplash.com/photo-1503387762-592e5a91db3f?auto=format&fit=crop&q=80&w=800" alt="Vacuum Oven" />
+                </div>
+                <div class="facility-info">
+                  <h3>Vacuum Oven</h3>
+                  <p>Provides a controlled, oxygen-free environment for thermal treatment and drying of sensitive materials.</p>
+                </div>
+              </article>
+
+              <article class="content-card facility-card">
+                <div class="facility-image">
+                  <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&q=80&w=800" alt="Impedance Tube" />
+                </div>
+                <div class="facility-info">
+                  <h3>Impedance Tube</h3>
+                  <p>Used for sound insulation studies to measure absorption coefficients and acoustic transmission loss.</p>
+                </div>
+              </article>
+
+              <article class="content-card facility-card">
+                <div class="facility-image">
+                  <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" alt="Ball Milling" />
+                </div>
+                <div class="facility-info">
+                  <h3>Ball Milling</h3>
+                  <p>Mechanical processing equipment for particle size reduction and homogeneous mixing of raw materials.</p>
+                </div>
+              </article>
+
+              <article class="content-card facility-card">
+                <div class="facility-image">
+                  <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=800" alt="High Shear Homogenizer" />
+                </div>
+                <div class="facility-info">
+                  <h3>High Shear Homogenizer</h3>
+                  <p>High-energy mechanical shear for creating stable emulsions and fine dispersions in chemical processing.</p>
+                </div>
+              </article>
+
+              <article class="content-card facility-card">
+                <div class="facility-image">
+                  <img src="https://images.unsplash.com/photo-1635332308691-6e3cd09439e4?auto=format&fit=crop&q=80&w=800" alt="Thermal Imaging Camera" />
+                </div>
+                <div class="facility-info">
+                  <h3>Thermal Imaging Camera</h3>
+                  <p>Non-contact thermal mapping for evaluating the performance of insulation materials and heat distribution.</p>
+                </div>
+              </article>
+
+              <article class="content-card facility-card">
+                <div class="facility-image">
+                  <img src="https://images.unsplash.com/photo-1532187643603-ba119ca4109e?auto=format&fit=crop&q=80&w=800" alt="Liquid Density Meter" />
+                </div>
+                <div class="facility-info">
+                  <h3>Liquid Density Meter</h3>
+                  <p>Precision instrument for the rapid and accurate measurement of liquid density and concentration.</p>
+                </div>
+              </article>
+
             </div>
           </div>
         </section>
-
-        <section class="section" style="padding-top: 0;">
-          <div class="container">
-<div class="publication-list-layout">              <article class="content-card publication-card">
-                <div class="publication-meta-top">
-                  <span class="publication-year-tag">2025</span>
-                  <span class="publication-type-tag">Journal Article</span>
-                </div>
-                <h3>Dual Layered Janus Nonwovens with Asymmetric Wettability for Efficient Directional Moisture Transport</h3>
-                <p class="publication-authors">Kumaresan Subramani, Sollazhagan Nataraj, Porika Anirudh Naik, Rengasamy Raju Seenivasan, Harun Venkatesan</p>
-                <p class="publication-source"><em>Colloids and Surfaces A: Physicochemical and Engineering Aspects, 138862</em></p>
-                <div class="publication-actions">
-                  <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=_R5JZskAAAAJ&citation_for_view=_R5JZskAAAAJ:L8Ckcad2t8MC" target="_blank" class="button button-sm button-secondary">
-                    <i class="fa-solid fa-graduation-cap"></i> View on Scholar
-                  </a>
-                </div>
-              </article>              <article class="content-card publication-card">
-                <div class="publication-meta-top">
-                  <span class="publication-year-tag">2025</span>
-                  <span class="publication-type-tag">Journal Article</span>
-                </div>
-                <h3>Preparation and Characterization of Kombucha-Derived Bacterial Cellulose for Advanced Antimicrobial Biomaterials</h3>
-                <p class="publication-authors">Ankita Sharma, Harun Venkatesan</p>
-                <p class="publication-source"><em>MDPI</em></p>
-                <div class="publication-actions">
-                  <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=_R5JZskAAAAJ&citation_for_view=_R5JZskAAAAJ:-f6ydRqryjwC" target="_blank" class="button button-sm button-secondary">
-                    <i class="fa-solid fa-graduation-cap"></i> View on Scholar
-                  </a>
-                </div>
-              </article>              <article class="content-card publication-card">
-                <div class="publication-meta-top">
-                  <span class="publication-year-tag">2025</span>
-                  <span class="publication-type-tag">Book Chapter</span>
-                </div>
-                <h3>Surface modification strategies to functionalize biodegradable materials for antimicrobial properties</h3>
-                <p class="publication-authors">Ankita Sharma, Harun Venkatesan</p>
-                <p class="publication-source"><em>Bioresorbable Materials and Bioactive Surface Coatings, 293-321</em></p>
-                <div class="publication-actions">
-                  <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=_R5JZskAAAAJ&citation_for_view=_R5JZskAAAAJ:hC7cP41nSMkC" target="_blank" class="button button-sm button-secondary">
-                    <i class="fa-solid fa-graduation-cap"></i> View on Scholar
-                  </a>
-                </div>
-              </article>              <article class="content-card publication-card">
-                <div class="publication-meta-top">
-                  <span class="publication-year-tag">2025</span>
-                  <span class="publication-type-tag">Journal Article</span>
-                </div>
-                <h3>Silica/Alginate Hybrid Aerogel‐Coated Sustainable Textile Liners for Cold Weather Insulation</h3>
-                <p class="publication-authors">Shreya Behera, Lakshmanan Nagarajan, Ankita Sharma, BS Butola, RR Seenivasan, Harun Venkatesan</p>
-                <p class="publication-source"><em>Advanced Engineering Materials, e202501458</em></p>
-                <div class="publication-actions">
-                  <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=_R5JZskAAAAJ&citation_for_view=_R5JZskAAAAJ:IWHjjKOFINEC" target="_blank" class="button button-sm button-secondary">
-                    <i class="fa-solid fa-graduation-cap"></i> View on Scholar
-                  </a>
-                </div>
-              </article>            </div>
-          </div>
-        </section>
       </main>
+
       <footer class="site-footer">
         <div class="container">
           <div class="footer-grid">
@@ -243,6 +328,7 @@
         </div>
       </footer>
     </div>
+
     <script>
       // Navigation functionality
       const menuToggle = document.querySelector(".menu-toggle");

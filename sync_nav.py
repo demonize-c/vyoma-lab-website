@@ -34,7 +34,7 @@ NAV_BLOCK_NEW = '''<nav id="nav-menu" class="nav-menu" aria-label="Primary">
                   <i class="fa-solid fa-user-gear" aria-hidden="true"></i>
                   <span>Staff</span>
                 </a>
-                <a href="index.html#staff-photos">
+                <a href="photos.html">
                   <i class="fa-solid fa-camera-retro" aria-hidden="true"></i>
                   <span>Photos</span>
                 </a>
@@ -45,6 +45,13 @@ NAV_BLOCK_NEW = '''<nav id="nav-menu" class="nav-menu" aria-label="Primary">
               <a class="nav-link" href="index.html#current-research">
                 <i class="fa-solid fa-flask-vial" aria-hidden="true"></i>
                 <span>Current Research</span>
+              </a>
+            </div>
+
+            <div class="nav-item">
+              <a class="nav-link" href="facilities.html">
+                <i class="fa-solid fa-microscope" aria-hidden="true"></i>
+                <span>Facilities</span>
               </a>
             </div>
 

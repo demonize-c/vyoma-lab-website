@@ -45,7 +45,7 @@ NAV_BLOCK_MASTER = '''<nav id="nav-menu" class="nav-menu" aria-label="Primary">
                   </div>
                 </div>
                 <a href="index.html#staff">Staff</a>
-                <a href="index.html#staff-photos">Photos</a>
+                <a href="photos.html">Photos</a>
               </div>
             </div>
 

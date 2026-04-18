@@ -19,18 +19,19 @@ NAV_BLOCK_NEW = '''<nav id="nav-menu" class="nav-menu" aria-label="Primary">
                   <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
                   <span>Harun Venkatesan</span>
                 </a>
-                <div class="dropdown-subgroup">
-                  <button class="dropdown-subtrigger" type="button" aria-expanded="false">
-                    <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
-                    <span>Alumni</span>
-                  </button>
-                  <div class="dropdown-submenu" aria-label="Alumni groups">
-                    <a class="dropdown-subitem" href="alumni-postdoc.html">Postdoctoral Scholars</a>
-                    <a class="dropdown-subitem" href="alumni-phd.html">Ph.D. Graduates</a>
-                    <a class="dropdown-subitem" href="alumni-masters-ug.html">Masters & Undergraduates</a>
-                  </div>
-                </div>
-                <a href="index.html#staff">
+                <a href="alumni-postdoc.html">
+                  <i class="fa-solid fa-user-graduate" aria-hidden="true"></i>
+                  <span>Postdoctoral Scholars</span>
+                </a>
+                <a href="alumni-phd.html">
+                  <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                  <span>Ph.D. Graduates</span>
+                </a>
+                <a href="alumni-masters-ug.html">
+                  <i class="fa-solid fa-user-group" aria-hidden="true"></i>
+                  <span>Masters & Undergraduates</span>
+                </a>
+                <a href="staff.html">
                   <i class="fa-solid fa-user-gear" aria-hidden="true"></i>
                   <span>Staff</span>
                 </a>

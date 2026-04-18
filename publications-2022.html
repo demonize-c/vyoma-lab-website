@@ -40,83 +40,48 @@
           </button>
           <nav id="nav-menu" class="nav-menu" aria-label="Primary">
             <div class="nav-item">
-              <a class="nav-link" href="index.html#home">
-                <i class="fa-solid fa-house" aria-hidden="true"></i>
-                <span>Home</span>
-              </a>
+              <a class="nav-link" href="index.html#home">Home</a>
             </div>
 
             <div class="nav-item has-dropdown">
               <button class="nav-trigger" type="button" aria-expanded="false">
-                <i class="fa-solid fa-users" aria-hidden="true"></i>
-                <span>People</span>
+                People
               </button>
               <div class="dropdown">
-                <button class="submenu-back" type="button" aria-label="Go back to main menu">
-                  <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
-                  <span>Back to Menu</span>
-                </button>
-                <a href="harun-venkatesan.html">
-                  <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
-                  <span>Harun Venkatesan</span>
-                </a>
-                <a href="alumni-postdoc.html">
-                  <i class="fa-solid fa-user-graduate" aria-hidden="true"></i>
-                  <span>Postdoctoral Scholars</span>
-                </a>
-                <a href="alumni-phd.html">
-                  <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
-                  <span>Ph.D. Graduates</span>
-                </a>
-                <a href="alumni-masters-ug.html">
-                  <i class="fa-solid fa-user-group" aria-hidden="true"></i>
-                  <span>Masters & Undergraduates</span>
-                </a>
-                <a href="staff.html">
-                  <i class="fa-solid fa-user-gear" aria-hidden="true"></i>
-                  <span>Staff</span>
-                </a>
-                <a href="photos.html">
-                  <i class="fa-solid fa-camera-retro" aria-hidden="true"></i>
-                  <span>Photos</span>
-                </a>
+                <a href="harun-venkatesan.html">Harun Venkatesan</a>
+                <div class="dropdown-subgroup">
+                  <button class="dropdown-subtrigger" type="button" aria-expanded="false">
+                    Alumni
+                  </button>
+                  <div class="dropdown-submenu" aria-label="Alumni groups">
+                    <a class="dropdown-subitem" href="alumni-postdoc.html">Postdoctoral Scholars</a>
+                    <a class="dropdown-subitem" href="alumni-phd.html">Ph.D. Graduates</a>
+                    <a class="dropdown-subitem" href="alumni-masters-ug.html">Masters & Undergraduates</a>
+                  </div>
+                </div>
+                <a href="index.html#staff">Staff</a>
+                <a href="photos.html">Photos</a>
               </div>
             </div>
 
             <div class="nav-item">
-              <a class="nav-link" href="index.html#current-research">
-                <i class="fa-solid fa-flask-vial" aria-hidden="true"></i>
-                <span>Current Research</span>
-              </a>
+              <a class="nav-link" href="index.html#current-research">Current Research</a>
             </div>
 
             <div class="nav-item">
-              <a class="nav-link" href="facilities.html">
-                <i class="fa-solid fa-microscope" aria-hidden="true"></i>
-                <span>Facilities</span>
-              </a>
+              <a class="nav-link" href="facilities.html">Facilities</a>
             </div>
 
             <div class="nav-item has-dropdown">
               <button class="nav-trigger" type="button" aria-expanded="false">
-                <i class="fa-solid fa-book-open" aria-hidden="true"></i>
-                <span>Publications</span>
+                Publications
               </button>
               <div class="dropdown">
-                <button class="submenu-back" type="button" aria-label="Go back to main menu">
-                  <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
-                  <span>Back to Menu</span>
-                </button>
                 <div class="dropdown-subgroup">
                   <button class="dropdown-subtrigger" type="button" aria-expanded="false">
-                    <i class="fa-solid fa-journal-whills" aria-hidden="true"></i>
-                    <span>Publications</span>
+                    Publications
                   </button>
                   <div class="dropdown-submenu" aria-label="Publication years">
-                    <button class="submenu-back" type="button" aria-label="Go back to publication options">
-                      <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
-                      <span>Back</span>
-                    </button>
                     <a class="dropdown-subitem" href="publications.html">All Publications</a>
                     <a class="dropdown-subitem" href="publications-2025.html">2025 Publications</a>
                     <a class="dropdown-subitem" href="publications-2024.html">2024 Publications</a>
@@ -127,14 +92,9 @@
                 </div>
                 <div class="dropdown-subgroup">
                   <button class="dropdown-subtrigger" type="button" aria-expanded="false">
-                    <i class="fa-solid fa-book" aria-hidden="true"></i>
-                    <span>Book Chapters</span>
+                    Book Chapters
                   </button>
                   <div class="dropdown-submenu" aria-label="Book Chapter years">
-                    <button class="submenu-back" type="button" aria-label="Go back to publication options">
-                      <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
-                      <span>Back</span>
-                    </button>
                     <a class="dropdown-subitem" href="book-chapters.html">All Chapters</a>
                     <a class="dropdown-subitem" href="book-chapters-2026.html">2026 Book Chapters</a>
                     <a class="dropdown-subitem" href="book-chapters-2025.html">2025 Book Chapters</a>
@@ -146,17 +106,11 @@
             </div>
 
             <div class="nav-item">
-              <a class="nav-link" href="index.html#news">
-                <i class="fa-solid fa-newspaper" aria-hidden="true"></i>
-                <span>News</span>
-              </a>
+              <a class="nav-link" href="index.html#news">News</a>
             </div>
 
             <div class="nav-item">
-              <a class="nav-link" href="index.html#honours">
-                <i class="fa-solid fa-award" aria-hidden="true"></i>
-                <span>Honours</span>
-              </a>
+              <a class="nav-link" href="index.html#honours">Honours</a>
             </div>
           </nav>
         </div>
@@ -319,8 +273,6 @@
           group.classList.remove("open");
           setTriggerState(group.querySelector(".dropdown-subtrigger"), false);
         });
-        // Clear sub-activity
-        document.querySelectorAll(".dropdown.subgroup-active").forEach(d => d.classList.remove("subgroup-active"));
       };
 
       const closeDropdownItems = () => {
@@ -328,7 +280,6 @@
           item.classList.remove("open");
           setTriggerState(item.querySelector(".nav-trigger"), false);
         });
-        navMenu.classList.remove("submenu-active");
         closeDropdownSubgroups();
       };
 
@@ -373,7 +324,6 @@
           if (!isOpen) {
             item.classList.add("open");
             setTriggerState(trigger, true);
-            navMenu.classList.add("submenu-active");
           }
         });
       });
@@ -386,36 +336,12 @@
         trigger.addEventListener("click", (event) => {
           event.stopPropagation();
           const isOpen = group.classList.contains("open");
-          const parentDropdown = group.closest(".dropdown");
 
           closeDropdownSubgroups();
 
           if (!isOpen) {
             group.classList.add("open");
             setTriggerState(trigger, true);
-            if (parentDropdown) {
-              parentDropdown.classList.add("subgroup-active");
-            }
-          }
-        });
-      });
-
-      // Handle back buttons
-      document.querySelectorAll(".submenu-back").forEach((btn) => {
-        btn.addEventListener("click", (event) => {
-          event.stopPropagation();
-          const subgroup = btn.closest(".dropdown-subgroup");
-          const dropdown = btn.closest(".dropdown");
-          const navItem = btn.closest(".nav-item");
-
-          if (subgroup && subgroup.classList.contains("open")) {
-            subgroup.classList.remove("open");
-            setTriggerState(subgroup.querySelector(".dropdown-subtrigger"), false);
-            if (dropdown) dropdown.classList.remove("subgroup-active");
-          } else if (navItem && navItem.classList.contains("open")) {
-            navItem.classList.remove("open");
-            setTriggerState(navItem.querySelector(".nav-trigger"), false);
-            navMenu.classList.remove("submenu-active");
           }
         });
       });

@@ -2309,10 +2309,12 @@
           0 24px 48px rgba(7, 32, 47, 0.1),
           0 8px 20px rgba(15, 92, 133, 0.08),
           inset 0 1px 0 rgba(255, 255, 255, 0.44);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        will-change: transform;
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        will-change: transform, opacity;
         transform: translateZ(0);
+        content-visibility: auto;
+        contain-intrinsic-size: auto 300px;
       }
 
       .faculty-glass-card::before {
@@ -2331,10 +2333,8 @@
       }
 
       .faculty-glass-card .eyebrow {
-        background: rgba(255, 255, 255, 0.44);
+        background: rgba(255, 255, 255, 0.85);
         box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.32);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
       }
 
       .faculty-glass-card .faculty-section-label {
@@ -2344,8 +2344,8 @@
         padding: 0.78rem 1.1rem;
         border-radius: 999px;
         background:
-          linear-gradient(162deg, rgba(7, 32, 47, 0.14), rgba(7, 32, 47, 0.32)),
-          linear-gradient(135deg, rgba(23, 152, 205, 0.38), rgba(7, 32, 47, 0.44));
+          linear-gradient(162deg, rgba(7, 32, 47, 0.35), rgba(7, 32, 47, 0.5)),
+          linear-gradient(135deg, rgba(23, 152, 205, 0.6), rgba(7, 32, 47, 0.6));
         color: var(--white);
         font-size: var(--fs-sm);
         font-weight: 700;
@@ -2353,8 +2353,6 @@
         box-shadow:
           0 14px 30px rgba(7, 32, 47, 0.12),
           inset 0 1px 0 rgba(255, 255, 255, 0.16);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
       }
 
       .faculty-glass-card .tag-list,
@@ -3747,10 +3745,16 @@
       .lightbox-content img {
         display: block;
         max-width: 100%;
-        max-height: 58vh; /* Further reduced to guarantee caption visibility without scrolling */
+        max-height: 58vh;
         object-fit: contain;
         border-radius: 12px;
         box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+        transition: opacity 0.3s ease, filter 0.3s ease;
+      }
+
+      .lightbox-content img.loading {
+        opacity: 0.4;
+        filter: blur(10px);
       }
 
       .lightbox-caption {

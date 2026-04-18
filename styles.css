@@ -197,6 +197,7 @@
           0 1px 0 rgba(15, 92, 133, 0.02),
           0 8px 32px rgba(7, 32, 47, 0.03);
         transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: backdrop-filter;
       }
 
       .site-header:hover {
@@ -596,7 +597,7 @@
         backdrop-filter: blur(8px);
         -webkit-backdrop-filter: blur(8px);
         border: 1px solid rgba(255, 255, 255, 0.1);
-        will-change: transform;
+        will-change: transform, backdrop-filter;
       }
 
       .hero-panel::after {
@@ -1271,6 +1272,23 @@
           linear-gradient(175deg, rgba(7, 32, 47, 0.44), rgba(7, 32, 47, 0.82)),
           url("images/home-page-banner.webp") center 38% / cover;
         box-shadow: 0 40px 100px rgba(7, 32, 47, 0.28), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+        will-change: transform; /* Hint for container animation */
+      }
+
+      @media (max-width: 640px) {
+        .research-stage {
+          background-image: 
+            linear-gradient(175deg, rgba(7, 32, 47, 0.52), rgba(7, 32, 47, 0.88)),
+            url("images/sm/home-page-banner.webp");
+        }
+      }
+
+      @media (min-width: 641px) and (max-width: 1024px) {
+        .research-stage {
+          background-image: 
+            linear-gradient(175deg, rgba(7, 32, 47, 0.48), rgba(7, 32, 47, 0.85)),
+            url("images/md/home-page-banner.webp");
+        }
       }
 
       /* Dot-grid pattern overlay */
@@ -1331,13 +1349,6 @@
       }
 
       .current-research-section .section-heading,
-      .current-research-section .research-grid,
-      .research-metrics {
-        position: relative;
-        z-index: 1;
-      }
-
-      /* ─── Section Heading inside stage ─── */
       .research-stage .section-heading {
         padding: clamp(1rem, 2.5vw, 1.8rem);
         border-radius: 28px;
@@ -1348,6 +1359,8 @@
         -webkit-backdrop-filter: blur(8px);
         border: 1px solid rgba(255, 255, 255, 0.08);
         max-width: 52rem;
+        will-change: backdrop-filter;
+        transform: translateZ(0);
         margin-bottom: 0;
       }
 
@@ -1378,14 +1391,20 @@
       .research-metrics {
         display: flex;
         align-items: center;
-        margin-top: 1.25rem;
-        padding: 1rem 0;
+        gap: 0;
+        max-width: fit-content;
+        margin: 2rem 0 3.2rem;
+        padding: 0.6rem;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(12px) saturate(160%);
+        -webkit-backdrop-filter: blur(12px) saturate(160%);
         border-radius: 20px;
-        background: rgba(255, 255, 255, 0.07);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        width: fit-content;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 
+          0 12px 40px rgba(0, 0, 0, 0.2),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+        will-change: backdrop-filter;
+        transform: translateZ(0);
       }
 
       .research-metric {
@@ -1530,6 +1549,7 @@
         box-shadow: 0 8px 32px rgba(7, 32, 47, 0.05);
         z-index: 1;
         isolation: isolate;
+        will-change: backdrop-filter;
       }
 
       /* Premium Shine Effect */
@@ -3229,6 +3249,24 @@
           line-height: 1.3;
           padding-right: 0.35rem;
           text-align: left;
+        }
+
+        @media (min-width: 394px) {
+          .research-funder-name,
+          .funder-link {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+          }
+
+          .research-funder-logo {
+            width: 4rem;
+            height: 4rem;
+          }
+
+          .funder-mini-logo {
+            width: 3rem;
+            height: 3rem;
+          }
         }
 
         .research-funder-link {

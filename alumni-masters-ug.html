@@ -67,6 +67,10 @@
                 <span>People</span>
               </button>
               <div class="dropdown">
+                <button class="submenu-back" type="button" aria-label="Go back to main menu">
+                  <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                  <span>Back to Menu</span>
+                </button>
                 <a href="harun-venkatesan.html">
                   <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
                   <span>Harun Venkatesan</span>
@@ -114,12 +118,20 @@
                 <span>Publications</span>
               </button>
               <div class="dropdown">
+                <button class="submenu-back" type="button" aria-label="Go back to main menu">
+                  <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                  <span>Back to Menu</span>
+                </button>
                 <div class="dropdown-subgroup">
                   <button class="dropdown-subtrigger" type="button" aria-expanded="false">
                     <i class="fa-solid fa-journal-whills" aria-hidden="true"></i>
                     <span>Publications</span>
                   </button>
                   <div class="dropdown-submenu" aria-label="Publication years">
+                    <button class="submenu-back" type="button" aria-label="Go back to publication options">
+                      <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                      <span>Back</span>
+                    </button>
                     <a class="dropdown-subitem" href="publications.html">All Publications</a>
                     <a class="dropdown-subitem" href="publications-2025.html">2025 Publications</a>
                     <a class="dropdown-subitem" href="publications-2024.html">2024 Publications</a>
@@ -134,6 +146,10 @@
                     <span>Book Chapters</span>
                   </button>
                   <div class="dropdown-submenu" aria-label="Book Chapter years">
+                    <button class="submenu-back" type="button" aria-label="Go back to publication options">
+                      <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                      <span>Back</span>
+                    </button>
                     <a class="dropdown-subitem" href="book-chapters.html">All Chapters</a>
                     <a class="dropdown-subitem" href="book-chapters-2026.html">2026 Book Chapters</a>
                     <a class="dropdown-subitem" href="book-chapters-2025.html">2025 Book Chapters</a>
@@ -213,8 +229,16 @@
           <div class="container">
             <div class="alumni-grid">
               <article class="content-card alumni-card">
-                <div class="alumni-photo">
-                  <img src="images/sambhashar-singh.png" alt="Sambhashar Singh portrait" />
+                <div class="alumni-photo" style="background-image: url('images/people/alumni/masters-ug/placeholder/sambhashar-singh.webp');">
+                  <img 
+                    src="images/people/alumni/masters-ug/sm/sambhashar-singh.webp" 
+                    srcset="images/people/alumni/masters-ug/sm/sambhashar-singh.webp 400w, images/people/alumni/masters-ug/md/sambhashar-singh.webp 800w, images/people/alumni/masters-ug/lg/sambhashar-singh.webp 1600w"
+                    sizes="(max-width: 480px) 140px, 180px"
+                    alt="Sambhashar Singh portrait" 
+                    decoding="async"
+                    loading="lazy"
+                    onload="this.classList.add('loaded')"
+                  />
                 </div>
                 <div class="alumni-card-copy">
                   <span class="alumni-role">M.Tech Researcher</span>
@@ -231,8 +255,16 @@
               </article>
 
               <article class="content-card alumni-card">
-                <div class="alumni-photo">
-                  <img src="images/kumaresan-s.png" alt="Kumaresan S. portrait" />
+                <div class="alumni-photo" style="background-image: url('images/people/alumni/masters-ug/placeholder/kumaresan-s.webp');">
+                  <img 
+                    src="images/people/alumni/masters-ug/sm/kumaresan-s.webp" 
+                    srcset="images/people/alumni/masters-ug/sm/kumaresan-s.webp 400w, images/people/alumni/masters-ug/md/kumaresan-s.webp 800w, images/people/alumni/masters-ug/lg/kumaresan-s.webp 1600w"
+                    sizes="(max-width: 480px) 140px, 180px"
+                    alt="Kumaresan S. portrait" 
+                    decoding="async"
+                    loading="lazy"
+                    onload="this.classList.add('loaded')"
+                  />
                 </div>
                 <div class="alumni-card-copy">
                   <span class="alumni-role">M.Tech Researcher</span>
@@ -249,8 +281,16 @@
               </article>
 
               <article class="content-card alumni-card">
-                <div class="alumni-photo">
-                  <img src="images/rushikesh-dhumal.png" alt="Rushikesh Dhumal portrait" />
+                <div class="alumni-photo" style="background-image: url('images/people/alumni/masters-ug/placeholder/rushikesh-dhumal.webp');">
+                  <img 
+                    src="images/people/alumni/masters-ug/sm/rushikesh-dhumal.webp" 
+                    srcset="images/people/alumni/masters-ug/sm/rushikesh-dhumal.webp 400w, images/people/alumni/masters-ug/md/rushikesh-dhumal.webp 800w, images/people/alumni/masters-ug/lg/rushikesh-dhumal.webp 1600w"
+                    sizes="(max-width: 480px) 140px, 180px"
+                    alt="Rushikesh Dhumal portrait" 
+                    decoding="async"
+                    loading="lazy"
+                    onload="this.classList.add('loaded')"
+                  />
                 </div>
                 <div class="alumni-card-copy">
                   <span class="alumni-role">M.Tech Researcher</span>
@@ -347,6 +387,8 @@
           group.classList.remove("open");
           setTriggerState(group.querySelector(".dropdown-subtrigger"), false);
         });
+        // Clear sub-activity
+        document.querySelectorAll(".dropdown.subgroup-active").forEach(d => d.classList.remove("subgroup-active"));
       };
 
       const closeDropdownItems = () => {
@@ -354,6 +396,7 @@
           item.classList.remove("open");
           setTriggerState(item.querySelector(".nav-trigger"), false);
         });
+        navMenu.classList.remove("submenu-active");
         closeDropdownSubgroups();
       };
 
@@ -398,6 +441,7 @@
           if (!isOpen) {
             item.classList.add("open");
             setTriggerState(trigger, true);
+            navMenu.classList.add("submenu-active");
           }
         });
       });
@@ -410,12 +454,36 @@
         trigger.addEventListener("click", (event) => {
           event.stopPropagation();
           const isOpen = group.classList.contains("open");
+          const parentDropdown = group.closest(".dropdown");
 
           closeDropdownSubgroups();
 
           if (!isOpen) {
             group.classList.add("open");
             setTriggerState(trigger, true);
+            if (parentDropdown) {
+              parentDropdown.classList.add("subgroup-active");
+            }
+          }
+        });
+      });
+
+      // Handle back buttons
+      document.querySelectorAll(".submenu-back").forEach((btn) => {
+        btn.addEventListener("click", (event) => {
+          event.stopPropagation();
+          const subgroup = btn.closest(".dropdown-subgroup");
+          const dropdown = btn.closest(".dropdown");
+          const navItem = btn.closest(".nav-item");
+
+          if (subgroup && subgroup.classList.contains("open")) {
+            subgroup.classList.remove("open");
+            setTriggerState(subgroup.querySelector(".dropdown-subtrigger"), false);
+            if (dropdown) dropdown.classList.remove("subgroup-active");
+          } else if (navItem && navItem.classList.contains("open")) {
+            navItem.classList.remove("open");
+            setTriggerState(navItem.querySelector(".nav-trigger"), false);
+            navMenu.classList.remove("submenu-active");
           }
         });
       });

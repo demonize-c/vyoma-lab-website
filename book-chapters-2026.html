@@ -57,6 +57,10 @@
                 <span>People</span>
               </button>
               <div class="dropdown">
+                <button class="submenu-back" type="button" aria-label="Go back to main menu">
+                  <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                  <span>Back to Menu</span>
+                </button>
                 <a href="harun-venkatesan.html">
                   <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
                   <span>Harun Venkatesan</span>
@@ -104,12 +108,20 @@
                 <span>Publications</span>
               </button>
               <div class="dropdown">
+                <button class="submenu-back" type="button" aria-label="Go back to main menu">
+                  <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                  <span>Back to Menu</span>
+                </button>
                 <div class="dropdown-subgroup">
                   <button class="dropdown-subtrigger" type="button" aria-expanded="false">
                     <i class="fa-solid fa-journal-whills" aria-hidden="true"></i>
                     <span>Publications</span>
                   </button>
                   <div class="dropdown-submenu" aria-label="Publication years">
+                    <button class="submenu-back" type="button" aria-label="Go back to publication options">
+                      <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                      <span>Back</span>
+                    </button>
                     <a class="dropdown-subitem" href="publications.html">All Publications</a>
                     <a class="dropdown-subitem" href="publications-2025.html">2025 Publications</a>
                     <a class="dropdown-subitem" href="publications-2024.html">2024 Publications</a>
@@ -124,6 +136,10 @@
                     <span>Book Chapters</span>
                   </button>
                   <div class="dropdown-submenu" aria-label="Book Chapter years">
+                    <button class="submenu-back" type="button" aria-label="Go back to publication options">
+                      <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                      <span>Back</span>
+                    </button>
                     <a class="dropdown-subitem" href="book-chapters.html">All Chapters</a>
                     <a class="dropdown-subitem" href="book-chapters-2026.html">2026 Book Chapters</a>
                     <a class="dropdown-subitem" href="book-chapters-2025.html">2025 Book Chapters</a>
@@ -273,6 +289,8 @@
           group.classList.remove("open");
           setTriggerState(group.querySelector(".dropdown-subtrigger"), false);
         });
+        // Clear sub-activity
+        document.querySelectorAll(".dropdown.subgroup-active").forEach(d => d.classList.remove("subgroup-active"));
       };
 
       const closeDropdownItems = () => {
@@ -280,6 +298,7 @@
           item.classList.remove("open");
           setTriggerState(item.querySelector(".nav-trigger"), false);
         });
+        navMenu.classList.remove("submenu-active");
         closeDropdownSubgroups();
       };
 
@@ -324,6 +343,7 @@
           if (!isOpen) {
             item.classList.add("open");
             setTriggerState(trigger, true);
+            navMenu.classList.add("submenu-active");
           }
         });
       });
@@ -336,12 +356,36 @@
         trigger.addEventListener("click", (event) => {
           event.stopPropagation();
           const isOpen = group.classList.contains("open");
+          const parentDropdown = group.closest(".dropdown");
 
           closeDropdownSubgroups();
 
           if (!isOpen) {
             group.classList.add("open");
             setTriggerState(trigger, true);
+            if (parentDropdown) {
+              parentDropdown.classList.add("subgroup-active");
+            }
+          }
+        });
+      });
+
+      // Handle back buttons
+      document.querySelectorAll(".submenu-back").forEach((btn) => {
+        btn.addEventListener("click", (event) => {
+          event.stopPropagation();
+          const subgroup = btn.closest(".dropdown-subgroup");
+          const dropdown = btn.closest(".dropdown");
+          const navItem = btn.closest(".nav-item");
+
+          if (subgroup && subgroup.classList.contains("open")) {
+            subgroup.classList.remove("open");
+            setTriggerState(subgroup.querySelector(".dropdown-subtrigger"), false);
+            if (dropdown) dropdown.classList.remove("subgroup-active");
+          } else if (navItem && navItem.classList.contains("open")) {
+            navItem.classList.remove("open");
+            setTriggerState(navItem.querySelector(".nav-trigger"), false);
+            navMenu.classList.remove("submenu-active");
           }
         });
       });

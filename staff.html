@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab Staff | Vyoma Lab</title>
+    <meta
+      name="description"
+      content="Project Scientists, Fellows, and Research Assistants at Vyoma Lab."
+    />
+                                <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/favicon_io/apple-touch-icon.png?v=2"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon_io/favicon-32x32.png?v=2" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon_io/favicon-16x16.png?v=2" />
+    <link rel="icon" type="image/x-icon" sizes="any" href="./images/favicon_io/favicon.ico?v=2" />
+    <link rel="shortcut icon" href="./images/favicon_io/favicon.ico?v=2" />
+    <link rel="manifest" href="./images/favicon_io/site.webmanifest?v=2" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="container nav-wrap">
+          <a class="brand" href="index.html#home" aria-label="Vyoma Lab home">
+            <img class="brand-mark" src="images/logo-transparent.svg" alt="Vyoma Lab logo" />
+            <span>
+              Vyoma Lab
+              <small>Research & Discovery</small>
+            </span>
+          </a>
+
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="nav-menu"
+            aria-label="Open menu"
+          >
+            <span class="menu-label">Menu</span>
+            <span class="menu-icon" aria-hidden="true">☰</span>
+          </button>
+
+          <nav id="nav-menu" class="nav-menu" aria-label="Primary">
+            <div class="nav-item">
+              <a class="nav-link" href="index.html#home">
+                <i class="fa-solid fa-house" aria-hidden="true"></i>
+                <span>Home</span>
+              </a>
+            </div>
+
+            <div class="nav-item has-dropdown">
+              <button class="nav-trigger" type="button" aria-expanded="false">
+                <i class="fa-solid fa-users" aria-hidden="true"></i>
+                <span>People</span>
+              </button>
+              <div class="dropdown">
+                <button class="submenu-back" type="button" aria-label="Go back to main menu">
+                  <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                  <span>Back to Menu</span>
+                </button>
+                <a href="harun-venkatesan.html">
+                  <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
+                  <span>Harun Venkatesan</span>
+                </a>
+                <a href="alumni-postdoc.html">
+                  <i class="fa-solid fa-user-graduate" aria-hidden="true"></i>
+                  <span>Postdoctoral Scholars</span>
+                </a>
+                <a href="alumni-phd.html">
+                  <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                  <span>Ph.D. Graduates</span>
+                </a>
+                <a href="alumni-masters-ug.html">
+                  <i class="fa-solid fa-user-group" aria-hidden="true"></i>
+                  <span>Masters & Undergraduates</span>
+                </a>
+                <a href="staff.html">
+                  <i class="fa-solid fa-user-gear" aria-hidden="true"></i>
+                  <span>Staff</span>
+                </a>
+                <a href="photos.html">
+                  <i class="fa-solid fa-camera-retro" aria-hidden="true"></i>
+                  <span>Photos</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="nav-item">
+              <a class="nav-link" href="index.html#current-research">
+                <i class="fa-solid fa-flask-vial" aria-hidden="true"></i>
+                <span>Current Research</span>
+              </a>
+            </div>
+
+            <div class="nav-item">
+              <a class="nav-link" href="facilities.html">
+                <i class="fa-solid fa-microscope" aria-hidden="true"></i>
+                <span>Facilities</span>
+              </a>
+            </div>
+
+            <div class="nav-item has-dropdown">
+              <button class="nav-trigger" type="button" aria-expanded="false">
+                <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                <span>Publications</span>
+              </button>
+              <div class="dropdown">
+                <button class="submenu-back" type="button" aria-label="Go back to main menu">
+                  <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                  <span>Back to Menu</span>
+                </button>
+                <div class="dropdown-subgroup">
+                  <button class="dropdown-subtrigger" type="button" aria-expanded="false">
+                    <i class="fa-solid fa-journal-whills" aria-hidden="true"></i>
+                    <span>Publications</span>
+                  </button>
+                  <div class="dropdown-submenu" aria-label="Publication years">
+                    <button class="submenu-back" type="button" aria-label="Go back to publication options">
+                      <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                      <span>Back</span>
+                    </button>
+                    <a class="dropdown-subitem" href="publications.html">All Publications</a>
+                    <a class="dropdown-subitem" href="publications-2025.html">2025 Publications</a>
+                    <a class="dropdown-subitem" href="publications-2024.html">2024 Publications</a>
+                    <a class="dropdown-subitem" href="publications-2023.html">2023 Publications</a>
+                    <a class="dropdown-subitem" href="publications-2022.html">2022 Publications</a>
+                    <a class="dropdown-subitem" href="publications-2021.html">2021 Publications</a>
+                  </div>
+                </div>
+                <div class="dropdown-subgroup">
+                  <button class="dropdown-subtrigger" type="button" aria-expanded="false">
+                    <i class="fa-solid fa-book" aria-hidden="true"></i>
+                    <span>Book Chapters</span>
+                  </button>
+                  <div class="dropdown-submenu" aria-label="Book Chapter years">
+                    <button class="submenu-back" type="button" aria-label="Go back to publication options">
+                      <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                      <span>Back</span>
+                    </button>
+                    <a class="dropdown-subitem" href="book-chapters.html">All Chapters</a>
+                    <a class="dropdown-subitem" href="book-chapters-2026.html">2026 Book Chapters</a>
+                    <a class="dropdown-subitem" href="book-chapters-2025.html">2025 Book Chapters</a>
+                    <a class="dropdown-subitem" href="book-chapters-2020.html">2020 Book Chapters</a>
+                    <a class="dropdown-subitem" href="book-chapters-2019.html">2019 Book Chapters</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="nav-item">
+              <a class="nav-link" href="index.html#news">
+                <i class="fa-solid fa-newspaper" aria-hidden="true"></i>
+                <span>News</span>
+              </a>
+            </div>
+
+            <div class="nav-item">
+              <a class="nav-link" href="index.html#honours">
+                <i class="fa-solid fa-award" aria-hidden="true"></i>
+                <span>Honours</span>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="section alumni-hero-section">
+          <div class="container">
+            <a class="page-kicker" href="index.html">Home</a>
+
+            <div class="content-card alumni-hero-card">
+              <div class="alumni-hero-copy">
+                <span class="eyebrow">Lab Team</span>
+                <h1>Staff Members & Scientists</h1>
+                <p>
+                  Meet the project scientists, fellows, and dedicated staff members who keep our 
+                  research programs running and our facilities at the cutting edge.
+                </p>
+              </div>
+
+              <div class="alumni-hero-stats" aria-label="Team categories">
+                <article class="alumni-stat active">
+                  <div class="alumni-stat-content">
+                    <strong>Staff</strong>
+                    <span>Current team</span>
+                  </div>
+                </article>
+                <a href="alumni-postdoc.html" class="alumni-stat">
+                  <div class="alumni-stat-content">
+                    <strong>Postdoctoral</strong>
+                    <span>Legacy scholars</span>
+                  </div>
+                  <i class="fa-solid fa-chevron-right alumni-stat-arrow"></i>
+                </a>
+                <a href="alumni-phd.html" class="alumni-stat">
+                  <div class="alumni-stat-content">
+                    <strong>Ph.D.</strong>
+                    <span>Doctoral graduates</span>
+                  </div>
+                  <i class="fa-solid fa-chevron-right alumni-stat-arrow"></i>
+                </a>
+                <a href="alumni-masters-ug.html" class="alumni-stat">
+                  <div class="alumni-stat-content">
+                    <strong>Masters & UG</strong>
+                    <span>Project alumni</span>
+                  </div>
+                  <i class="fa-solid fa-chevron-right alumni-stat-arrow"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section alumni-section">
+          <div class="container">
+            <div class="alumni-grid">
+              <article class="content-card alumni-card">
+                <div class="alumni-photo" style="background-image: url('images/people/alumni/postdoc/placeholder/shama-parveen.webp');">
+                  <img 
+                    src="images/people/alumni/postdoc/sm/shama-parveen.webp" 
+                    srcset="images/people/alumni/postdoc/sm/shama-parveen.webp 400w, images/people/alumni/postdoc/md/shama-parveen.webp 800w, images/people/alumni/postdoc/lg/shama-parveen.webp 1600w"
+                    sizes="(max-width: 480px) 140px, 180px"
+                    alt="Dr. Ankita Sharma portrait" 
+                    decoding="async"
+                    loading="lazy"
+                    onload="this.classList.add('loaded')"
+                  />
+                </div>
+                <div class="alumni-card-copy">
+                  <span class="alumni-role">Project Scientist</span>
+                  <h3>Dr. Ankita Sharma</h3>
+                  <p>
+                    Biotechnologist interested in Biomaterial design and synthesis for healthcare applications. Worked on shape memory Bacterial Cellulose Aerogels for Wound Healing.
+                  </p>
+                  <div class="alumni-socials" aria-label="Dr. Ankita Sharma social links">
+                    <a href="#" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                      <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="content-card alumni-card">
+                <div class="alumni-photo" style="background-image: url('images/people/alumni/postdoc/placeholder/neha-abbasi.webp');">
+                  <img 
+                    src="images/people/alumni/postdoc/sm/neha-abbasi.webp" 
+                    srcset="images/people/alumni/postdoc/sm/neha-abbasi.webp 400w, images/people/alumni/postdoc/md/neha-abbasi.webp 800w, images/people/alumni/postdoc/lg/neha-abbasi.webp 1600w"
+                    sizes="(max-width: 480px) 140px, 180px"
+                    alt="Dr. Neha Abbasi portrait" 
+                    decoding="async"
+                    loading="lazy"
+                    onload="this.classList.add('loaded')"
+                  />
+                </div>
+                <div class="alumni-card-copy">
+                  <span class="alumni-role">Sr. Project Scientist</span>
+                  <h3>Dr. Neha Abbasi</h3>
+                  <p>
+                    Former Senior Project Scientist focused on high-impact research projects and collaborative systems.
+                  </p>
+                  <div class="alumni-socials" aria-label="Dr. Neha Abbasi social links">
+                    <a href="#" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                      <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="content-card alumni-card">
+                <div class="alumni-photo" style="background-image: url('images/people/alumni/postdoc/placeholder/ankita-sharma.webp');">
+                  <img 
+                    src="images/people/alumni/postdoc/sm/ankita-sharma.webp" 
+                    srcset="images/people/alumni/postdoc/sm/ankita-sharma.webp 400w, images/people/alumni/postdoc/md/ankita-sharma.webp 800w, images/people/alumni/postdoc/lg/ankita-sharma.webp 1600w"
+                    sizes="(max-width: 480px) 140px, 180px"
+                    alt="Dr. Shama Parveen portrait" 
+                    decoding="async"
+                    loading="lazy"
+                    onload="this.classList.add('loaded')"
+                  />
+                </div>
+                <div class="alumni-card-copy">
+                  <span class="alumni-role">Principal Project Scientist</span>
+                  <h3>Dr. Shama Parveen</h3>
+                  <p>
+                    Former Principal Project Scientist at Vyoma Lab, contributing to advanced materials research and lab leadership.
+                  </p>
+                  <div class="alumni-socials" aria-label="Dr. Shama Parveen social links">
+                    <a href="#" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                      <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="content-card alumni-card">
+                <div class="alumni-photo" style="background-image: url('images/people/alumni/postdoc/placeholder/sureshwar-thakur.webp');">
+                  <img 
+                    src="images/people/alumni/postdoc/sm/sureshwar-thakur.webp" 
+                    srcset="images/people/alumni/postdoc/sm/sureshwar-thakur.webp 400w, images/people/alumni/postdoc/md/sureshwar-thakur.webp 800w, images/people/alumni/postdoc/lg/sureshwar-thakur.webp 1600w"
+                    sizes="(max-width: 480px) 140px, 180px"
+                    alt="Sureshwar Thakur portrait" 
+                    decoding="async"
+                    loading="lazy"
+                    onload="this.classList.add('loaded')"
+                  />
+                </div>
+                <div class="alumni-card-copy">
+                  <span class="alumni-role">Project Assistant</span>
+                  <h3>Sureshwar Thakur</h3>
+                  <p>
+                    Contributed to project assistance and laboratory operations at Vyoma Lab.
+                  </p>
+                  <div class="alumni-socials" aria-label="Sureshwar Thakur social links">
+                    <a href="#" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                      <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="content-card alumni-card">
+                <div class="alumni-photo" style="background-image: url('images/people/alumni/postdoc/placeholder/lackyasa-nagrajan.webp');">
+                  <img 
+                    src="images/people/alumni/postdoc/sm/lackyasa-nagrajan.webp" 
+                    srcset="images/people/alumni/postdoc/sm/lackyasa-nagrajan.webp 400w, images/people/alumni/postdoc/md/lackyasa-nagrajan.webp 800w, images/people/alumni/postdoc/lg/lackyasa-nagrajan.webp 1600w"
+                    sizes="(max-width: 480px) 140px, 180px"
+                    alt="Lackyasa Nagrajan portrait" 
+                    decoding="async"
+                    loading="lazy"
+                    onload="this.classList.add('loaded')"
+                  />
+                </div>
+                <div class="alumni-card-copy">
+                  <span class="alumni-role">JRF</span>
+                  <h3>Lackyasa Nagrajan</h3>
+                  <p>
+                    Junior Research Fellow involved in foundational research projects and experimental setups.
+                  </p>
+                  <div class="alumni-socials" aria-label="Lackyasa Nagrajan social links">
+                    <a href="#" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                      <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container">
+          <div class="footer-grid">
+            <div class="footer-brand">
+              <a class="brand" href="index.html#home" style="margin-bottom: 2rem; display: flex;">
+                <img class="brand-mark" src="images/logo-transparent.svg" alt="Vyoma Lab" style="filter: brightness(0) invert(1); width: 42px;">
+                <span style="color: white; margin-left: 0.75rem; font-weight: 700; font-size: 1.25rem;">Vyoma Lab</span>
+              </a>
+              <p>
+                Leading research in advanced textiles, biomaterials, and energy-efficient cooling solutions. 
+                Pushing boundaries in multifunctional sensors and sustainable technology.
+              </p>
+            </div>
+
+            <div class="footer-col">
+              <h4>Navigation</h4>
+              <ul class="footer-links-list">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="harun-venkatesan.html">Dr. Harun Venkatesan</a></li>
+                <li><a href="index.html#current-research">Current Research</a></li>
+                <li><a href="index.html#news">News & Events</a></li>
+                <li><a href="index.html#honours">Honours</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h4>Research</h4>
+              <ul class="footer-links-list">
+                <li><a href="publications.html">All Publications</a></li>
+                <li><a href="book-chapters.html">Book Chapters</a></li>
+                <li><a href="publications-2025.html">2025 Archive</a></li>
+                <li><a href="publications-2024.html">2024 Archive</a></li>
+                <li><a href="book-chapters-2026.html">2026 Book Chapters</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h4>People</h4>
+              <ul class="footer-links-list">
+                <li><a href="alumni-postdoc.html">Postdoctoral Scholars</a></li>
+                <li><a href="alumni-phd.html">Ph.D. Graduates</a></li>
+                <li><a href="alumni-masters-ug.html">Masters & Undergraduates</a></li>
+                <li><a href="staff.html">Staff Members</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <div class="footer-contact">
+              <strong>Department of Textile and Fibre Engineering</strong><br>
+              IIT Campus, Hauz Khas, New Delhi-110016
+            </div>
+            <div class="footer-copyright">
+              Copyright © 2026 Vyoma Lab. All rights reserved.
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      // Navigation functionality
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navMenu = document.querySelector(".nav-menu");
+      const dropdownItems = Array.from(document.querySelectorAll(".has-dropdown"));
+      const dropdownSubgroups = Array.from(document.querySelectorAll(".dropdown-subgroup"));
+
+      const setTriggerState = (trigger, isOpen) => {
+        if (!trigger) return;
+        trigger.setAttribute("aria-expanded", String(isOpen));
+      };
+
+      const closeDropdownSubgroups = () => {
+        dropdownSubgroups.forEach((group) => {
+          group.classList.remove("open");
+          setTriggerState(group.querySelector(".dropdown-subtrigger"), false);
+        });
+        // Clear sub-activity
+        document.querySelectorAll(".dropdown.subgroup-active").forEach(d => d.classList.remove("subgroup-active"));
+      };
+
+      const closeDropdownItems = () => {
+        dropdownItems.forEach((item) => {
+          item.classList.remove("open");
+          setTriggerState(item.querySelector(".nav-trigger"), false);
+        });
+        navMenu.classList.remove("submenu-active");
+        closeDropdownSubgroups();
+      };
+
+      const closeNavMenu = () => {
+        if (!navMenu || !menuToggle) return;
+        navMenu.classList.remove("open");
+        document.body.classList.remove("menu-open");
+        setTriggerState(menuToggle, false);
+      };
+
+      if (menuToggle && navMenu) {
+        menuToggle.addEventListener("click", (event) => {
+          event.stopPropagation();
+          const isOpen = navMenu.classList.toggle("open");
+          document.body.classList.toggle("menu-open", isOpen);
+          setTriggerState(menuToggle, isOpen);
+
+          if (!isOpen) {
+            closeDropdownItems();
+          }
+        });
+
+        navMenu.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            closeDropdownItems();
+            closeNavMenu();
+          });
+        });
+      }
+
+      dropdownItems.forEach((item) => {
+        const trigger = item.querySelector(".nav-trigger");
+
+        if (!trigger) return;
+
+        trigger.addEventListener("click", (event) => {
+          event.stopPropagation();
+          const isOpen = item.classList.contains("open");
+
+          closeDropdownItems();
+
+          if (!isOpen) {
+            item.classList.add("open");
+            setTriggerState(trigger, true);
+            navMenu.classList.add("submenu-active");
+          }
+        });
+      });
+
+      dropdownSubgroups.forEach((group) => {
+        const trigger = group.querySelector(".dropdown-subtrigger");
+
+        if (!trigger) return;
+
+        trigger.addEventListener("click", (event) => {
+          event.stopPropagation();
+          const isOpen = group.classList.contains("open");
+          const parentDropdown = group.closest(".dropdown");
+
+          closeDropdownSubgroups();
+
+          if (!isOpen) {
+            group.classList.add("open");
+            setTriggerState(trigger, true);
+            if (parentDropdown) {
+              parentDropdown.classList.add("subgroup-active");
+            }
+          }
+        });
+      });
+
+      // Handle back buttons
+      document.querySelectorAll(".submenu-back").forEach((btn) => {
+        btn.addEventListener("click", (event) => {
+          event.stopPropagation();
+          const subgroup = btn.closest(".dropdown-subgroup");
+          const dropdown = btn.closest(".dropdown");
+          const navItem = btn.closest(".nav-item");
+
+          if (subgroup && subgroup.classList.contains("open")) {
+            subgroup.classList.remove("open");
+            setTriggerState(subgroup.querySelector(".dropdown-subtrigger"), false);
+            if (dropdown) dropdown.classList.remove("subgroup-active");
+          } else if (navItem && navItem.classList.contains("open")) {
+            navItem.classList.remove("open");
+            setTriggerState(navItem.querySelector(".nav-trigger"), false);
+            navMenu.classList.remove("submenu-active");
+          }
+        });
+      });
+
+      document.addEventListener("click", (event) => {
+        const clickedInsideMenu = navMenu && navMenu.contains(event.target);
+        const clickedMenuToggle = menuToggle && menuToggle.contains(event.target);
+
+        if (clickedInsideMenu || clickedMenuToggle) return;
+        closeDropdownItems();
+        closeNavMenu();
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key !== "Escape") return;
+        closeDropdownItems();
+        closeNavMenu();
+      });
+    </script>
+  </body>
+</html>

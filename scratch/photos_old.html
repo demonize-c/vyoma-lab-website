@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery | Vyoma Lab</title>
+    <meta
+      name="description"
+      content="Moments and milestones from Vyoma Lab - research, events, and community."
+    />
+        <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/favicon_io/apple-touch-icon.png?v=2"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon_io/favicon-32x32.png?v=2" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon_io/favicon-16x16.png?v=2" />
+    <link rel="icon" type="image/x-icon" sizes="any" href="./images/favicon_io/favicon.ico?v=2" />
+    <link rel="shortcut icon" href="./images/favicon_io/favicon.ico?v=2" />
+    <link rel="manifest" href="./images/favicon_io/site.webmanifest?v=2" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="container nav-wrap">
+          <a class="brand" href="index.html#home" aria-label="Vyoma Lab home">
+            <img class="brand-mark" src="images/logo-transparent.svg" alt="Vyoma Lab logo" />
+            <span>
+              Vyoma Lab
+              <small>Research & Discovery</small>
+            </span>
+          </a>
+
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="nav-menu"
+            aria-label="Open menu"
+          >
+            <span class="menu-label">Menu</span>
+            <span class="menu-icon" aria-hidden="true">☰</span>
+          </button>
+
+          <nav id="nav-menu" class="nav-menu" aria-label="Primary">
+            <div class="nav-item">
+              <a class="nav-link" href="index.html#home">
+                <i class="fa-solid fa-house" aria-hidden="true"></i>
+                <span>Home</span>
+              </a>
+            </div>
+
+            <div class="nav-item has-dropdown">
+              <button class="nav-trigger" type="button" aria-expanded="false">
+                <i class="fa-solid fa-users" aria-hidden="true"></i>
+                <span>People</span>
+              </button>
+              <div class="dropdown">
+                <a href="harun-venkatesan.html">
+                  <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
+                  <span>Harun Venkatesan</span>
+                </a>
+                <a href="alumni-postdoc.html">
+                  <i class="fa-solid fa-user-graduate" aria-hidden="true"></i>
+                  <span>Postdoctoral Scholars</span>
+                </a>
+                <a href="alumni-phd.html">
+                  <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                  <span>Ph.D. Graduates</span>
+                </a>
+                <a href="alumni-masters-ug.html">
+                  <i class="fa-solid fa-user-group" aria-hidden="true"></i>
+                  <span>Masters & Undergraduates</span>
+                </a>
+                <a href="staff.html">
+                  <i class="fa-solid fa-user-gear" aria-hidden="true"></i>
+                  <span>Staff</span>
+                </a>
+                <a href="photos.html">
+                  <i class="fa-solid fa-camera-retro" aria-hidden="true"></i>
+                  <span>Photos</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="nav-item">
+              <a class="nav-link" href="index.html#current-research">
+                <i class="fa-solid fa-flask-vial" aria-hidden="true"></i>
+                <span>Current Research</span>
+              </a>
+            </div>
+
+            <div class="nav-item">
+              <a class="nav-link" href="facilities.html">
+                <i class="fa-solid fa-microscope" aria-hidden="true"></i>
+                <span>Facilities</span>
+              </a>
+            </div>
+
+            <div class="nav-item has-dropdown">
+              <button class="nav-trigger" type="button" aria-expanded="false">
+                <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                <span>Publications</span>
+              </button>
+              <div class="dropdown">
+                <div class="dropdown-subgroup">
+                  <button class="dropdown-subtrigger" type="button" aria-expanded="false">
+                    <i class="fa-solid fa-journal-whills" aria-hidden="true"></i>
+                    <span>Publications</span>
+                  </button>
+                  <div class="dropdown-submenu" aria-label="Publication years">
+                    <a class="dropdown-subitem" href="publications.html">All Publications</a>
+                    <a class="dropdown-subitem" href="publications-2025.html">2025 Publications</a>
+                    <a class="dropdown-subitem" href="publications-2024.html">2024 Publications</a>
+                    <a class="dropdown-subitem" href="publications-2023.html">2023 Publications</a>
+                    <a class="dropdown-subitem" href="publications-2022.html">2022 Publications</a>
+                    <a class="dropdown-subitem" href="publications-2021.html">2021 Publications</a>
+                  </div>
+                </div>
+                <div class="dropdown-subgroup">
+                  <button class="dropdown-subtrigger" type="button" aria-expanded="false">
+                    <i class="fa-solid fa-book" aria-hidden="true"></i>
+                    <span>Book Chapters</span>
+                  </button>
+                  <div class="dropdown-submenu" aria-label="Book Chapter years">
+                    <a class="dropdown-subitem" href="book-chapters.html">All Chapters</a>
+                    <a class="dropdown-subitem" href="book-chapters-2026.html">2026 Book Chapters</a>
+                    <a class="dropdown-subitem" href="book-chapters-2025.html">2025 Book Chapters</a>
+                    <a class="dropdown-subitem" href="book-chapters-2020.html">2020 Book Chapters</a>
+                    <a class="dropdown-subitem" href="book-chapters-2019.html">2019 Book Chapters</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="nav-item">
+              <a class="nav-link" href="index.html#news">
+                <i class="fa-solid fa-newspaper" aria-hidden="true"></i>
+                <span>News</span>
+              </a>
+            </div>
+
+            <div class="nav-item">
+              <a class="nav-link" href="index.html#honours">
+                <i class="fa-solid fa-award" aria-hidden="true"></i>
+                <span>Honours</span>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <div class="page-header section dark">
+            <div class="container">
+              <span class="eyebrow">Moments</span>
+              <h1>Gallery</h1>
+              <p>Capturing milestones, research breakthroughs, and moments of discovery at Vyoma Lab.</p>
+            </div>
+        </div>
+
+        <section class="section">
+          <div class="container">
+            
+            <div class="gallery-filters" aria-label="Filter gallery">
+              <button class="filter-btn active" data-filter="all">All Moments</button>
+              <button class="filter-btn" data-filter="research">Research</button>
+              <button class="filter-btn" data-filter="events">Events</button>
+              <button class="filter-btn" data-filter="team">Team & Life</button>
+            </div>
+
+            <div class="gallery-grid">
+              
+              <article class="gallery-item" data-category="research">
+                <div class="gallery-card" style="background-image: url('images/gallery/placeholder/gallery-research-awards.webp');">
+                  <img src="images/gallery/sm/gallery-research-awards.webp" 
+                       srcset="images/gallery/sm/gallery-research-awards.webp 400w, images/gallery/md/gallery-research-awards.webp 800w, images/gallery/lg/gallery-research-awards.webp 1600w"
+                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                       data-large-src="images/gallery/lg/gallery-research-awards.webp"
+                       alt="Innovation and Research Award Recognition at IIT Delhi" 
+                       loading="lazy"
+                       onload="this.classList.add('loaded')" />
+                  <div class="gallery-overlay">
+                    <div class="gallery-content">
+                      <h3>Innovation & Research Awards</h3>
+                      <p class="gallery-event">Research Excellence Awards • IIT Delhi</p>
+                      <p class="gallery-description">Recognition of excellence in advanced material research and discovery milestones.</p>
+                      <button class="gallery-expand-btn" aria-label="Open in Lightbox">
+                        <i class="fa-solid fa-maximize"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="gallery-item" data-category="research">
+                <div class="gallery-card" style="background-image: url('images/gallery/placeholder/gallery-technical-symposium.webp');">
+                  <img src="images/gallery/sm/gallery-technical-symposium.webp" 
+                       srcset="images/gallery/sm/gallery-technical-symposium.webp 400w, images/gallery/md/gallery-technical-symposium.webp 800w, images/gallery/lg/gallery-technical-symposium.webp 1600w"
+                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                       data-large-src="images/gallery/lg/gallery-technical-symposium.webp"
+                       alt="Vyoma Lab presenting at Technical Symposium" 
+                       loading="lazy"
+                       onload="this.classList.add('loaded')" />
+                  <div class="gallery-overlay">
+                    <div class="gallery-content">
+                      <h3>Technical Symposium</h3>
+                      <p class="gallery-event">Global Material Symposium • IIT Delhi</p>
+                      <p class="gallery-description">Presenting novel aerogel applications and innovative textile solutions to the scientific community.</p>
+                      <button class="gallery-expand-btn" aria-label="Open in Lightbox">
+                        <i class="fa-solid fa-maximize"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="gallery-item" data-category="research">
+                <div class="gallery-card" style="background-image: url('images/gallery/placeholder/gallery-active-research.webp');">
+                  <img src="images/gallery/sm/gallery-active-research.webp" 
+                       srcset="images/gallery/sm/gallery-active-research.webp 400w, images/gallery/md/gallery-active-research.webp 800w, images/gallery/lg/gallery-active-research.webp 1600w"
+                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                       data-large-src="images/gallery/lg/gallery-active-research.webp"
+                       alt="Researchers working in Vyoma Lab active session" 
+                       loading="lazy"
+                       onload="this.classList.add('loaded')" />
+                  <div class="gallery-overlay">
+                    <div class="gallery-content">
+                      <h3>Active Research Session</h3>
+                      <p class="gallery-event">Lab Integration Day • Vyoma Lab</p>
+                      <p class="gallery-description">A deep dive into the synthesis and characterization of sustainable aerogel materials.</p>
+                      <button class="gallery-expand-btn" aria-label="Open in Lightbox">
+                        <i class="fa-solid fa-maximize"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="gallery-item" data-category="team">
+                <div class="gallery-card" style="background-image: url('images/gallery/placeholder/gallery-group-achievement.webp');">
+                  <img src="images/gallery/sm/gallery-group-achievement.webp" 
+                       srcset="images/gallery/sm/gallery-group-achievement.webp 400w, images/gallery/md/gallery-group-achievement.webp 800w, images/gallery/lg/gallery-group-achievement.webp 1600w"
+                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                       data-large-src="images/gallery/lg/gallery-group-achievement.webp"
+                       alt="Vyoma Lab team celebrating a group achievement" 
+                       loading="lazy"
+                       onload="this.classList.add('loaded')" />
+                  <div class="gallery-overlay">
+                    <div class="gallery-content">
+                      <h3>Group Achievement</h3>
+                      <p class="gallery-event">Milestone Celebration • IIT Delhi</p>
+                      <p class="gallery-description">Celebrating major research breakthroughs and project milestones with the entire multidisciplinary team.</p>
+                      <button class="gallery-expand-btn" aria-label="Open in Lightbox">
+                        <i class="fa-solid fa-maximize"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="gallery-item" data-category="events">
+                <div class="gallery-card" style="background-image: url('images/gallery/placeholder/gallery-certificate-presentation.webp');">
+                  <img src="images/gallery/sm/gallery-certificate-presentation.webp" 
+                       srcset="images/gallery/sm/gallery-certificate-presentation.webp 400w, images/gallery/md/gallery-certificate-presentation.webp 800w, images/gallery/lg/gallery-certificate-presentation.webp 1600w"
+                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                       data-large-src="images/gallery/lg/gallery-certificate-presentation.webp"
+                       alt="Certificate presentation at Convocation Hall" 
+                       loading="lazy"
+                       onload="this.classList.add('loaded')" />
+                  <div class="gallery-overlay">
+                    <div class="gallery-content">
+                      <h3>Certificate Presentation</h3>
+                      <p class="gallery-event">Annual Convocation • IIT Delhi</p>
+                      <p class="gallery-description">Honouring the dedication, scholarly contributions, and scientific rigour of our graduating researchers.</p>
+                      <button class="gallery-expand-btn" aria-label="Open in Lightbox">
+                        <i class="fa-solid fa-maximize"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+
+              <article class="gallery-item" data-category="research">
+                <div class="gallery-card" style="background-image: url('images/gallery/placeholder/gallery-innovation-exhibition.webp');">
+                  <img src="images/gallery/sm/gallery-innovation-exhibition.webp" 
+                       srcset="images/gallery/sm/gallery-innovation-exhibition.webp 400w, images/gallery/md/gallery-innovation-exhibition.webp 800w, images/gallery/lg/gallery-innovation-exhibition.webp 1600w"
+                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                       data-large-src="images/gallery/lg/gallery-innovation-exhibition.webp"
+                       alt="Innovation Exhibition showcase of aerogel prototypes" 
+                       loading="lazy"
+                       onload="this.classList.add('loaded')" />
+                  <div class="gallery-overlay">
+                    <div class="gallery-content">
+                      <h3>Innovation Exhibition</h3>
+                      <p class="gallery-event">TechExpo Showcase • Main Building</p>
+                      <p class="gallery-description">Showcasing fully functional prototypes of advanced aerogel-based textiles for industrial applications.</p>
+                      <button class="gallery-expand-btn" aria-label="Open in Lightbox">
+                        <i class="fa-solid fa-maximize"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="gallery-item" data-category="team">
+                <div class="gallery-card" style="background-image: url('images/gallery/placeholder/gallery-collaborative-spirit.webp');">
+                  <img src="images/gallery/sm/gallery-collaborative-spirit.webp" 
+                       srcset="images/gallery/sm/gallery-collaborative-spirit.webp 400w, images/gallery/md/gallery-collaborative-spirit.webp 800w, images/gallery/lg/gallery-collaborative-spirit.webp 1600w"
+                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                       data-large-src="images/gallery/lg/gallery-collaborative-spirit.webp"
+                       alt="Team members collaborating at Vyoma Lab" 
+                       loading="lazy"
+                       onload="this.classList.add('loaded')" />
+                  <div class="gallery-overlay">
+                    <div class="gallery-content">
+                      <h3>Collaborative Spirit</h3>
+                      <p class="gallery-event">Research Workshop • Vyoma Lab</p>
+                      <p class="gallery-description">The core strength of Vyoma Lab lies in the diverse perspectives and passionate collaboration of our people.</p>
+                      <button class="gallery-expand-btn" aria-label="Open in Lightbox">
+                        <i class="fa-solid fa-maximize"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="gallery-item" data-category="events">
+                <div class="gallery-card" style="background-image: url('images/gallery/placeholder/gallery-celebrating-excellence.webp');">
+                  <img src="images/gallery/sm/gallery-celebrating-excellence.webp" 
+                       srcset="images/gallery/sm/gallery-celebrating-excellence.webp 400w, images/gallery/md/gallery-celebrating-excellence.webp 800w, images/gallery/lg/gallery-celebrating-excellence.webp 1600w"
+                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                       data-large-src="images/gallery/lg/gallery-celebrating-excellence.webp"
+                       alt="Lab team celebrating excellence at IIT Delhi" 
+                       loading="lazy"
+                       onload="this.classList.add('loaded')" />
+                  <div class="gallery-overlay">
+                    <div class="gallery-content">
+                      <h3>Celebrating Excellence</h3>
+                      <p class="gallery-event">Excellence Awards Ceremony • IIT Delhi</p>
+                      <p class="gallery-description">Moments of collective pride and institutional recognition for the lab's impact on sustainable materials.</p>
+                      <button class="gallery-expand-btn" aria-label="Open in Lightbox">
+                        <i class="fa-solid fa-maximize"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="gallery-item" data-category="events">
+                <div class="gallery-card" style="background-image: url('images/gallery/placeholder/gallery-success-stories.webp');">
+                  <img src="images/gallery/sm/gallery-success-stories.webp" 
+                       srcset="images/gallery/sm/gallery-success-stories.webp 400w, images/gallery/md/gallery-success-stories.webp 800w, images/gallery/lg/gallery-success-stories.webp 1600w"
+                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                       data-large-src="images/gallery/lg/gallery-success-stories.webp"
+                       alt="Graduation moment and success stories of researchers" 
+                       loading="lazy"
+                       onload="this.classList.add('loaded')" />
+                  <div class="gallery-overlay">
+                    <div class="gallery-content">
+                      <h3>Success Stories</h3>
+                      <p class="gallery-event">Researcher Graduation • Convocation Center</p>
+                      <p class="gallery-description">Our talented researchers moving forward to lead the next generation of industrial and academic discovery.</p>
+                      <button class="gallery-expand-btn" aria-label="Open in Lightbox">
+                        <i class="fa-solid fa-maximize"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="gallery-item" data-category="events">
+                <div class="gallery-card" style="background-image: url('images/gallery/placeholder/gallery-global-exchange.webp');">
+                  <img src="images/gallery/sm/gallery-global-exchange.webp" 
+                       srcset="images/gallery/sm/gallery-global-exchange.webp 400w, images/gallery/md/gallery-global-exchange.webp 800w, images/gallery/lg/gallery-global-exchange.webp 1600w"
+                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                       data-large-src="images/gallery/lg/gallery-global-exchange.webp"
+                       alt="International interaction at Conference Hall" 
+                       loading="lazy"
+                       onload="this.classList.add('loaded')" />
+                  <div class="gallery-overlay">
+                    <div class="gallery-content">
+                      <h3>Global Exchange</h3>
+                      <p class="gallery-event">International Symposium • Conference Hall</p>
+                      <p class="gallery-description">Fostering international partnerships and sharing scientific knowledge with global experts and peers.</p>
+                      <button class="gallery-expand-btn" aria-label="Open in Lightbox">
+                        <i class="fa-solid fa-maximize"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="gallery-item" data-category="research">
+                <div class="gallery-card" style="background-image: url('images/gallery/placeholder/gallery-visionary-planning.webp');">
+                  <img src="images/gallery/sm/gallery-visionary-planning.webp" 
+                       srcset="images/gallery/sm/gallery-visionary-planning.webp 400w, images/gallery/md/gallery-visionary-planning.webp 800w, images/gallery/lg/gallery-visionary-planning.webp 1600w"
+                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                       data-large-src="images/gallery/lg/gallery-visionary-planning.webp"
+                       alt="Visionary planning meeting for textile innovations" 
+                       loading="lazy"
+                       onload="this.classList.add('loaded')" />
+                  <div class="gallery-overlay">
+                    <div class="gallery-content">
+                      <h3>Visionary Planning</h3>
+                      <p class="gallery-event">Strategic Roadmap Session • Meeting Room</p>
+                      <p class="gallery-description">Architecting the long-term roadmap for sustainable innovations in advanced textile and energy systems.</p>
+                      <button class="gallery-expand-btn" aria-label="Open in Lightbox">
+                        <i class="fa-solid fa-maximize"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="gallery-item" data-category="team">
+                <div class="gallery-card" style="background-image: url('images/gallery/placeholder/gallery-life-at-lab.webp');">
+                  <img src="images/gallery/sm/gallery-life-at-lab.webp" 
+                       srcset="images/gallery/sm/gallery-life-at-lab.webp 400w, images/gallery/md/gallery-life-at-lab.webp 800w, images/gallery/lg/gallery-life-at-lab.webp 1600w"
+                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                       data-large-src="images/gallery/lg/gallery-life-at-lab.webp"
+                       alt="Lab culture and daily life at Vyoma Lab" 
+                       loading="lazy"
+                       onload="this.classList.add('loaded')" />
+                  <div class="gallery-overlay">
+                    <div class="gallery-content">
+                      <h3>Life at the Lab</h3>
+                      <p class="gallery-event">Lab Identity & Culture • Vyoma Lab</p>
+                      <p class="gallery-description">A vibrant culture built on curiosity, scientific integrity, and the relentless pursuit of innovation.</p>
+                      <button class="gallery-expand-btn" aria-label="Open in Lightbox">
+                        <i class="fa-solid fa-maximize"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- Lightbox Modal -->
+        <div id="gallery-lightbox" class="lightbox" aria-hidden="true">
+          <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+          <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="" />
+            <div class="lightbox-caption">
+              <h3 id="lightbox-title"></h3>
+              <p id="lightbox-desc"></p>
+            </div>
+          </div>
+          <button class="lightbox-prev" aria-label="Previous image">&#10094;</button>
+          <button class="lightbox-next" aria-label="Next image">&#10095;</button>
+        </div>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container">
+          <div class="footer-grid">
+            <div class="footer-brand">
+              <a class="brand" href="index.html#home" style="margin-bottom: 2rem; display: flex;">
+                <img class="brand-mark" src="images/logo-transparent.svg" alt="Vyoma Lab" style="filter: brightness(0) invert(1); width: 42px;">
+                <span style="color: white; margin-left: 0.75rem; font-weight: 700; font-size: 1.25rem;">Vyoma Lab</span>
+              </a>
+              <p>
+                Leading research in advanced textiles, biomaterials, and energy-efficient cooling solutions. 
+                Pushing boundaries in multifunctional sensors and sustainable technology.
+              </p>
+            </div>
+
+            <div class="footer-col">
+              <h4>Navigation</h4>
+              <ul class="footer-links-list">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="harun-venkatesan.html">Dr. Harun Venkatesan</a></li>
+                <li><a href="index.html#current-research">Current Research</a></li>
+                <li><a href="index.html#news">News & Events</a></li>
+                <li><a href="index.html#honours">Honours</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h4>Research</h4>
+              <ul class="footer-links-list">
+                <li><a href="publications.html">All Publications</a></li>
+                <li><a href="book-chapters.html">Book Chapters</a></li>
+                <li><a href="publications-2025.html">2025 Archive</a></li>
+                <li><a href="publications-2024.html">2024 Archive</a></li>
+                <li><a href="book-chapters-2026.html">2026 Book Chapters</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h4>People</h4>
+              <ul class="footer-links-list">
+                <li><a href="alumni-postdoc.html">Postdoctoral Scholars</a></li>
+                <li><a href="alumni-phd.html">Ph.D. Graduates</a></li>
+                <li><a href="alumni-masters-ug.html">Masters & Undergraduates</a></li>
+                <li><a href="index.html#staff">Staff Members</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <div class="footer-contact">
+              <strong>Department of Textile and Fibre Engineering</strong><br>
+              IIT Campus, Hauz Khas, New Delhi-110016
+            </div>
+            <div class="footer-copyright">
+              Copyright © 2026 Vyoma Lab. All rights reserved.
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      // Navigation functionality
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navMenu = document.querySelector(".nav-menu");
+      const dropdownItems = Array.from(document.querySelectorAll(".has-dropdown"));
+      const dropdownSubgroups = Array.from(document.querySelectorAll(".dropdown-subgroup"));
+
+      const setTriggerState = (trigger, isOpen) => {
+        if (!trigger) return;
+        trigger.setAttribute("aria-expanded", String(isOpen));
+      };
+
+      const closeDropdownSubgroups = () => {
+        dropdownSubgroups.forEach((group) => {
+          group.classList.remove("open");
+          setTriggerState(group.querySelector(".dropdown-subtrigger"), false);
+        });
+      };
+
+      const closeDropdownItems = () => {
+        dropdownItems.forEach((item) => {
+          item.classList.remove("open");
+          setTriggerState(item.querySelector(".nav-trigger"), false);
+        });
+        closeDropdownSubgroups();
+      };
+
+      const closeNavMenu = () => {
+        if (!navMenu || !menuToggle) return;
+        navMenu.classList.remove("open");
+        document.body.classList.remove("menu-open");
+        setTriggerState(menuToggle, false);
+      };
+
+      if (menuToggle && navMenu) {
+        menuToggle.addEventListener("click", (event) => {
+          event.stopPropagation();
+          const isOpen = navMenu.classList.toggle("open");
+          document.body.classList.toggle("menu-open", isOpen);
+          setTriggerState(menuToggle, isOpen);
+
+          if (!isOpen) {
+            closeDropdownItems();
+          }
+        });
+
+        navMenu.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            closeDropdownItems();
+            closeNavMenu();
+          });
+        });
+      }
+
+      dropdownItems.forEach((item) => {
+        const trigger = item.querySelector(".nav-trigger");
+        if (!trigger) return;
+
+        trigger.addEventListener("click", (event) => {
+          event.stopPropagation();
+          const isOpen = item.classList.contains("open");
+          closeDropdownItems();
+          if (!isOpen) {
+            item.classList.add("open");
+            setTriggerState(trigger, true);
+          }
+        });
+      });
+
+      // --- Gallery Functionality ---
+      const filterBtns = document.querySelectorAll(".filter-btn");
+      const galleryItems = document.querySelectorAll(".gallery-item");
+      const lightbox = document.getElementById("gallery-lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      const lightboxTitle = document.getElementById("lightbox-title");
+      const lightboxDesc = document.getElementById("lightbox-desc");
+      const lightboxClose = document.querySelector(".lightbox-close");
+      const lightboxPrev = document.querySelector(".lightbox-prev");
+      const lightboxNext = document.querySelector(".lightbox-next");
+
+      let currentImages = [];
+      let currentIndex = 0;
+
+      // Filtering
+      filterBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+          filterBtns.forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          const filter = btn.getAttribute("data-filter");
+
+          galleryItems.forEach(item => {
+            const category = item.getAttribute("data-category");
+            if (filter === "all" || category === filter) {
+              item.style.display = "block";
+              item.style.animation = "fadeUp 0.5s ease forwards";
+            } else {
+              item.style.display = "none";
+            }
+          });
+        });
+      });
+
+      // Lightbox logic
+      const updateLightbox = (index) => {
+        const item = currentImages[index];
+        const img = item.querySelector("img");
+        const largeSrc = img.getAttribute("data-large-src");
+        const title = item.querySelector("h3").textContent;
+        const desc = item.querySelector(".gallery-description").textContent;
+
+        lightboxImg.src = largeSrc || img.src;
+        lightboxImg.alt = img.alt;
+        lightboxTitle.textContent = title;
+        lightboxDesc.textContent = desc;
+        currentIndex = index;
+      };
+
+      const openLightbox = (item) => {
+        const activeFilter = document.querySelector(".filter-btn.active").getAttribute("data-filter");
+        currentImages = Array.from(galleryItems).filter(i => 
+          activeFilter === "all" || i.getAttribute("data-category") === activeFilter
+        );
+        
+        currentIndex = currentImages.indexOf(item);
+        updateLightbox(currentIndex);
+        lightbox.classList.add("active");
+        lightbox.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      };
+
+      // Handle interactions
+      galleryItems.forEach((item) => {
+        const expandBtn = item.querySelector(".gallery-expand-btn");
+
+        // Click on the whole item
+        item.addEventListener("click", (e) => {
+          // Detect mobile/touch
+          const isMobile = window.innerWidth <= 768;
+          
+          if (isMobile) {
+            // Check if we clicked the expand button
+            if (expandBtn.contains(e.target) || e.target === expandBtn) {
+              openLightbox(item);
+            } else {
+              // Toggle touch-active for the overlay
+              const isActive = item.classList.contains("touch-active");
+              galleryItems.forEach(i => i.classList.remove("touch-active"));
+              if (!isActive) item.classList.add("touch-active");
+            }
+          } else {
+            // Desktop behavior: open lightbox on click
+            openLightbox(item);
+          }
+        });
+      });
+
+      const closeLightbox = () => {
+        lightbox.classList.remove("active");
+        lightbox.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      };
+
+      lightboxClose.addEventListener("click", closeLightbox);
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      lightboxPrev.addEventListener("click", (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+        updateLightbox(currentIndex);
+      });
+
+      lightboxNext.addEventListener("click", (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex + 1) % currentImages.length;
+        updateLightbox(currentIndex);
+      });
+
+      // Swipe support for Lightbox
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      lightbox.addEventListener("touchstart", (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      lightbox.addEventListener("touchend", (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+      }, { passive: true });
+
+      const handleSwipe = () => {
+        // Only allow swipe navigation on mobile/small screens
+        const isMobile = window.innerWidth <= 768;
+        if (!isMobile) return;
+
+        const swipeThreshold = 50;
+        if (touchEndX < touchStartX - swipeThreshold) {
+          // Swiped Left -> Next
+          lightboxNext.click();
+        }
+        if (touchEndX > touchStartX + swipeThreshold) {
+          // Swiped Right -> Prev
+          lightboxPrev.click();
+        }
+      };
+
+      document.addEventListener("keydown", (e) => {
+        if (!lightbox.classList.contains("active")) return;
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowLeft") lightboxPrev.click();
+        if (e.key === "ArrowRight") lightboxNext.click();
+      });
+
+      // Existing Global Listeners
+      document.addEventListener("click", (event) => {
+        const clickedInsideMenu = navMenu && navMenu.contains(event.target);
+        const clickedMenuToggle = menuToggle && menuToggle.contains(event.target);
+        if (clickedInsideMenu || clickedMenuToggle) return;
+        closeDropdownItems();
+        closeNavMenu();
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key !== "Escape") return;
+        closeDropdownItems();
+        closeNavMenu();
+      });
+    </script>
+  </body>
+</html>

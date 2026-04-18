@@ -3399,24 +3399,39 @@
       .gallery-card {
         position: relative;
         width: 100%;
+        min-height: 280px;
+        max-height: 580px;
         border-radius: 20px;
         overflow: hidden;
         background: var(--navy-900);
+        background-size: cover;
+        background-position: center;
         box-shadow: var(--shadow-card);
         transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.6s ease;
+        border: none; /* Remove border */
       }
 
       .gallery-card img {
         width: 100%;
-        height: auto;
+        height: 100%;
+        min-height: 280px;
+        max-height: 580px;
+        object-fit: cover;
         display: block;
-        transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        opacity: 0;
+        filter: blur(10px);
+        transition: opacity 0.6s ease, filter 0.6s ease, transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+
+      .gallery-card img.loaded {
+        opacity: 1;
+        filter: blur(0);
       }
 
       /* Glassmorphism Overlays */
       .gallery-overlay {
         position: absolute;
-        inset: 0;
+        inset: -1px; /* Slight inset pull to hide any subpixel gaps */
         background: linear-gradient(
           to top, 
           rgba(7, 32, 47, 0.85) 0%, 
@@ -3432,42 +3447,64 @@
         transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
         backdrop-filter: blur(12px) saturate(180%);
         -webkit-backdrop-filter: blur(12px) saturate(180%);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        border: none; /* Remove border */
         border-radius: 20px;
       }
 
       .gallery-content {
         color: var(--white);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
       }
 
-      .gallery-location {
-        display: inline-block;
-        padding: 0.3rem 0.85rem;
-        background: rgba(122, 211, 247, 0.2);
-        color: var(--sky-200);
-        font-size: 0.7rem;
+      .gallery-event {
+        display: block;
+        font-size: 0.75rem;
         font-weight: 800;
-        letter-spacing: 0.12em;
+        letter-spacing: 0.08em;
         text-transform: uppercase;
-        border-radius: 999px;
-        backdrop-filter: blur(4px);
-        border: 1px solid rgba(122, 211, 247, 0.3);
-        margin-bottom: 0.85rem;
+        color: var(--sky-200);
+        margin-bottom: 0.5rem;
+        opacity: 0.9;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
-      .gallery-content h3 {
+      .gallery-description {
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.75);
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .gallery-expand-btn {
+        margin-top: auto;
+        align-self: flex-start;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.2);
         color: var(--white);
-        margin: 0 0 0.5rem;
-        font-size: 1.4rem;
-        font-weight: 700;
-        letter-spacing: -0.02em;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        backdrop-filter: blur(8px);
       }
 
-      .gallery-content p {
-        font-size: 0.9rem;
-        color: rgba(255, 255, 255, 0.8);
-        line-height: 1.6;
-        max-width: 100%;
+      .gallery-expand-btn:hover {
+        background: var(--white);
+        color: var(--navy-900);
+        transform: scale(1.1);
       }
 
       .gallery-item:hover .gallery-card {
@@ -3479,7 +3516,8 @@
         transform: scale(1.08);
       }
 
-      .gallery-item:hover .gallery-overlay {
+      .gallery-item:hover .gallery-overlay,
+      .gallery-item.touch-active .gallery-overlay {
         opacity: 1;
         transform: translateY(0);
       }
@@ -3489,15 +3527,18 @@
         position: fixed;
         inset: 0;
         z-index: 2000;
-        background: rgba(7, 32, 47, 0.95);
+        background: rgba(7, 32, 47, 0.98);
         backdrop-filter: blur(15px);
         display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start; /* Changed from center to leave room at top */
         opacity: 0;
         visibility: hidden;
         transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-        padding: 2rem;
+        padding: 4rem 1rem 1.5rem; /* Slightly reduced padding to save space */
+        touch-action: none;
+        overflow-y: auto;
       }
 
       .lightbox.active {
@@ -3507,10 +3548,14 @@
 
       .lightbox-content {
         position: relative;
-        max-width: 85vw;
-        max-height: 85vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: min(90vw, 1200px);
         transform: scale(0.95);
         transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        margin: auto 0; /* Keeps it centered if space allows */
       }
 
       .lightbox.active .lightbox-content {
@@ -3520,60 +3565,73 @@
       .lightbox-content img {
         display: block;
         max-width: 100%;
-        max-height: 85vh;
+        max-height: 58vh; /* Further reduced to guarantee caption visibility without scrolling */
+        object-fit: contain;
         border-radius: 12px;
         box-shadow: 0 40px 100px rgba(0,0,0,0.5);
       }
 
       .lightbox-caption {
-        position: absolute;
-        bottom: -1rem;
-        left: 0;
-        right: 0;
-        transform: translateY(100%);
-        padding: 1.5rem 0;
+        width: 100%;
+        max-width: 700px;
+        padding: 1.25rem 1rem 0.5rem;
         color: var(--white);
         text-align: center;
       }
 
       .lightbox-caption h3 {
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
+        font-size: 1.45rem;
+        margin-bottom: 0.25rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
       }
 
       .lightbox-caption p {
-        font-size: 1rem;
+        font-size: 0.92rem;
         opacity: 0.8;
+        line-height: 1.5;
       }
 
       .lightbox-close {
-        position: absolute;
-        top: 2rem;
-        right: 2rem;
-        font-size: 2.5rem;
+        position: fixed; /* Changed to fixed to stay at top regardless of content */
+        top: 1.25rem;
+        right: 1.25rem;
+        font-size: 1.8rem;
         color: var(--white);
-        background: none;
-        border: none;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         cursor: pointer;
-        opacity: 0.7;
-        transition: 0.2s;
-        z-index: 2001;
+        transition: 0.3s;
+        z-index: 2010;
       }
 
-      .lightbox-close:hover { opacity: 1; }
+      .lightbox-close:hover { 
+        background: rgba(255, 255, 255, 0.25);
+        transform: scale(1.1);
+      }
 
       .lightbox-prev, .lightbox-next {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        background: rgba(255,255,255,0.1);
-        border: 1px solid rgba(255,255,255,0.2);
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.1);
         color: var(--white);
-        padding: 1.5rem 1rem;
+        width: 3.5rem;
+        height: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         cursor: pointer;
-        border-radius: 12px;
+        border-radius: 16px;
         backdrop-filter: blur(10px);
-        transition: 0.3s;
         font-size: 1.2rem;
       }
 
@@ -3591,6 +3649,22 @@
 
       @media (max-width: 768px) {
         .gallery-grid {
-          grid-template-columns: 1fr;
+          columns: 1;
+        }
+
+        .lightbox-prev, .lightbox-next {
+          display: none !important;
+        }
+
+        .lightbox-caption h3 {
+          font-size: 1.4rem;
+        }
+
+        .lightbox-caption p {
+          font-size: 0.9rem;
+        }
+
+        .gallery-description {
+          -webkit-line-clamp: 2;
         }
       }

@@ -1241,28 +1241,12 @@
         overflow: hidden;
         padding: clamp(1.8rem, 3.5vw, 2.8rem);
         border-radius: 40px;
-        background:
-          linear-gradient(175deg, rgba(7, 32, 47, 0.44), rgba(7, 32, 47, 0.82)),
-          url("images/home-page-banner.webp") center 38% / cover;
+        background: linear-gradient(145deg, rgb(12, 46, 66) 0%, rgb(5, 20, 31) 100%);
         box-shadow: 0 40px 100px rgba(7, 32, 47, 0.28), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
         will-change: transform; /* Hint for container animation */
       }
 
-      @media (max-width: 640px) {
-        .research-stage {
-          background-image: 
-            linear-gradient(175deg, rgba(7, 32, 47, 0.52), rgba(7, 32, 47, 0.88)),
-            url("images/sm/home-page-banner.webp");
-        }
-      }
 
-      @media (min-width: 641px) and (max-width: 1024px) {
-        .research-stage {
-          background-image: 
-            linear-gradient(175deg, rgba(7, 32, 47, 0.48), rgba(7, 32, 47, 0.85)),
-            url("images/md/home-page-banner.webp");
-        }
-      }
 
       /* Dot-grid pattern overlay */
       .research-stage::before {

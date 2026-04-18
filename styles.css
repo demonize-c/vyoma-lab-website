@@ -504,14 +504,14 @@
 
       @media (max-width: 640px) {
         .hero-frame {
-          background-image: url("images/sm/home-page-banner.webp");
+          background-image: url("images/md/home-page-banner.webp");
           min-height: 32rem;
         }
       }
 
       @media (min-width: 641px) and (max-width: 1024px) {
         .hero-frame {
-          background-image: url("images/md/home-page-banner.webp");
+          background-image: url("images/lg/home-page-banner.webp");
         }
       }
 
@@ -1629,8 +1629,7 @@
 
       .research-project-media:hover img,
       .research-project-media:focus-within img {
-        transform: scale(1.05);
-        filter: brightness(1.05) contrast(1.02);
+        transform: scale(1.015);
       }
 
       .research-project-media:hover::after,

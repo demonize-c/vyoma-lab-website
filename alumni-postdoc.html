@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Postdoctoral Alumni | Vyoma Lab</title>
+    <title>Staff & Scientists | Vyoma Lab</title>
     <meta
       name="description"
       content="Postdoctoral Scholars and Project Scientists alumni of Vyoma Lab."
     />
-                                <link
+                                    <link
       rel="apple-touch-icon"
       sizes="180x180"
       href="./images/favicon_io/apple-touch-icon.png?v=2"
@@ -76,33 +76,39 @@
                   <span>Harun Venkatesan</span>
                 </a>
                 <a href="alumni-postdoc.html">
-                  <i class="fa-solid fa-user-graduate" aria-hidden="true"></i>
-                  <span>Postdoctoral Scholars</span>
+                  <i class="fa-solid fa-user-gear" aria-hidden="true"></i>
+                  <span>Staff</span>
                 </a>
                 <a href="alumni-phd.html">
                   <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
                   <span>Ph.D. Graduates</span>
                 </a>
                 <a href="alumni-masters-ug.html">
-                  <i class="fa-solid fa-user-group" aria-hidden="true"></i>
-                  <span>Masters & Undergraduates</span>
-                </a>
-                <a href="staff.html">
-                  <i class="fa-solid fa-user-gear" aria-hidden="true"></i>
-                  <span>Staff</span>
-                </a>
-                <a href="photos.html">
-                  <i class="fa-solid fa-camera-retro" aria-hidden="true"></i>
-                  <span>Photos</span>
+                   <i class="fa-solid fa-user-group" aria-hidden="true"></i>
+                   <span>Masters & Undergraduates</span>
                 </a>
               </div>
             </div>
 
-            <div class="nav-item">
-              <a class="nav-link" href="index.html#current-research">
+            <div class="nav-item has-dropdown">
+              <button class="nav-trigger" type="button" aria-expanded="false">
                 <i class="fa-solid fa-flask-vial" aria-hidden="true"></i>
                 <span>Current Research</span>
-              </a>
+              </button>
+              <div class="dropdown">
+                <button class="submenu-back" type="button" aria-label="Go back to main menu">
+                  <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                  <span>Back to Menu</span>
+                </button>
+                <a href="index.html#current-research">
+                  <i class="fa-solid fa-microscope" aria-hidden="true"></i>
+                  <span>Domain of Research</span>
+                </a>
+                <a href="#">
+                  <i class="fa-solid fa-link" aria-hidden="true"></i>
+                  <span>Link 1</span>
+                </a>
+              </div>
             </div>
 
             <div class="nav-item">
@@ -161,9 +167,9 @@
             </div>
 
             <div class="nav-item">
-              <a class="nav-link" href="index.html#news">
-                <i class="fa-solid fa-newspaper" aria-hidden="true"></i>
-                <span>News</span>
+              <a class="nav-link" href="photos.html">
+                <i class="fa-solid fa-camera-retro" aria-hidden="true"></i>
+                <span>Gallery</span>
               </a>
             </div>
 
@@ -185,7 +191,7 @@
             <div class="content-card alumni-hero-card">
               <div class="alumni-hero-copy">
                 <span class="eyebrow">Alumni</span>
-                <h1>Postdoctoral Scholars & Scientists</h1>
+                <h1>Staff & Scientists</h1>
                 <p>
                   Explore alumni from advanced research appointments who helped shape high-impact studies,
                   lab systems, and collaborative programs at Vyoma Lab.
@@ -193,17 +199,10 @@
               </div>
 
               <div class="alumni-hero-stats" aria-label="Team categories">
-                <a href="staff.html" class="alumni-stat">
-                  <div class="alumni-stat-content">
-                    <strong>Staff</strong>
-                    <span>Current team</span>
-                  </div>
-                  <i class="fa-solid fa-chevron-right alumni-stat-arrow"></i>
-                </a>
                 <article class="alumni-stat active">
                   <div class="alumni-stat-content">
-                    <strong>Postdoctoral</strong>
-                    <span>Legacy scholars</span>
+                    <strong>Staff</strong>
+                    <span>Current team & scholars</span>
                   </div>
                 </article>
                 <a href="alumni-phd.html" class="alumni-stat">
@@ -382,7 +381,7 @@
                 <li><a href="index.html#home">Home</a></li>
                 <li><a href="harun-venkatesan.html">Dr. Harun Venkatesan</a></li>
                 <li><a href="index.html#current-research">Current Research</a></li>
-                <li><a href="index.html#news">News & Events</a></li>
+                <li><a href="photos.html">Gallery</a></li>
                 <li><a href="index.html#honours">Honours</a></li>
               </ul>
             </div>
@@ -401,10 +400,9 @@
             <div class="footer-col">
               <h4>People</h4>
               <ul class="footer-links-list">
-                <li><a href="alumni-postdoc.html">Postdoctoral Scholars</a></li>
+                <li><a href="alumni-postdoc.html">Staff</a></li>
                 <li><a href="alumni-phd.html">Ph.D. Graduates</a></li>
                 <li><a href="alumni-masters-ug.html">Masters & Undergraduates</a></li>
-                <li><a href="index.html#staff">Staff Members</a></li>
               </ul>
             </div>
           </div>
@@ -439,8 +437,6 @@
           group.classList.remove("open");
           setTriggerState(group.querySelector(".dropdown-subtrigger"), false);
         });
-        // Clear sub-activity
-        document.querySelectorAll(".dropdown.subgroup-active").forEach(d => d.classList.remove("subgroup-active"));
       };
 
       const closeDropdownItems = () => {
@@ -448,7 +444,6 @@
           item.classList.remove("open");
           setTriggerState(item.querySelector(".nav-trigger"), false);
         });
-        navMenu.classList.remove("submenu-active");
         closeDropdownSubgroups();
       };
 
@@ -493,7 +488,6 @@
           if (!isOpen) {
             item.classList.add("open");
             setTriggerState(trigger, true);
-            navMenu.classList.add("submenu-active");
           }
         });
       });
@@ -506,36 +500,12 @@
         trigger.addEventListener("click", (event) => {
           event.stopPropagation();
           const isOpen = group.classList.contains("open");
-          const parentDropdown = group.closest(".dropdown");
 
           closeDropdownSubgroups();
 
           if (!isOpen) {
             group.classList.add("open");
             setTriggerState(trigger, true);
-            if (parentDropdown) {
-              parentDropdown.classList.add("subgroup-active");
-            }
-          }
-        });
-      });
-
-      // Handle back buttons
-      document.querySelectorAll(".submenu-back").forEach((btn) => {
-        btn.addEventListener("click", (event) => {
-          event.stopPropagation();
-          const subgroup = btn.closest(".dropdown-subgroup");
-          const dropdown = btn.closest(".dropdown");
-          const navItem = btn.closest(".nav-item");
-
-          if (subgroup && subgroup.classList.contains("open")) {
-            subgroup.classList.remove("open");
-            setTriggerState(subgroup.querySelector(".dropdown-subtrigger"), false);
-            if (dropdown) dropdown.classList.remove("subgroup-active");
-          } else if (navItem && navItem.classList.contains("open")) {
-            navItem.classList.remove("open");
-            setTriggerState(navItem.querySelector(".nav-trigger"), false);
-            navMenu.classList.remove("submenu-active");
           }
         });
       });

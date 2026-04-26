@@ -635,107 +635,293 @@
         box-shadow: 0 8px 24px rgba(7, 32, 47, 0.18);
       }
 
-      /* ─── Highlights Strip ─── */
-      .highlights-strip {
+      /* ─── About Section (Unified Header + Two-Column) ─── */
+      .about-panel {
+        padding: 6rem 0 8rem;
+        border-top: 1px solid rgba(15, 92, 133, 0.1);
+        margin-top: 2rem;
+      }
+
+      .about-header {
+        margin-bottom: 0.5rem;
+        max-width: 45rem;
+      }
+
+      .about-heading {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(3rem, 7vw, 4.25rem);
+        font-weight: 800;
+        line-height: 1;
+        letter-spacing: -0.05em;
+        color: var(--navy-900);
+        margin-top: 0.5rem;
+        display: inline-block;
+        position: relative;
+      }
+
+      .about-heading::after {
+        content: ".";
+        color: var(--sky-500);
+      }
+
+      .about-heading-accent {
+        display: block;
+        width: 4rem;
+        height: 4px;
+        background: linear-gradient(to right, var(--sky-500), transparent);
+        margin-top: 1rem;
+        border-radius: 2px;
+        box-shadow: 0 2px 10px rgba(15, 160, 206, 0.2);
+      }
+
+      .about-grid {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 1.1rem;
-        margin-top: 1.75rem;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 6rem;
+        align-items: center;
       }
 
-      /* ─── Cards — Shared Base ─── */
-      .strip-card,
-      .hero-bottom-panel,
-      .content-card,
-      .news-card,
-      .honours-card,
-      .footer-card {
-        border-radius: var(--radius-md);
-        background: rgba(255, 255, 255, 0.92);
-        border: 1px solid rgba(15, 92, 133, 0.09);
-        box-shadow: var(--shadow-card);
-        transition: box-shadow 220ms ease, transform 220ms ease;
-        will-change: transform;
-        backface-visibility: hidden;
+      .about-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
       }
 
-      .news-card:hover,
-      .strip-card:hover,
-      .honours-card:hover {
-        box-shadow: var(--shadow-card-hover);
-        transform: translateY(-2px);
+      .about-tagline {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+        font-weight: 700;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        background: linear-gradient(135deg, var(--sky-600) 0%, var(--navy-900) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        position: relative;
+        margin: 0;
       }
 
-      /* ─── Hero Bottom Panel ─── */
-      .hero-bottom-panel {
-        margin: 2.8rem auto 0;
-        padding: clamp(2.5rem, 5vw, 4rem);
-        border-radius: 48px;
-        background: linear-gradient(135deg, #ffffff 0%, #f7fcff 100%);
-        border: 1px solid rgba(15, 92, 133, 0.1);
+      .about-body {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: var(--slate-700);
+        max-width: 36rem;
+      }
+
+      .about-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-weight: 700;
+        color: var(--navy-900);
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: gap 0.2s ease, color 0.2s ease;
+      }
+
+      .about-cta:hover {
+        color: var(--sky-600);
+        gap: 1rem;
+      }
+
+      /* ─── About Gallery (Aligned Asymmetric Layout) ─── */
+      .about-masonry {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 1.5rem;
+        width: 100%;
+        position: relative;
+        max-width: 42rem;
+        margin-left: auto;
+      }
+
+      .about-masonry-item {
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 8px 30px rgba(7, 32, 47, 0.08);
+        border: 1px solid rgba(15, 92, 133, 0.06);
+        background: #fff;
+        transition: transform 0.4s cubic-bezier(0.2, 0, 0.2, 1), box-shadow 0.4s ease;
+      }
+
+      .about-masonry-item img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+      }
+
+      .about-masonry-item--tall {
+        grid-row: 1 / 3;
+        height: 100%;
+      }
+
+      /* Placing right side items in the grid directly for better alignment */
+      .about-masonry-item--right-top {
+        grid-column: 2;
+        grid-row: 1;
+        aspect-ratio: 4 / 3;
+      }
+
+      .about-masonry-item--right-bottom {
+        grid-column: 2;
+        grid-row: 2;
+        aspect-ratio: 4 / 3;
+      }
+
+      .about-masonry-item:hover {
+        transform: scale(1.02);
+        z-index: 10;
+        box-shadow: 0 15px 40px rgba(7, 32, 47, 0.12);
+      }
+
+      @media (max-width: 992px) {
+        .about-grid {
+          grid-template-columns: 1fr;
+          gap: 4rem;
+        }
+
+        .about-masonry {
+          max-width: 40rem;
+          margin: 0 auto;
+        }
+
+        .about-masonry-item {
+          transform: none !important;
+          width: 100% !important;
+          grid-column: auto !important;
+        }
+
+        .about-header {
+          margin-bottom: 2.5rem;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .about-masonry {
+          column-count: 1;
+        }
+      }
+
+      /* ─── Highlights Symmetric Grid ─── */
+      .rh-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+        margin-top: 3rem;
+      }
+
+      .rh-card {
+        background: #fff;
+        border-radius: 32px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.4s cubic-bezier(0.2, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.2, 0, 0.2, 1);
+        box-shadow: 0 4px 20px rgba(7, 32, 47, 0.04);
+        position: relative;
+        height: 100%;
+      }
+
+      .rh-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 30px 60px rgba(7, 32, 47, 0.12);
+      }
+
+      .rh-card-img-wrap {
         position: relative;
         overflow: hidden;
-        box-shadow: 
-          0 30px 60px -12px rgba(7, 32, 47, 0.08),
-          0 10px 30px -10px rgba(15, 92, 133, 0.05),
-          inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+        background: #f0f4f8;
+        aspect-ratio: 16 / 10;
       }
 
-      .hero-bottom-panel::before {
-        content: "";
-        position: absolute;
-        top: -15%;
-        right: -10%;
-        width: 32rem;
-        height: 32rem;
-        background: radial-gradient(circle, rgba(122, 211, 247, 0.22) 0%, transparent 70%);
-        border-radius: 50%;
-        z-index: 0;
-        pointer-events: none;
+      .rh-card-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.8s cubic-bezier(0.2, 0, 0.2, 1);
       }
 
-      .hero-bottom-panel::after {
-        content: "";
-        position: absolute;
-        bottom: -10%;
-        left: -5%;
-        width: 24rem;
-        height: 24rem;
-        background: radial-gradient(circle, rgba(15, 92, 133, 0.06) 0%, transparent 70%);
-        border-radius: 50%;
-        z-index: 0;
-        pointer-events: none;
+      .rh-card:hover .rh-card-img-wrap img {
+        transform: scale(1.1);
       }
 
-      .hero-bottom-panel > * {
-        position: relative;
-        z-index: 1;
+      .rh-card-body {
+        padding: 2rem 2.5rem 2.5rem;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
       }
 
-      .hero-bottom-panel .eyebrow {
-        margin-bottom: 0.8rem;
-      }
-
-      .hero-bottom-panel h2 {
-        margin: 0.5rem 0 1.5rem;
-        font-family: "Space Grotesk", sans-serif;
-        font-size: clamp(3rem, 8vw, 5.2rem);
+      .rh-chip {
+        display: inline-block;
+        padding: 0.45rem 0.9rem;
+        background: var(--sky-050);
+        color: var(--sky-700);
+        font-size: 0.72rem;
         font-weight: 800;
-        line-height: 1.05;
-        letter-spacing: -0.04em;
-        background: linear-gradient(135deg, var(--navy-900) 0%, var(--sky-700) 50%, var(--sky-500) 100%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        color: var(--navy-900);
+        border-radius: 999px;
+        text-transform: uppercase;
+        letter-spacing: 0.05rem;
+        align-self: flex-start;
+        margin-bottom: 1.25rem;
       }
 
-      .hero-bottom-panel p {
-        max-width: 58rem;
-        font-size: var(--fs-lg);
-        color: var(--slate-700);
-        line-height: 1.7;
-        font-weight: 500;
+      .rh-card-title {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 1.3;
+        margin-bottom: 0.75rem;
+        letter-spacing: -0.02em;
+      }
+
+      .rh-card-title a {
+        color: var(--navy-900);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .rh-card-title a:hover {
+        color: var(--sky-600);
+      }
+
+      .rh-arrow {
+        font-size: 0.8em;
+        display: inline-block;
+        transition: transform 0.3s ease;
+      }
+
+      .rh-card:hover .rh-arrow {
+        transform: translate(4px, -4px);
+      }
+
+      .rh-card-excerpt {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: var(--slate-600);
+        margin-bottom: 1.5rem;
+        flex-grow: 1;
+      }
+
+      .rh-card-date {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--slate-400);
+        margin-top: auto;
+      }
+
+      @media (max-width: 1100px) {
+        .rh-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .rh-grid {
+          grid-template-columns: 1fr;
+        }
       }
 
       /* ─── Strip Card ─── */
@@ -1413,6 +1599,17 @@
       @keyframes pulse-dot {
         0%, 100% { opacity: 1;   transform: scale(1);    }
         50%       { opacity: 0.4; transform: scale(0.72); }
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
       /* ─── Faculty Profile Specific Projects ─── */
@@ -3541,27 +3738,29 @@
         box-shadow: 0 10px 25px rgba(7, 32, 47, 0.2);
       }
 
-      /* Premium Masonry Layout */
+      /* Premium Justified Layout (Maintains Aspect Ratios & Aligns Edges) */
       .gallery-grid {
-        columns: 3 360px;
-        column-gap: 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
         margin-top: 1rem;
       }
 
       .gallery-item {
-        display: inline-block;
-        width: 100%;
-        margin-bottom: 1.5rem;
-        break-inside: avoid;
+        flex: 1 1 300px; /* Default basis to prevent collapse */
+        height: 380px;
+        min-width: 280px; /* Absolute minimum to prevent slivers */
         position: relative;
         cursor: pointer;
+        border-radius: 20px;
+        overflow: hidden;
+        transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
       }
 
       .gallery-card {
         position: relative;
         width: 100%;
-        min-height: 280px;
-        max-height: 580px;
+        height: 100%;
         border-radius: 20px;
         overflow: hidden;
         background: var(--navy-900);
@@ -3575,8 +3774,6 @@
       .gallery-card img {
         width: 100%;
         height: 100%;
-        min-height: 280px;
-        max-height: 580px;
         object-fit: cover;
         display: block;
         opacity: 0;
@@ -3650,23 +3847,27 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 3rem;
-        height: 3rem;
-        border-radius: 14px;
+        width: 3.2rem;
+        height: 3.2rem;
+        border-radius: 10px;
         background: rgba(255, 255, 255, 0.15);
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        border: 1.5px solid rgba(255, 255, 255, 0.6);
         color: var(--white);
-        font-size: 1.1rem;
+        font-size: 1.15rem;
         cursor: pointer;
-        transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-        backdrop-filter: blur(6px);
-        -webkit-backdrop-filter: blur(6px);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        will-change: transform;
       }
 
       .gallery-expand-btn:hover {
         background: var(--white);
         color: var(--navy-900);
-        transform: scale(1.1);
+        transform: scale(1.15);
+        box-shadow: 0 8px 24px rgba(255, 255, 255, 0.35);
+        border-color: var(--white);
       }
 
       .gallery-item:hover .gallery-card {
@@ -3847,24 +4048,32 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 4rem;
-        background: transparent;
+        padding: 2rem;
+        background: transparent !important; /* Ensure it never blocks the section background */
+        overflow: visible;
       }
 
       .tour-visual img {
         width: 100%;
+        max-width: 700px;
         max-height: 500px;
-        object-fit: cover;
-        border-radius: 4px;
-        border: 1px solid rgba(15, 92, 133, 0.12);
-        box-shadow: 0 20px 50px -15px rgba(15, 92, 133, 0.15);
+        margin: 0 auto;
+        object-fit: contain;
+        /* mix-blend-mode: multiply effectively removes the white background 
+           making the instrument look like it's printed on the section background */
+        mix-blend-mode: multiply;
         opacity: 1;
         transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        border: none !important;
+        box-shadow: none !important;
+      }
+
+      #thermal-imaging .tour-visual img {
+        object-fit: contain;
       }
 
       .tour-section:hover .tour-visual img {
-        transform: translateY(-5px) scale(1.01);
-        box-shadow: 0 30px 60px -12px rgba(15, 92, 133, 0.18);
+        transform: translateY(-8px) scale(1.02);
       }
 
       .visual-overlay {
@@ -4010,9 +4219,29 @@
         }
       }
 
+      @media (max-width: 1024px) {
+        .gallery-item {
+          height: 320px;
+        }
+      }
+
       @media (max-width: 768px) {
         .gallery-grid {
-          columns: 1;
+          display: block; /* Stack on mobile */
+          gap: 1.5rem;
+        }
+
+        .gallery-item {
+          height: auto !important;
+          width: 100%;
+          flex: none;
+          aspect-ratio: unset;
+          margin-bottom: 1.5rem;
+        }
+
+        .gallery-card {
+          aspect-ratio: auto;
+          min-height: 300px;
         }
 
         .lightbox-prev, .lightbox-next {

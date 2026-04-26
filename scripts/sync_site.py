@@ -25,44 +25,89 @@ HEAD_BLOCK_MASTER = '''    <link
 
 NAV_BLOCK_MASTER = '''<nav id="nav-menu" class="nav-menu" aria-label="Primary">
             <div class="nav-item">
-              <a class="nav-link" href="index.html#home">Home</a>
+              <a class="nav-link" href="index.html#home">
+                <i class="fa-solid fa-house" aria-hidden="true"></i>
+                <span>Home</span>
+              </a>
             </div>
 
             <div class="nav-item has-dropdown">
               <button class="nav-trigger" type="button" aria-expanded="false">
-                People
+                <i class="fa-solid fa-users" aria-hidden="true"></i>
+                <span>People</span>
               </button>
               <div class="dropdown">
-                <a href="harun-venkatesan.html">Harun Venkatesan</a>
-                <div class="dropdown-subgroup">
-                  <button class="dropdown-subtrigger" type="button" aria-expanded="false">
-                    Alumni
-                  </button>
-                  <div class="dropdown-submenu" aria-label="Alumni groups">
-                    <a class="dropdown-subitem" href="alumni-postdoc.html">Postdoctoral Scholars</a>
-                    <a class="dropdown-subitem" href="alumni-phd.html">Ph.D. Graduates</a>
-                    <a class="dropdown-subitem" href="alumni-masters-ug.html">Masters & Undergraduates</a>
-                  </div>
-                </div>
-                <a href="index.html#staff">Staff</a>
-                <a href="photos.html">Photos</a>
+                <button class="submenu-back" type="button" aria-label="Go back to main menu">
+                  <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                  <span>Back to Menu</span>
+                </button>
+                <a href="harun-venkatesan.html">
+                  <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
+                  <span>Harun Venkatesan</span>
+                </a>
+                <a href="alumni-postdoc.html">
+                  <i class="fa-solid fa-user-gear" aria-hidden="true"></i>
+                  <span>Staff</span>
+                </a>
+                <a href="alumni-phd.html">
+                  <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                  <span>Ph.D. Graduates</span>
+                </a>
+                <a href="alumni-masters-ug.html">
+                   <i class="fa-solid fa-user-group" aria-hidden="true"></i>
+                   <span>Masters & Undergraduates</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="nav-item has-dropdown">
+              <button class="nav-trigger" type="button" aria-expanded="false">
+                <i class="fa-solid fa-flask-vial" aria-hidden="true"></i>
+                <span>Current Research</span>
+              </button>
+              <div class="dropdown">
+                <button class="submenu-back" type="button" aria-label="Go back to main menu">
+                  <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                  <span>Back to Menu</span>
+                </button>
+                <a href="index.html#current-research">
+                  <i class="fa-solid fa-microscope" aria-hidden="true"></i>
+                  <span>Domain of Research</span>
+                </a>
+                <a href="#">
+                  <i class="fa-solid fa-link" aria-hidden="true"></i>
+                  <span>Link 1</span>
+                </a>
               </div>
             </div>
 
             <div class="nav-item">
-              <a class="nav-link" href="index.html#current-research">Current Research</a>
+              <a class="nav-link" href="facilities.html">
+                <i class="fa-solid fa-microscope" aria-hidden="true"></i>
+                <span>Facilities</span>
+              </a>
             </div>
 
             <div class="nav-item has-dropdown">
               <button class="nav-trigger" type="button" aria-expanded="false">
-                Publications
+                <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                <span>Publications</span>
               </button>
               <div class="dropdown">
+                <button class="submenu-back" type="button" aria-label="Go back to main menu">
+                  <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                  <span>Back to Menu</span>
+                </button>
                 <div class="dropdown-subgroup">
                   <button class="dropdown-subtrigger" type="button" aria-expanded="false">
-                    Publications
+                    <i class="fa-solid fa-journal-whills" aria-hidden="true"></i>
+                    <span>Publications</span>
                   </button>
                   <div class="dropdown-submenu" aria-label="Publication years">
+                    <button class="submenu-back" type="button" aria-label="Go back to publication options">
+                      <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                      <span>Back</span>
+                    </button>
                     <a class="dropdown-subitem" href="publications.html">All Publications</a>
                     <a class="dropdown-subitem" href="publications-2025.html">2025 Publications</a>
                     <a class="dropdown-subitem" href="publications-2024.html">2024 Publications</a>
@@ -73,9 +118,14 @@ NAV_BLOCK_MASTER = '''<nav id="nav-menu" class="nav-menu" aria-label="Primary">
                 </div>
                 <div class="dropdown-subgroup">
                   <button class="dropdown-subtrigger" type="button" aria-expanded="false">
-                    Book Chapters
+                    <i class="fa-solid fa-book" aria-hidden="true"></i>
+                    <span>Book Chapters</span>
                   </button>
                   <div class="dropdown-submenu" aria-label="Book Chapter years">
+                    <button class="submenu-back" type="button" aria-label="Go back to publication options">
+                      <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                      <span>Back</span>
+                    </button>
                     <a class="dropdown-subitem" href="book-chapters.html">All Chapters</a>
                     <a class="dropdown-subitem" href="book-chapters-2026.html">2026 Book Chapters</a>
                     <a class="dropdown-subitem" href="book-chapters-2025.html">2025 Book Chapters</a>
@@ -87,11 +137,17 @@ NAV_BLOCK_MASTER = '''<nav id="nav-menu" class="nav-menu" aria-label="Primary">
             </div>
 
             <div class="nav-item">
-              <a class="nav-link" href="index.html#news">News</a>
+              <a class="nav-link" href="photos.html">
+                <i class="fa-solid fa-camera-retro" aria-hidden="true"></i>
+                <span>Gallery</span>
+              </a>
             </div>
 
             <div class="nav-item">
-              <a class="nav-link" href="index.html#honours">Honours</a>
+              <a class="nav-link" href="index.html#honours">
+                <i class="fa-solid fa-award" aria-hidden="true"></i>
+                <span>Honours</span>
+              </a>
             </div>
           </nav>'''
 
@@ -115,7 +171,7 @@ FOOTER_BLOCK_MASTER = '''<footer class="site-footer">
                 <li><a href="index.html#home">Home</a></li>
                 <li><a href="harun-venkatesan.html">Dr. Harun Venkatesan</a></li>
                 <li><a href="index.html#current-research">Current Research</a></li>
-                <li><a href="index.html#news">News & Events</a></li>
+                <li><a href="photos.html">Gallery</a></li>
                 <li><a href="index.html#honours">Honours</a></li>
               </ul>
             </div>
@@ -134,10 +190,9 @@ FOOTER_BLOCK_MASTER = '''<footer class="site-footer">
             <div class="footer-col">
               <h4>People</h4>
               <ul class="footer-links-list">
-                <li><a href="alumni-postdoc.html">Postdoctoral Scholars</a></li>
+                <li><a href="alumni-postdoc.html">Staff</a></li>
                 <li><a href="alumni-phd.html">Ph.D. Graduates</a></li>
                 <li><a href="alumni-masters-ug.html">Masters & Undergraduates</a></li>
-                <li><a href="index.html#staff">Staff Members</a></li>
               </ul>
             </div>
           </div>

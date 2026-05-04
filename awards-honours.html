@@ -95,14 +95,26 @@
         overflow: hidden;
         box-shadow: var(--shadow-card-hover);
         transition: transform 0.4s ease;
+        background: var(--navy-900, #07202f);
+        background-size: cover;
+        background-position: center;
+        aspect-ratio: 16/9; /* Standardized aspect ratio */
       }
       .award-item:hover .award-image {
         transform: scale(1.02);
       }
       .award-image img {
         width: 100%;
-        height: auto;
+        height: 100%;
+        object-fit: cover;
         display: block;
+        opacity: 0;
+        filter: blur(10px);
+        transition: opacity 0.6s ease, filter 0.6s ease;
+      }
+      .award-image img.loaded {
+        opacity: 1;
+        filter: blur(0);
       }
       .award-content {
         flex: 1.2;
@@ -318,8 +330,13 @@
               
               <!-- Sire Symposium 2026 -->
               <article class="award-item">
-                <div class="award-image">
-                  <img src="images/awards/best-poster-award-sire-symposium-2026.png" alt="Sire Symposium 2026 Award" />
+                <div class="award-image" style="background-image: url('images/awards/placeholder/best-poster-award-sire-symposium-2026.webp');">
+                  <img src="images/awards/sm/best-poster-award-sire-symposium-2026.webp" 
+                       srcset="images/awards/sm/best-poster-award-sire-symposium-2026.webp 400w, images/awards/md/best-poster-award-sire-symposium-2026.webp 800w, images/awards/lg/best-poster-award-sire-symposium-2026.webp 1600w"
+                       sizes="(max-width: 900px) 100vw, 50vw"
+                       alt="Sire Symposium 2026 Award"
+                       loading="lazy"
+                       onload="this.classList.add('loaded')" />
                 </div>
                 <div class="award-content">
                   <span class="award-date">2026</span>
@@ -331,8 +348,13 @@
 
               <!-- APA International Conference 2025 -->
               <article class="award-item">
-                <div class="award-image">
-                  <img src="images/awards/best-poster-award-apa-international-conference-2025.png" alt="APA International Conference Award" />
+                <div class="award-image" style="background-image: url('images/awards/placeholder/best-poster-award-apa-international-conference-2025.webp');">
+                  <img src="images/awards/sm/best-poster-award-apa-international-conference-2025.webp" 
+                       srcset="images/awards/sm/best-poster-award-apa-international-conference-2025.webp 400w, images/awards/md/best-poster-award-apa-international-conference-2025.webp 800w, images/awards/lg/best-poster-award-apa-international-conference-2025.webp 1600w"
+                       sizes="(max-width: 900px) 100vw, 50vw"
+                       alt="APA International Conference Award"
+                       loading="lazy"
+                       onload="this.classList.add('loaded')" />
                 </div>
                 <div class="award-content">
                   <span class="award-date">October 2025</span>
@@ -344,8 +366,13 @@
 
               <!-- IIT Delhi Open House 2025 -->
               <article class="award-item">
-                <div class="award-image">
-                  <img src="images/awards/best-poster-award-sudipto-behera-iit-delhi-open-house.jpg" alt="Best Poster Award - Sudipto Behera - IIT Delhi Open House" />
+                <div class="award-image" style="background-image: url('images/awards/placeholder/best-poster-award-sudipto-behera-iit-delhi-open-house.webp');">
+                  <img src="images/awards/sm/best-poster-award-sudipto-behera-iit-delhi-open-house.webp" 
+                       srcset="images/awards/sm/best-poster-award-sudipto-behera-iit-delhi-open-house.webp 400w, images/awards/md/best-poster-award-sudipto-behera-iit-delhi-open-house.webp 800w, images/awards/lg/best-poster-award-sudipto-behera-iit-delhi-open-house.webp 1600w"
+                       sizes="(max-width: 900px) 100vw, 50vw"
+                       alt="Best Poster Award - Sudipto Behera - IIT Delhi Open House"
+                       loading="lazy"
+                       onload="this.classList.add('loaded')" />
                 </div>
                 <div class="award-content">
                   <span class="award-date">9th November 2024</span>
@@ -357,8 +384,13 @@
 
               <!-- Bharat Tex Hackathon 2024 -->
               <article class="award-item">
-                <div class="award-image">
-                  <img src="images/awards/bharat-tex-hackathon-2024-award.jpg" alt="Bharat Tex Hackathon 2024" />
+                <div class="award-image" style="background-image: url('images/awards/placeholder/bharat-tex-hackathon-2024-award.webp');">
+                  <img src="images/awards/sm/bharat-tex-hackathon-2024-award.webp" 
+                       srcset="images/awards/sm/bharat-tex-hackathon-2024-award.webp 400w, images/awards/md/bharat-tex-hackathon-2024-award.webp 800w, images/awards/lg/bharat-tex-hackathon-2024-award.webp 1600w"
+                       sizes="(max-width: 900px) 100vw, 50vw"
+                       alt="Bharat Tex Hackathon 2024"
+                       loading="lazy"
+                       onload="this.classList.add('loaded')" />
                 </div>
                 <div class="award-content">
                   <span class="award-date">2024</span>

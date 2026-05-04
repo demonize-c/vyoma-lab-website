@@ -85,16 +85,7 @@
       }
       .rd-domain-card.flip { direction: rtl; }
       .rd-domain-card.flip > * { direction: ltr; }
-      .rd-img-wrap { position: relative; overflow: hidden; }
-      .rd-img-wrap img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-        transition: transform 0.6s ease;
-      }
-      .rd-domain-card:hover .rd-img-wrap img { transform: scale(1.05); }
-      .rd-img-overlay { position: absolute; inset: 0; pointer-events: none; }
+      
       .rd-num {
         position: absolute;
         bottom: 1.25rem;
@@ -105,7 +96,31 @@
         color: rgba(255,255,255,0.22);
         line-height: 1;
         letter-spacing: -0.04em;
+        z-index: 2;
       }
+      /* Blur-up effect */
+      .rd-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.6s ease, opacity 0.6s ease, filter 0.6s ease;
+        opacity: 0;
+        filter: blur(10px);
+      }
+      .rd-img-wrap img.loaded {
+        opacity: 1;
+        filter: blur(0);
+      }
+      .rd-img-wrap { 
+        position: relative; 
+        overflow: hidden; 
+        background-size: cover;
+        background-position: center;
+      }
+      .rd-domain-card:hover .rd-img-wrap img { transform: scale(1.05); }
+      .rd-img-overlay { position: absolute; inset: 0; pointer-events: none; }
+      
       .rd-card-body {
         padding: 2.75rem 3.25rem;
         display: flex;
@@ -119,13 +134,20 @@
         border-right: 4px solid var(--sky-500, #1798cd);
       }
       .rd-category {
+        display: inline-flex;
+        padding: 0.4rem 1.1rem;
+        background: #f8fafc;
+        color: var(--sky-700, #0f5c85);
         font-family: var(--font-body, 'Manrope', sans-serif);
-        font-size: 0.72rem;
-        font-weight: 700;
-        letter-spacing: 0.14em;
+        font-size: 0.68rem;
+        font-weight: 800;
         text-transform: uppercase;
-        color: var(--sky-500, #1798cd);
-        margin-bottom: 0.5rem;
+        letter-spacing: 0.12em;
+        border-radius: 100px;
+        margin-bottom: 1.25rem;
+        border: 1px solid #e2e8f0;
+        line-height: 1;
+        width: fit-content;
       }
       .rd-card-body h2 {
         font-family: var(--font-display, 'Space Grotesk', sans-serif);
@@ -153,7 +175,7 @@
         border: 1px solid var(--sky-300, #7ad3f7);
         white-space: nowrap;
       }
-      .rd-num {
+      .rd-num-badge {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -168,10 +190,7 @@
         letter-spacing: 0;
         margin-bottom: 0.75rem;
         flex-shrink: 0;
-        /* Remove the old absolute positioning */
         position: static;
-        bottom: auto;
-        left: auto;
       }
       /* ── Medium-large: tighten padding, still 2-col ── */
       @media (max-width: 1280px) {
@@ -380,14 +399,20 @@
 
             <!-- 01: Cryogenic Insulation -->
             <article class="rd-domain-card">
-              <div class="rd-img-wrap">
-                <img src="images/research/cryogenic.webp" loading="eager" alt="Cryogenic Insulation Research" />
+              <div class="rd-img-wrap" style="background-image: url('images/research/placeholder/cryogenic.webp');">
+                <img src="images/research/sm/cryogenic.webp" 
+                     srcset="images/research/sm/cryogenic.webp 400w, images/research/md/cryogenic.webp 800w, images/research/lg/cryogenic.webp 1600w"
+                     sizes="(max-width: 1100px) 100vw, 50vw"
+                     loading="eager" 
+                     alt="Cryogenic Insulation Research" 
+                     onload="this.classList.add('loaded')" />
+                <span class="rd-num">01</span>
               </div>
               <div class="rd-card-body">
-                <span class="rd-num">01</span>
+                <span class="rd-num-badge">01</span>
                 <span class="rd-category">Thermal Engineering</span>
                 <h2>Cryogenic Insulation</h2>
-                <p>Designed to minimize heat transfer at extremely low temperatures (below −150 °C). We develop ultra-low thermal conductivity aerogels and vacuum insulation panels to drastically reduce boil-off losses and improve energy efficiency in LNG storage and transport.</p>
+                <p class="rd-desc">Designed to minimize heat transfer at extremely low temperatures (below −150 °C). We develop ultra-low thermal conductivity aerogels and vacuum insulation panels to drastically reduce boil-off losses and improve energy efficiency in LNG storage and transport.</p>
                 <div class="rd-tags">
                   <span class="rd-tag">Below −150 °C</span>
                   <span class="rd-tag">Aerogels &amp; VIPs</span>
@@ -399,14 +424,20 @@
 
             <!-- 02: Extreme Weather Clothing -->
             <article class="rd-domain-card flip">
-              <div class="rd-img-wrap">
-                <img src="images/research/extreme_weather.webp" loading="lazy" alt="Extreme Weather Clothing Research" />
+              <div class="rd-img-wrap" style="background-image: url('images/research/placeholder/extreme_weather.webp');">
+                <img src="images/research/sm/extreme_weather.webp" 
+                     srcset="images/research/sm/extreme_weather.webp 400w, images/research/md/extreme_weather.webp 800w, images/research/lg/extreme_weather.webp 1600w"
+                     sizes="(max-width: 1100px) 100vw, 50vw"
+                     loading="lazy" 
+                     alt="Extreme Weather Clothing Research" 
+                     onload="this.classList.add('loaded')" />
+                <span class="rd-num">02</span>
               </div>
               <div class="rd-card-body">
-                <span class="rd-num">02</span>
+                <span class="rd-num-badge">02</span>
                 <span class="rd-category">Protective Textiles</span>
                 <h2>Extreme Weather Clothing</h2>
-                <p>Engineering protection for the harshest environments on earth. We incorporate advanced aerogel insulation and phase change materials (PCMs) into multilayer textile systems to regulate heat transfer and maintain thermal comfort in polar and high-altitude conditions.</p>
+                <p class="rd-desc">Engineering protection for the harshest environments on earth. We incorporate advanced aerogel insulation and phase change materials (PCMs) into multilayer textile systems to regulate heat transfer and maintain thermal comfort in polar and high-altitude conditions.</p>
                 <div class="rd-tags">
                   <span class="rd-tag">Aerogel + PCM</span>
                   <span class="rd-tag">Polar Environments</span>
@@ -418,14 +449,20 @@
 
             <!-- 03: Biomedical Applications -->
             <article class="rd-domain-card">
-              <div class="rd-img-wrap">
-                <img src="images/research/biomedical.webp" loading="lazy" alt="Biomedical Applications Research" />
+              <div class="rd-img-wrap" style="background-image: url('images/research/placeholder/biomedical.webp');">
+                <img src="images/research/sm/biomedical.webp" 
+                     srcset="images/research/sm/biomedical.webp 400w, images/research/md/biomedical.webp 800w, images/research/lg/biomedical.webp 1600w"
+                     sizes="(max-width: 1100px) 100vw, 50vw"
+                     loading="lazy" 
+                     alt="Biomedical Applications Research" 
+                     onload="this.classList.add('loaded')" />
+                <span class="rd-num">03</span>
               </div>
               <div class="rd-card-body">
-                <span class="rd-num">03</span>
+                <span class="rd-num-badge">03</span>
                 <span class="rd-category">Biomedical Science</span>
                 <h2>Biomedical Applications</h2>
-                <p>Leveraging highly porous, biocompatible aerogel structures for drug delivery, tissue engineering, and wound healing. Our research focuses on controlled release mechanisms and scaffolding cell growth through tunable material properties and surface chemistry.</p>
+                <p class="rd-desc">Leveraging highly porous, biocompatible aerogel structures for drug delivery, tissue engineering, and wound healing. Our research focuses on controlled release mechanisms and scaffolding cell growth through tunable material properties and surface chemistry.</p>
                 <div class="rd-tags">
                   <span class="rd-tag">Drug Delivery</span>
                   <span class="rd-tag">Tissue Engineering</span>
@@ -437,14 +474,20 @@
 
             <!-- 04: Tactical Applications -->
             <article class="rd-domain-card flip">
-              <div class="rd-img-wrap">
-                <img src="images/research/tactical.webp" loading="lazy" alt="Tactical Applications Research" />
+              <div class="rd-img-wrap" style="background-image: url('images/research/placeholder/tactical.webp');">
+                <img src="images/research/sm/tactical.webp" 
+                     srcset="images/research/sm/tactical.webp 400w, images/research/md/tactical.webp 800w, images/research/lg/tactical.webp 1600w"
+                     sizes="(max-width: 1100px) 100vw, 50vw"
+                     loading="lazy" 
+                     alt="Tactical Applications Research" 
+                     onload="this.classList.add('loaded')" />
+                <span class="rd-num">04</span>
               </div>
               <div class="rd-card-body">
-                <span class="rd-num">04</span>
+                <span class="rd-num-badge">04</span>
                 <span class="rd-category">Defence &amp; Tactical</span>
                 <h2>Tactical Applications</h2>
-                <p>Developing lightweight, multifunctional insulation for extreme defence environments. We augment protective gear with EMI shielding and infrared stealth capabilities, leveraging the exceptional high porosity and ultra-low density of aerogel composites for mission-critical performance.</p>
+                <p class="rd-desc">Developing lightweight, multifunctional insulation for extreme defence environments. We augment protective gear with EMI shielding and infrared stealth capabilities, leveraging the exceptional high porosity and ultra-low density of aerogel composites for mission-critical performance.</p>
                 <div class="rd-tags">
                   <span class="rd-tag">EMI Shielding</span>
                   <span class="rd-tag">IR Stealth</span>
@@ -456,14 +499,20 @@
 
             <!-- 05: Electronic Insulation -->
             <article class="rd-domain-card">
-              <div class="rd-img-wrap">
-                <img src="images/research/electronic.webp" loading="lazy" alt="Electronic Insulation Research" />
+              <div class="rd-img-wrap" style="background-image: url('images/research/placeholder/electronic.webp');">
+                <img src="images/research/sm/electronic.webp" 
+                     srcset="images/research/sm/electronic.webp 400w, images/research/md/electronic.webp 800w, images/research/lg/electronic.webp 1600w"
+                     sizes="(max-width: 1100px) 100vw, 50vw"
+                     loading="lazy" 
+                     alt="Electronic Insulation Research" 
+                     onload="this.classList.add('loaded')" />
+                <span class="rd-num">05</span>
               </div>
               <div class="rd-card-body">
-                <span class="rd-num">05</span>
+                <span class="rd-num-badge">05</span>
                 <span class="rd-category">Electronics &amp; Energy</span>
                 <h2>Electronic Insulation</h2>
-                <p>Enabling next-generation thermal management and electrical insulation for advanced electronics. Our aerogel-based materials allow miniaturisation and improved safety in batteries, printed circuits, and high-performance computing devices operating at extreme thermal loads.</p>
+                <p class="rd-desc">Enabling next-generation thermal management and electrical insulation for advanced electronics. Our aerogel-based materials allow miniaturisation and improved safety in batteries, printed circuits, and high-performance computing devices operating at extreme thermal loads.</p>
                 <div class="rd-tags">
                   <span class="rd-tag">Thermal Management</span>
                   <span class="rd-tag">Batteries &amp; PCBs</span>

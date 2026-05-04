@@ -8,7 +8,7 @@
       name="description"
       content="Masters and Undergraduate Researchers alumni of Vyoma Lab."
     />
-                                    <link
+                                        <link
       rel="apple-touch-icon"
       sizes="180x180"
       href="./images/favicon_io/apple-touch-icon.png?v=2"
@@ -317,10 +317,10 @@
                 <img class="brand-mark" src="images/logo-transparent.svg" alt="Vyoma Lab" style="filter: brightness(0) invert(1); width: 42px;">
                 <span style="color: white; margin-left: 0.75rem; font-weight: 700; font-size: 1.25rem;">Vyoma Lab</span>
               </a>
-              <div class="alumni-details">
+              <p>
                 Leading research in advanced textiles, biomaterials, and energy-efficient cooling solutions. 
                 Pushing boundaries in multifunctional sensors and sustainable technology.
-              </div>
+              </p>
             </div>
 
             <div class="footer-col">
@@ -374,6 +374,7 @@
       const navMenu = document.querySelector(".nav-menu");
       const dropdownItems = Array.from(document.querySelectorAll(".has-dropdown"));
       const dropdownSubgroups = Array.from(document.querySelectorAll(".dropdown-subgroup"));
+      const backButtons = Array.from(document.querySelectorAll(".submenu-back"));
 
       const setTriggerState = (trigger, isOpen) => {
         if (!trigger) return;
@@ -384,6 +385,8 @@
         dropdownSubgroups.forEach((group) => {
           group.classList.remove("open");
           setTriggerState(group.querySelector(".dropdown-subtrigger"), false);
+          const parentDropdown = group.closest(".dropdown");
+          if (parentDropdown) parentDropdown.classList.remove("subgroup-active");
         });
       };
 
@@ -392,12 +395,14 @@
           item.classList.remove("open");
           setTriggerState(item.querySelector(".nav-trigger"), false);
         });
+        if (navMenu) navMenu.classList.remove("submenu-active");
         closeDropdownSubgroups();
       };
 
       const closeNavMenu = () => {
         if (!navMenu || !menuToggle) return;
         navMenu.classList.remove("open");
+        navMenu.classList.remove("submenu-active");
         document.body.classList.remove("menu-open");
         setTriggerState(menuToggle, false);
       };
@@ -435,6 +440,7 @@
 
           if (!isOpen) {
             item.classList.add("open");
+            if (navMenu) navMenu.classList.add("submenu-active");
             setTriggerState(trigger, true);
           }
         });
@@ -453,7 +459,29 @@
 
           if (!isOpen) {
             group.classList.add("open");
+            const parentDropdown = group.closest(".dropdown");
+            if (parentDropdown) parentDropdown.classList.add("subgroup-active");
             setTriggerState(trigger, true);
+          }
+        });
+      });
+
+      // Handle back buttons
+      backButtons.forEach(button => {
+        button.addEventListener("click", (event) => {
+          event.stopPropagation();
+          const parentSubgroup = button.closest(".dropdown-subgroup");
+          const parentDropdownItem = button.closest(".has-dropdown");
+
+          if (parentSubgroup) {
+            parentSubgroup.classList.remove("open");
+            setTriggerState(parentSubgroup.querySelector(".dropdown-subtrigger"), false);
+            const parentDropdown = parentSubgroup.closest(".dropdown");
+            if (parentDropdown) parentDropdown.classList.remove("subgroup-active");
+          } else if (parentDropdownItem) {
+            parentDropdownItem.classList.remove("open");
+            setTriggerState(parentDropdownItem.querySelector(".nav-trigger"), false);
+            if (navMenu) navMenu.classList.remove("submenu-active");
           }
         });
       });

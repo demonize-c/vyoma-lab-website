@@ -70,13 +70,13 @@ NAV_BLOCK_MASTER = '''<nav id="nav-menu" class="nav-menu" aria-label="Primary">
                   <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
                   <span>Back to Menu</span>
                 </button>
-                <a href="index.html#current-research">
+                <a href="funding-collaboration.html">
+                  <i class="fa-solid fa-handshake" aria-hidden="true"></i>
+                  <span>Funding & Collaboration</span>
+                </a>
+                <a href="research-domains.html">
                   <i class="fa-solid fa-microscope" aria-hidden="true"></i>
                   <span>Domain of Research</span>
-                </a>
-                <a href="#">
-                  <i class="fa-solid fa-link" aria-hidden="true"></i>
-                  <span>Link 1</span>
                 </a>
               </div>
             </div>
@@ -144,7 +144,7 @@ NAV_BLOCK_MASTER = '''<nav id="nav-menu" class="nav-menu" aria-label="Primary">
             </div>
 
             <div class="nav-item">
-              <a class="nav-link" href="index.html#honours">
+              <a class="nav-link" href="awards-honours.html">
                 <i class="fa-solid fa-award" aria-hidden="true"></i>
                 <span>Honours</span>
               </a>
@@ -172,7 +172,7 @@ FOOTER_BLOCK_MASTER = '''<footer class="site-footer">
                 <li><a href="harun-venkatesan.html">Dr. Harun Venkatesan</a></li>
                 <li><a href="index.html#current-research">Current Research</a></li>
                 <li><a href="photos.html">Gallery</a></li>
-                <li><a href="index.html#honours">Honours</a></li>
+                <li><a href="awards-honours.html">Honours</a></li>
               </ul>
             </div>
 
@@ -216,6 +216,7 @@ SCRIPT_BLOCK_MASTER = '''<script>
       const navMenu = document.querySelector(".nav-menu");
       const dropdownItems = Array.from(document.querySelectorAll(".has-dropdown"));
       const dropdownSubgroups = Array.from(document.querySelectorAll(".dropdown-subgroup"));
+      const backButtons = Array.from(document.querySelectorAll(".submenu-back"));
 
       const setTriggerState = (trigger, isOpen) => {
         if (!trigger) return;
@@ -226,6 +227,8 @@ SCRIPT_BLOCK_MASTER = '''<script>
         dropdownSubgroups.forEach((group) => {
           group.classList.remove("open");
           setTriggerState(group.querySelector(".dropdown-subtrigger"), false);
+          const parentDropdown = group.closest(".dropdown");
+          if (parentDropdown) parentDropdown.classList.remove("subgroup-active");
         });
       };
 
@@ -234,12 +237,14 @@ SCRIPT_BLOCK_MASTER = '''<script>
           item.classList.remove("open");
           setTriggerState(item.querySelector(".nav-trigger"), false);
         });
+        if (navMenu) navMenu.classList.remove("submenu-active");
         closeDropdownSubgroups();
       };
 
       const closeNavMenu = () => {
         if (!navMenu || !menuToggle) return;
         navMenu.classList.remove("open");
+        navMenu.classList.remove("submenu-active");
         document.body.classList.remove("menu-open");
         setTriggerState(menuToggle, false);
       };
@@ -277,6 +282,7 @@ SCRIPT_BLOCK_MASTER = '''<script>
 
           if (!isOpen) {
             item.classList.add("open");
+            if (navMenu) navMenu.classList.add("submenu-active");
             setTriggerState(trigger, true);
           }
         });
@@ -295,7 +301,29 @@ SCRIPT_BLOCK_MASTER = '''<script>
 
           if (!isOpen) {
             group.classList.add("open");
+            const parentDropdown = group.closest(".dropdown");
+            if (parentDropdown) parentDropdown.classList.add("subgroup-active");
             setTriggerState(trigger, true);
+          }
+        });
+      });
+
+      // Handle back buttons
+      backButtons.forEach(button => {
+        button.addEventListener("click", (event) => {
+          event.stopPropagation();
+          const parentSubgroup = button.closest(".dropdown-subgroup");
+          const parentDropdownItem = button.closest(".has-dropdown");
+
+          if (parentSubgroup) {
+            parentSubgroup.classList.remove("open");
+            setTriggerState(parentSubgroup.querySelector(".dropdown-subtrigger"), false);
+            const parentDropdown = parentSubgroup.closest(".dropdown");
+            if (parentDropdown) parentDropdown.classList.remove("subgroup-active");
+          } else if (parentDropdownItem) {
+            parentDropdownItem.classList.remove("open");
+            setTriggerState(parentDropdownItem.querySelector(".nav-trigger"), false);
+            if (navMenu) navMenu.classList.remove("submenu-active");
           }
         });
       });

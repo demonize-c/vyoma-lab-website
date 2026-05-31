@@ -4344,7 +4344,7 @@
         transform: translateY(0);
       }
 
-      /* Lightbox Styling */
+      /* ─── Lightbox ─── */
       .lightbox {
         position: fixed;
         inset: 0;
@@ -4354,24 +4354,36 @@
         -webkit-backdrop-filter: blur(10px);
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: flex-start; /* Changed from center to leave room at top */
+        align-items: stretch;
+        overflow: hidden; /* never allow viewport scroll */
         opacity: 0;
         visibility: hidden;
-        transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-        padding: 4rem 1rem 1.5rem; /* Slightly reduced padding to save space */
-        touch-action: none;
-        overflow-y: auto;
+        transition: opacity 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+                    visibility 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        touch-action: pan-y;
       }
 
-      .lightbox.active,
       .lightbox.open {
         opacity: 1;
         visibility: visible;
       }
 
+      /* Flex-fill inner: never scrolls, image shrinks to fit */
+      .lightbox-inner {
+        flex: 1;
+        min-height: 0;           /* key: lets flex child shrink below content size */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        padding: 0 5rem 1.5rem;
+        box-sizing: border-box;
+      }
+
+      /* Content wrapper: grows to fill inner, never overflows */
       .lightbox-content {
-        position: relative;
+        flex: 1;
+        min-height: 0;           /* key: allows shrinking */
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -4379,40 +4391,67 @@
         max-width: min(90vw, 1200px);
         transform: scale(0.95);
         transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-        margin: auto 0; /* Keeps it centered if space allows */
       }
 
-      .lightbox.active .lightbox-content,
       .lightbox.open .lightbox-content {
         transform: scale(1);
       }
 
-      .lightbox-content img {
+      /* ── Dual-image crossfade wrapper: flex-fills remaining space ── */
+      .lightbox-img-wrap {
+        position: relative;
+        flex: 1;
+        min-height: 0;           /* key: allows img to shrink to fit */
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .lightbox-img {
         display: block;
         max-width: 100%;
-        max-height: 58vh;
+        max-height: 100%;        /* fills flex parent height — no fixed vh needed */
         object-fit: contain;
         border-radius: 12px;
         box-shadow: 0 40px 100px rgba(0,0,0,0.5);
-        transition: opacity 0.3s ease, filter 0.3s ease;
+        /* Each img is absolute so they overlap for the crossfade */
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        will-change: opacity, transform;
+        transition: opacity 0.38s ease, transform 0.38s cubic-bezier(0.23,1,0.32,1);
       }
 
-      .lightbox-content img.loading {
-        opacity: 0.4;
-        filter: blur(10px);
+      /* Active image: in-flow so the wrapper gets its height */
+      .lightbox-img.active {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: translateX(0);
+        opacity: 1;
+        /* Constrain height to the flex parent */
+        max-height: 100%;
+        height: 100%;
+        width: auto;
       }
 
+      /* Caption: never grows, never scrolls */
       .lightbox-caption {
+        flex-shrink: 0;
         width: 100%;
         max-width: 700px;
-        padding: 1.25rem 1rem 0.5rem;
+        padding: 1rem 1rem 0.25rem;
         color: var(--white);
         text-align: center;
       }
 
       .lightbox-caption h3 {
         font-size: 1.45rem;
-        margin-bottom: 0.25rem;
+        margin-bottom: 0.35rem;
         font-weight: 700;
         letter-spacing: -0.02em;
       }
@@ -4423,37 +4462,51 @@
         line-height: 1.5;
       }
 
+      /* ── Lightbox header bar (holds close button) ── */
+      .lightbox-header {
+        flex-shrink: 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 0.85rem 1.25rem 0.5rem;
+      }
+
+      /* ── Close button: sits in header bar, right-aligned ── */
       .lightbox-close {
-        position: fixed; /* Changed to fixed to stay at top regardless of content */
-        top: 1.25rem;
-        right: 1.25rem;
-        font-size: 1.8rem;
+        position: relative;
+        top: auto;
+        right: auto;
+        font-size: 1.5rem;
         color: var(--white);
-        background: rgba(255, 255, 255, 0.15);
+        background: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
         border: 1px solid rgba(255, 255, 255, 0.2);
-        width: 3rem;
-        height: 3rem;
+        width: 2.6rem;
+        height: 2.6rem;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        transition: 0.3s;
-        z-index: 2010;
+        transition: background 0.25s, transform 0.25s;
+        z-index: 2100;
+        line-height: 1;
       }
 
-      .lightbox-close:hover { 
-        background: rgba(255, 255, 255, 0.25);
-        transform: scale(1.1);
+      .lightbox-close:hover {
+        background: rgba(255, 255, 255, 0.26);
+        transform: scale(1.1) rotate(90deg);
       }
 
-      .lightbox-prev, .lightbox-next {
-        position: absolute;
+      /* ── Nav arrows: fixed to viewport centre sides ── */
+      .lightbox-prev,
+      .lightbox-next {
+        position: fixed;
         top: 50%;
         transform: translateY(-50%);
-        background: rgba(255,255,255,0.08);
-        border: 1px solid rgba(255,255,255,0.1);
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.12);
         color: var(--white);
         width: 3.5rem;
         height: 5rem;
@@ -4464,13 +4517,57 @@
         border-radius: 16px;
         backdrop-filter: blur(10px);
         font-size: 1.2rem;
+        z-index: 2050;
+        transition: background 0.25s, transform 0.25s;
       }
 
-      .lightbox-prev { left: 2rem; }
-      .lightbox-next { right: 2rem; }
+      .lightbox-prev { left: 1.25rem; }
+      .lightbox-next { right: 1.25rem; }
 
-      .lightbox-prev:hover, .lightbox-next:hover {
-        background: rgba(255,255,255,0.2);
+      .lightbox-prev:hover,
+      .lightbox-next:hover {
+        background: rgba(255, 255, 255, 0.22);
+      }
+
+      /* ── Swipe hint toast (mobile only) ── */
+      .lightbox-swipe-hint {
+        position: fixed;
+        bottom: 2.5rem;
+        left: 50%;
+        transform: translateX(-50%) translateY(20px);
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        color: var(--white);
+        padding: 0.65rem 1.4rem;
+        border-radius: 999px;
+        font-size: 0.82rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.55rem;
+        opacity: 0;
+        pointer-events: none;
+        z-index: 2060;
+        transition: opacity 0.4s ease, transform 0.4s ease;
+        white-space: nowrap;
+      }
+
+      .lightbox-swipe-hint.visible {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      .lightbox-swipe-hint i {
+        font-size: 1rem;
+        animation: swipe-wiggle 1s ease-in-out infinite;
+      }
+
+      @keyframes swipe-wiggle {
+        0%, 100% { transform: translateX(0); }
+        25%       { transform: translateX(-5px); }
+        75%       { transform: translateX(5px); }
       }
 
       /* ─── Immersive Laboratory Tour (Light Theme) ─── */
@@ -4743,3 +4840,38 @@
           -webkit-line-clamp: 2;
         }
       }
+
+      /* ─── Lightbox: narrow phones (≤ 523 px) ─── */
+      @media (max-width: 523px) {
+        .lightbox-header {
+          padding: 0.6rem 0.75rem 0.3rem;
+        }
+
+        .lightbox-inner {
+          padding: 0 0.75rem 1rem; /* tight sides so image gets full width */
+        }
+
+        .lightbox-content {
+          max-width: 100%;
+        }
+
+        .lightbox-img {
+          max-height: 72vh;
+          border-radius: 8px;
+        }
+
+        .lightbox-caption {
+          padding: 0.75rem 0.5rem 0.25rem;
+          min-height: auto;
+        }
+
+        .lightbox-caption h3 {
+          font-size: 1.1rem;
+          margin-bottom: 0.2rem;
+        }
+
+        .lightbox-caption p {
+          font-size: 0.82rem;
+        }
+      }
+

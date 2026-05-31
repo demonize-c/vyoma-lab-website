@@ -51,7 +51,7 @@ NAV_BLOCK_MASTER = '''<nav id="nav-menu" class="nav-menu" aria-label="Primary">
                 </a>
                 <a href="alumni-phd.html">
                   <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
-                  <span>Ph.D. Graduates</span>
+                  <span>Ph.D. Students</span>
                 </a>
                 <a href="alumni-masters-ug.html">
                    <i class="fa-solid fa-user-group" aria-hidden="true"></i>
@@ -151,6 +151,58 @@ NAV_BLOCK_MASTER = '''<nav id="nav-menu" class="nav-menu" aria-label="Primary">
             </div>
           </nav>'''
 
+HEADER_BLOCK_MASTER = '''<header class="site-header">
+        <div class="header-brand-row-outer">
+          <div class="container header-brand-row-inner">
+            <a class="brand" href="index.html#home" aria-label="Vyoma Lab home">
+              <img class="brand-mark" src="images/logo-transparent.svg" alt="Vyoma Lab logo" />
+              <span>
+                Vyoma Lab
+                <small>Research &amp; Discovery</small>
+              </span>
+            </a>
+            
+            <div class="header-iitd-brand">
+              <img src="images/funding/iitd-logo.png" alt="IIT Delhi logo" class="iitd-logo" />
+              <span class="iitd-text">Indian Institute of Technology Delhi</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="container nav-wrap">
+          <!-- Grouped brands: Vyoma Lab | IIT Delhi — treated as one flex item -->
+          <div class="nav-brands-group">
+            <a class="brand brand-mobile" href="index.html#home" aria-label="Vyoma Lab home">
+              <img class="brand-mark" src="images/logo-transparent.svg" alt="Vyoma Lab logo" />
+              <span>
+                Vyoma Lab
+                <small>Research &amp; Discovery</small>
+              </span>
+            </a>
+
+            <span class="nav-brand-sep" aria-hidden="true">|</span>
+
+            <a class="iitd-nav" href="https://home.iitd.ac.in/" target="_blank" aria-label="IIT Delhi">
+              <img src="images/funding/iitd-logo.png" alt="IIT Delhi logo" class="iitd-nav-logo" />
+              <span class="iitd-nav-text">IIT Delhi</span>
+            </a>
+          </div>
+
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="nav-menu"
+            aria-label="Open menu"
+          >
+            <span class="menu-label">Menu</span>
+            <span class="menu-icon" aria-hidden="true">☰</span>
+          </button>
+
+          ''' + NAV_BLOCK_MASTER + '''
+        </div>
+      </header>'''
+
 FOOTER_BLOCK_MASTER = '''<footer class="site-footer">
         <div class="container">
           <div class="footer-grid">
@@ -159,10 +211,13 @@ FOOTER_BLOCK_MASTER = '''<footer class="site-footer">
                 <img class="brand-mark" src="images/logo-transparent.svg" alt="Vyoma Lab" style="filter: brightness(0) invert(1); width: 42px;">
                 <span style="color: white; margin-left: 0.75rem; font-weight: 700; font-size: 1.25rem;">Vyoma Lab</span>
               </a>
-              <p>
+              <p style="margin-bottom: 1.5rem;">
                 Leading research in advanced textiles, biomaterials, and energy-efficient cooling solutions. 
                 Pushing boundaries in multifunctional sensors and sustainable technology.
               </p>
+              <a href="https://home.iitd.ac.in/" target="_blank" aria-label="IIT Delhi">
+                <img src="images/logo-iit.png" alt="IIT Delhi Logo" style="filter: brightness(0) invert(1); max-width: 150px;">
+              </a>
             </div>
 
             <div class="footer-col">
@@ -191,7 +246,7 @@ FOOTER_BLOCK_MASTER = '''<footer class="site-footer">
               <h4>People</h4>
               <ul class="footer-links-list">
                 <li><a href="alumni-postdoc.html">Staff</a></li>
-                <li><a href="alumni-phd.html">Ph.D. Graduates</a></li>
+                <li><a href="alumni-phd.html">Ph.D. Students</a></li>
                 <li><a href="alumni-masters-ug.html">Masters & Undergraduates</a></li>
               </ul>
             </div>
@@ -342,6 +397,18 @@ SCRIPT_BLOCK_MASTER = '''<script>
         closeDropdownItems();
         closeNavMenu();
       });
+
+      // Header scroll collapse effect
+      const siteHeader = document.querySelector(".site-header");
+      if (siteHeader) {
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 40) {
+            siteHeader.classList.add("scrolled");
+          } else {
+            siteHeader.classList.remove("scrolled");
+          }
+        }, { passive: true });
+      }
     </script>'''
 
 def transform_archive_heading(content, filename):
@@ -402,7 +469,7 @@ for filename in files:
             end_idx = content.find('>', end_idx) + 1
             content = content[:start_idx] + HEAD_BLOCK_MASTER + content[end_idx:]
 
-    content = re.sub(r'<nav id="nav-menu".*?>.*?</nav>', NAV_BLOCK_MASTER, content, flags=re.DOTALL)
+    content = re.sub(r'<header\s+class=["\']site-header["\'].*?>.*?</header>', HEADER_BLOCK_MASTER, content, flags=re.DOTALL)
     content = re.sub(r'<footer\s+class=["\'](?:footer|site-footer)["\'].*?>.*?</footer>', FOOTER_BLOCK_MASTER, content, flags=re.DOTALL)
     
     if 'menuToggle' in content:

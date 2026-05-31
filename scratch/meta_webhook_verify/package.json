@@ -1,0 +1,12 @@
+{
+  "name": "meta-webhook-verify",
+  "version": "1.0.0",
+  "description": "Simple app to verify Meta webhooks",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

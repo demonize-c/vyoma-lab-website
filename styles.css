@@ -53,7 +53,15 @@
       section[id],
       article[id],
       div[id] {
-        scroll-margin-top: 6.5rem;
+        scroll-margin-top: 9rem;
+      }
+
+      @media (max-width: 1024px) {
+        section[id],
+        article[id],
+        div[id] {
+          scroll-margin-top: 6.5rem;
+        }
       }
 
       body {
@@ -200,6 +208,7 @@
 
       /* ─── Header / Nav ─── */
       .site-header {
+        margin: 0 !important;
         position: sticky;
         top: 0;
         z-index: 1000;
@@ -218,13 +227,198 @@
         background: rgba(255, 255, 255, 0.82);
       }
 
-      .nav-wrap {
+      /* ─── Brand row: smooth grid-row collapse on scroll ─── */
+      /* Outer wrapper is a single-cell grid — animating grid-template-rows
+         gives a pixel-perfect height tween with no layout jank             */
+      .header-brand-row-outer {
+        display: grid;
+        grid-template-rows: 1fr;          /* expanded */
+        transition: grid-template-rows 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow: hidden;
+      }
+
+      .site-header.scrolled .header-brand-row-outer {
+        grid-template-rows: 0fr;          /* collapsed */
+      }
+
+      /* Inner wrapper must have min-height: 0 for the grid trick to work */
+      .header-brand-row-inner {
+        min-height: 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 2rem;
-        min-height: 4.5rem;
-        padding: 0.5rem 0;
+        padding: 0.65rem 0;
+        opacity: 1;
+        transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .site-header.scrolled .header-brand-row-inner {
+        opacity: 0;
+      }
+
+      /* Mobile/tablet: collapse top brand row — both brands live in nav-wrap instead */
+      @media (max-width: 1024px) {
+        .header-brand-row-outer {
+          display: none;
+        }
+      }
+
+      /* nav-brands-group: hidden on desktop, shown on mobile via media query below */
+      .nav-brands-group {
+        display: none;
+      }
+
+      /* nav-brand-sep: hidden by default */
+      .nav-brand-sep {
+        display: none;
+      }
+
+      @media (max-width: 1024px) {
+        .nav-brands-group {
+          display: flex;
+        }
+        .nav-brand-sep {
+          display: inline;
+        }
+      }
+
+      /* ─── IITD compact block inside nav-wrap (mobile/tablet only) ─── */
+      .iitd-nav {
+        display: none;          /* hidden on desktop */
+        align-items: center;
+        gap: 0.5rem;
+        text-decoration: none;
+        color: var(--navy-900);
+        flex-shrink: 0;
+      }
+
+      @media (max-width: 1024px) {
+        .iitd-nav {
+          display: flex;
+        }
+      }
+
+      .iitd-nav-logo {
+        height: 34px;
+        width: auto;
+        display: block;
+        object-fit: contain;
+        flex-shrink: 0;
+      }
+
+      .iitd-nav-text {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: var(--navy-900);
+        white-space: nowrap;
+        letter-spacing: -0.01em;
+      }
+
+      /* On most mobile/tablet screens — show brand name text, smaller size */
+      @media (max-width: 640px) {
+        .iitd-nav-logo { height: 26px; }
+        .iitd-nav-text { font-size: 0.7rem; }
+        .brand-mobile .brand-mark { width: 1.9rem; height: 1.9rem; }
+        .brand-mobile > span { font-size: 0.88rem; }
+        .brand-mobile small { display: none; }
+      }
+
+      /* Very tiny phones only (≤ 340px) — logos only, no text */
+      @media (max-width: 340px) {
+        .iitd-nav-text { display: none; }
+        .brand-mobile > span { display: none; }
+        .brand-mobile .brand-mark { width: 2rem; height: 2rem; }
+        .iitd-nav-logo { height: 28px; }
+      }
+
+      .header-iitd-brand {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .iitd-logo {
+        height: 42px;
+        width: auto;
+        display: block;
+        object-fit: contain;
+      }
+
+      .iitd-text {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: var(--navy-900);
+        letter-spacing: -0.01em;
+      }
+
+      /* Tablet (641–1024px): show text, slightly smaller */
+      @media (max-width: 1024px) {
+        .iitd-text {
+          font-size: 0.78rem;
+        }
+        .iitd-logo {
+          height: 36px;
+        }
+      }
+
+      /* ─── Nav-bar row: always visible, slim on scroll ─── */
+      .nav-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.1rem;
+        min-height: 3.5rem;
+        padding: 0.4rem 0;
+        border-top: 1px solid rgba(15, 92, 133, 0.08);
+        transition: padding 0.35s ease, min-height 0.35s ease;
+      }
+
+      /* When scrolled, the top tier collapses. Remove the top border on nav-wrap so it doesn't look like an hr */
+      .site-header.scrolled .nav-wrap {
+        border-top-color: transparent;
+      }
+
+      /* On desktop the nav-wrap only shows the nav-menu centered */
+      @media (min-width: 1025px) {
+        .nav-wrap {
+          justify-content: center;
+        }
+
+        .menu-toggle {
+          display: none;
+        }
+      }
+
+      /* On mobile: 2 flex items — brands group on left, toggle on right */
+      @media (max-width: 1024px) {
+        .nav-wrap {
+          justify-content: space-between;
+          border-top: none;
+          padding: 0;
+          min-height: 3.8rem;
+        }
+
+        /* Group div: keeps both logos side-by-side */
+        .nav-brands-group {
+          display: flex;
+          align-items: center;
+          gap: 0.45rem;
+        }
+
+        /* Pipe separator */
+        .nav-brand-sep {
+          color: rgba(15, 92, 133, 0.28);
+          font-size: 1rem;
+          line-height: 1;
+          flex-shrink: 0;
+        }
+
+        /* Remove the old ::before pseudo-element divider if present */
+        .iitd-nav::before {
+          display: none;
+        }
       }
 
       .brand {
@@ -239,6 +433,22 @@
         color: var(--navy-900);
         transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
         white-space: nowrap;
+      }
+
+      /* Desktop: brand is in header-brand-row-outer (left side) */
+      /* Mobile/tablet: brand-mobile lives in nav-wrap, always visible */
+      .brand-mobile {
+        display: none;
+      }
+
+      @media (max-width: 1024px) {
+        .brand-mobile {
+          display: inline-flex;
+          /* Always visible — no scroll trigger needed */
+          opacity: 1;
+          transform: translateX(0);
+          pointer-events: auto;
+        }
       }
 
       .brand:hover {
@@ -493,119 +703,240 @@
         color: var(--sky-700);
       }
 
+      main {
+        margin: 0;
+        padding: 0;
+      }
+
       /* ─── Hero ─── */
       .hero {
         padding: 0 0 4.5rem;
+        margin-top: 0 !important;
       }
 
       .hero-bleed {
         width: 100vw;
         margin-left: calc(50% - 50vw);
         margin-right: calc(50% - 50vw);
+        margin-top: 0 !important;
       }
 
-      .hero-frame {
+      /* ─── Hero Carousel ─── */
+      .hero-carousel {
         position: relative;
-        min-height: 44rem;
-        overflow: visible;
-        background: url("images/home-page-banner.jpg") center 42% / cover no-repeat;
-        background: url("images/home-page-banner.webp") center 42% / cover no-repeat;
+        overflow: hidden;
+        height: clamp(16rem, 38vw, 30rem);
+        background: var(--navy-900);
+        margin-top: 0 !important;
       }
 
-      @media (max-width: 640px) {
-        .hero-frame {
-          background-image: url("images/md/home-page-banner.webp");
-          min-height: 32rem;
-        }
-      }
-
-      @media (min-width: 641px) and (max-width: 1024px) {
-        .hero-frame {
-          background-image: url("images/lg/home-page-banner.webp");
-        }
-      }
-
-      .hero-frame::before,
-      .hero-frame::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-      }
-
-      .hero-frame::before {
-        background:
-          linear-gradient(180deg, rgba(248, 252, 255, 0.12), rgba(232, 245, 252, 0.18)),
-          linear-gradient(135deg, rgba(223, 245, 255, 0.12), rgba(122, 211, 247, 0.08));
-      }
-
-      .hero-frame::after {
-        background:
-          radial-gradient(circle at top left, rgba(255, 255, 255, 0.14), transparent 30%),
-          radial-gradient(circle at bottom right, rgba(8, 38, 58, 0.16), transparent 34%),
-          linear-gradient(180deg, rgba(7, 32, 47, 0.04), rgba(7, 32, 47, 0.18));
-      }
-
-      .hero-frame > * {
-        position: relative;
-        z-index: 1;
-      }
-
-      .hero-panel {
-        position: absolute;
-        left: 50%;
-        top: clamp(4rem, 10vw, 6.5rem);
-        transform: translateX(-50%) translateZ(0);
-        width: min(44rem, calc(100vw - 2rem));
+      /* Slide track — flex row, no wrap */
+      .hc-track {
         display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        padding: clamp(2rem, 4vw, 3.5rem);
-        border-radius: calc(var(--radius-lg) + 4px);
-        background:
-          linear-gradient(155deg, rgba(7, 32, 47, 0.25), rgba(7, 32, 47, 0.45)),
-          linear-gradient(130deg, rgba(23, 152, 205, 0.45), rgba(7, 32, 47, 0.75));
-        color: var(--white);
-        box-shadow: 0 32px 80px rgba(7, 32, 47, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.12);
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-        border: 1px solid rgba(255, 255, 255, 0.15);
+        height: 100%;
+        transition: transform 0.75s cubic-bezier(0.77, 0, 0.18, 1);
         will-change: transform;
       }
 
-      .hero-panel::after {
+      /* Each slide is full-width */
+      .hc-slide {
+        flex: 0 0 100%;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hc-slide picture,
+      .hc-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+        display: block;
+        transition: transform 7s ease;
+        transform: scale(1.06);
+      }
+
+      /* Active slide: zoom back to natural size */
+      .hc-slide.hc-active img {
+        transform: scale(1);
+      }
+
+      /* Dark scrim overlay for text legibility */
+      .hc-slide::after {
         content: "";
         position: absolute;
-        inset: auto 2rem 2rem auto;
-        width: 8rem;
-        height: 8rem;
-        border-radius: 32px;
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.03));
+        inset: 0;
+        background: rgba(7, 32, 47, 0.45);
+        pointer-events: none;
+      }
+
+      /* Text overlay — centered */
+      .hc-overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0 clamp(1.25rem, 6vw, 6rem);
+        pointer-events: none;
+      }
+
+      .hc-heading {
+        margin: 0 0 0.75rem;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(2rem, 5.5vw, 3.8rem);
+        font-weight: 700;
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+        color: #fff;
+        text-shadow: 0 2px 20px rgba(7, 32, 47, 0.5);
+      }
+
+      .hc-heading span {
+        color: var(--sky-300);
+      }
+
+      .hc-sub {
+        margin: 0;
+        font-family: "Manrope", sans-serif;
+        font-size: clamp(0.88rem, 1.8vw, 1.1rem);
+        font-weight: 500;
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.88);
+        text-shadow: 0 1px 8px rgba(7, 32, 47, 0.55);
+      }
+
+      /* Prev / Next buttons */
+      .hc-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 20;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        border: 1.5px solid rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.12);
+        color: #fff;
+        font-size: 1rem;
+        cursor: pointer;
         backdrop-filter: blur(6px);
         -webkit-backdrop-filter: blur(6px);
+        transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
       }
 
-      .hero-panel > * {
-        position: relative;
-        z-index: 1;
+      .hc-btn:hover {
+        background: rgba(255, 255, 255, 0.25);
+        border-color: rgba(255, 255, 255, 0.55);
+        transform: translateY(-50%) scale(1.08);
       }
 
-      .hero-panel h1 {
-        margin: 0;
-        max-width: 14ch;
-        font-family: "Space Grotesk", sans-serif;
-        font-size: clamp(2.7rem, 7.5vw, 5rem);
-        font-weight: 700;
-        line-height: 1.0;
-        letter-spacing: -0.04em;
-      }
+      .hc-prev { left: clamp(0.75rem, 2vw, 1.75rem); }
+      .hc-next { right: clamp(0.75rem, 2vw, 1.75rem); }
 
-      .hero-actions {
+      /* Dot indicators */
+      .hc-dots {
+        position: absolute;
+        bottom: 1.25rem;
+        right: clamp(1rem, 3vw, 2rem);
+        z-index: 20;
         display: flex;
-        flex-wrap: wrap;
-        gap: 0.85rem;
-        margin-top: 1.5rem;
+        gap: 0.45rem;
+        align-items: center;
+      }
+
+      .hc-dot {
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 999px;
+        border: none;
+        background: rgba(255, 255, 255, 0.45);
+        cursor: pointer;
+        padding: 0;
+        transition: width 0.3s ease, background 0.3s ease;
+      }
+
+      .hc-dot.active {
+        width: 1.5rem;
+        background: #fff;
+      }
+
+      /* ── Mobile optimisations (≤ 640px) ── */
+      @media (max-width: 640px) {
+        /* Taller on mobile so the image reads well */
+        .hero-carousel {
+          height: clamp(14rem, 55vw, 22rem);
+        }
+
+        /* Slightly lighter scrim — images are already dark enough at this size */
+        .hc-slide::after {
+          background: rgba(7, 32, 47, 0.38);
+        }
+
+        /* Tighter overlay padding, but clear the buttons */
+        .hc-overlay {
+          padding: 0 3.5rem;
+        }
+        /* Compact heading */
+        .hc-heading {
+          font-size: clamp(1.25rem, 6.5vw, 1.75rem);
+          margin-bottom: 0.45rem;
+          letter-spacing: -0.02em;
+        }
+
+        /* Sub-text: smaller, hide the <br> */
+        .hc-sub {
+          font-size: 0.8rem;
+          line-height: 1.5;
+          max-width: 90%;
+        }
+
+        /* Smaller prev/next buttons */
+        .hc-btn {
+          width: 2.1rem;
+          height: 2.1rem;
+          font-size: 0.75rem;
+        }
+
+        /* Dots centred at bottom on mobile */
+        .hc-dots {
+          left: 50%;
+          right: auto;
+          transform: translateX(-50%);
+          bottom: 0.75rem;
+        }
+
+        .hc-br { display: none; }
+      }
+
+      /* ── Very small mobile (≤ 523px) ── */
+      @media (max-width: 523px) {
+        .hero-carousel {
+          height: clamp(20rem, 85vw, 26rem);
+        }
+      }
+
+      /* ── Tablet tweaks (641px–1024px) ── */
+      @media (min-width: 641px) and (max-width: 1024px) {
+        .hero-carousel {
+          height: clamp(18rem, 42vw, 28rem);
+        }
+
+        .hc-heading {
+          font-size: clamp(1.6rem, 4vw, 2.4rem);
+        }
+
+        .hc-sub {
+          font-size: clamp(0.85rem, 1.6vw, 1rem);
+        }
       }
 
       .button {
@@ -3900,15 +4231,18 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: center center;
         display: block;
         opacity: 0;
-        filter: blur(10px);
-        transition: opacity 0.6s ease, filter 0.6s ease, transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        filter: blur(6px);
+        transition: opacity 0.5s ease, filter 0.5s ease, transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        transform: scale(1.04);
       }
 
       .gallery-card img.loaded {
         opacity: 1;
         filter: blur(0);
+        transform: scale(1);
       }
 
       /* Glassmorphism Overlays */
@@ -4030,7 +4364,8 @@
         overflow-y: auto;
       }
 
-      .lightbox.active {
+      .lightbox.active,
+      .lightbox.open {
         opacity: 1;
         visibility: visible;
       }
@@ -4047,7 +4382,8 @@
         margin: auto 0; /* Keeps it centered if space allows */
       }
 
-      .lightbox.active .lightbox-content {
+      .lightbox.active .lightbox-content,
+      .lightbox.open .lightbox-content {
         transform: scale(1);
       }
 

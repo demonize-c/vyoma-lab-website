@@ -8,7 +8,7 @@
       name="description"
       content="Advanced research facilities and equipment available at Vyoma Lab."
     />
-                <link
+                                                                                <link
       rel="apple-touch-icon"
       sizes="180x180"
       href="./images/favicon_io/apple-touch-icon.png?v=2"
@@ -33,14 +33,41 @@
   <body>
     <div class="site-shell">
       <header class="site-header">
+        <div class="header-brand-row-outer">
+          <div class="container header-brand-row-inner">
+            <a class="brand" href="index.html#home" aria-label="Vyoma Lab home">
+              <img class="brand-mark" src="images/logo-transparent.svg" alt="Vyoma Lab logo" />
+              <span>
+                Vyoma Lab
+                <small>Research &amp; Discovery</small>
+              </span>
+            </a>
+            
+            <div class="header-iitd-brand">
+              <img src="images/funding/iitd-logo.png" alt="IIT Delhi logo" class="iitd-logo" />
+              <span class="iitd-text">Indian Institute of Technology Delhi</span>
+            </div>
+          </div>
+        </div>
+
         <div class="container nav-wrap">
-          <a class="brand" href="index.html#home" aria-label="Vyoma Lab home">
-            <img class="brand-mark" src="images/logo-transparent.svg" alt="Vyoma Lab logo" />
-            <span>
-              Vyoma Lab
-              <small>Research & Discovery</small>
-            </span>
-          </a>
+          <!-- Grouped brands: Vyoma Lab | IIT Delhi — treated as one flex item -->
+          <div class="nav-brands-group">
+            <a class="brand brand-mobile" href="index.html#home" aria-label="Vyoma Lab home">
+              <img class="brand-mark" src="images/logo-transparent.svg" alt="Vyoma Lab logo" />
+              <span>
+                Vyoma Lab
+                <small>Research &amp; Discovery</small>
+              </span>
+            </a>
+
+            <span class="nav-brand-sep" aria-hidden="true">|</span>
+
+            <a class="iitd-nav" href="https://home.iitd.ac.in/" target="_blank" aria-label="IIT Delhi">
+              <img src="images/funding/iitd-logo.png" alt="IIT Delhi logo" class="iitd-nav-logo" />
+              <span class="iitd-nav-text">IIT Delhi</span>
+            </a>
+          </div>
 
           <button
             class="menu-toggle"
@@ -81,7 +108,7 @@
                 </a>
                 <a href="alumni-phd.html">
                   <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
-                  <span>Ph.D. Graduates</span>
+                  <span>Ph.D. Students</span>
                 </a>
                 <a href="alumni-masters-ug.html">
                    <i class="fa-solid fa-user-group" aria-hidden="true"></i>
@@ -261,8 +288,8 @@
           <section id="fesem" class="tour-section">
             <div class="tour-visual">
               <img 
-                src="images/facilities/md/fesem-hitachi-flexsem.webp"
-                srcset="images/facilities/sm/fesem-hitachi-flexsem.webp 400w, images/facilities/md/fesem-hitachi-flexsem.webp 800w, images/facilities/lg/fesem-hitachi-flexsem.webp 1600w"
+                src="images/facilities/md/FLEX_SEM.webp"
+                srcset="images/facilities/sm/FLEX_SEM.webp 400w, images/facilities/md/FLEX_SEM.webp 800w, images/facilities/lg/FLEX_SEM.webp 1600w"
                 sizes="(max-width: 1024px) 100vw, 60vw"
                 loading="lazy" 
                 onload="this.classList.add('loaded')"
@@ -482,44 +509,40 @@
             </div>
           </section>
 
-          <!-- Group 4: Specialized Testing & Processing -->
-          <section id="thermal-imaging" class="tour-section">
+          <section id="ftir-spectrometer" class="tour-section">
             <div class="tour-visual">
               <img 
-                src="images/facilities/md/thermal-imaging.webp"
-                srcset="images/facilities/sm/thermal-imaging.webp 400w, images/facilities/md/thermal-imaging.webp 800w, images/facilities/lg/thermal-imaging.webp 1600w"
+                src="images/facilities/md/thermo-ftir.webp"
+                srcset="images/facilities/sm/thermo-ftir.webp 400w, images/facilities/md/thermo-ftir.webp 800w, images/facilities/lg/thermo-ftir.webp 1600w"
                 sizes="(max-width: 1024px) 100vw, 60vw"
                 loading="lazy" 
                 onload="this.classList.add('loaded')"
-                alt="Fluke TiX580 Thermal Imager" 
+                alt="Thermo Scientific FTIR with Integrating Sphere" 
               />
             </div>
             <div class="tour-content">
-              <span class="tour-category">04 / Performance</span>
-              <h2>Fluke TiX580 Thermal Imager</h2>
-              <p class="tour-desc">High-performance infrared camera featuring MultiSharp™ focus for real-time monitoring of heat distribution and thermal insulation efficiency.</p>
+              <span class="tour-category">03 / Analytical</span>
+              <h2>Thermo Scientific FTIR with Integrating Sphere</h2>
+              <p class="tour-desc">Advanced Fourier Transform Infrared (FTIR) spectrometer equipped with an integrating sphere accessory for highly accurate diffuse reflectance and transmittance measurements of solid, liquid, and powder samples.</p>
               
               <div class="tour-data">
                 <div class="data-row">
-                  <span class="data-label">Resolution</span>
-                  <span class="data-value">Up to 1280 × 960 (SuperRes)</span>
+                  <span class="data-label">Technology</span>
+                  <span class="data-value">FTIR Spectroscopy</span>
                 </div>
                 <div class="data-row">
-                  <span class="data-label">Sensitivity</span>
-                  <span class="data-value">≤0.05 °C</span>
+                  <span class="data-label">Accessory</span>
+                  <span class="data-value">Integrating Sphere (Mid-IR/NIR)</span>
                 </div>
                 <div class="data-row">
-                  <span class="data-label">Range</span>
-                  <span class="data-value">−20 °C to 1000 °C</span>
-                </div>
-                <div class="data-row">
-                  <span class="data-label">Accuracy</span>
-                  <span class="data-value">±2 °C or ±2%</span>
+                  <span class="data-label">Capabilities</span>
+                  <span class="data-value">Diffuse Reflectance, Transmittance</span>
                 </div>
               </div>
             </div>
           </section>
 
+          <!-- Group 4: Specialized Testing & Processing -->
           <section id="ball-milling" class="tour-section alternate">
             <div class="tour-visual">
               <img 
@@ -549,35 +572,6 @@
             </div>
           </section>
 
-          <section id="homogenizer" class="tour-section">
-            <div class="tour-visual">
-              <img 
-                src="images/facilities/sm/high-shear-homogenizer.webp"
-                srcset="images/facilities/sm/high-shear-homogenizer.webp 400w, images/facilities/md/high-shear-homogenizer.webp 800w, images/facilities/lg/high-shear-homogenizer.webp 1600w"
-                sizes="(max-width: 1024px) 100vw, 60vw"
-                loading="lazy" 
-                onload="this.classList.add('loaded')"
-                alt="High Shear Homogenizer" 
-              />
-            </div>
-            <div class="tour-content">
-              <span class="tour-category">04 / Synthesis</span>
-              <h2>High Shear Homogenizer</h2>
-              <p class="tour-desc">High-energy mechanical shear for the creation of stable sub-micron emulsions and uniform dispersion of nanomaterials.</p>
-              
-              <div class="tour-data">
-                <div class="data-row">
-                  <span class="data-label">Technology</span>
-                  <span class="data-value">High Shear Dispersion</span>
-                </div>
-                <div class="data-row">
-                  <span class="data-label">Output</span>
-                  <span class="data-value">Sub-micron stable emulsions</span>
-                </div>
-              </div>
-            </div>
-          </section>
-
         </div>
       </main>
 
@@ -589,10 +583,13 @@
                 <img class="brand-mark" src="images/logo-transparent.svg" alt="Vyoma Lab" style="filter: brightness(0) invert(1); width: 42px;">
                 <span style="color: white; margin-left: 0.75rem; font-weight: 700; font-size: 1.25rem;">Vyoma Lab</span>
               </a>
-              <p>
+              <p style="margin-bottom: 1.5rem;">
                 Leading research in advanced textiles, biomaterials, and energy-efficient cooling solutions. 
                 Pushing boundaries in multifunctional sensors and sustainable technology.
               </p>
+              <a href="https://home.iitd.ac.in/" target="_blank" aria-label="IIT Delhi">
+                <img src="images/logo-iit.png" alt="IIT Delhi Logo" style="filter: brightness(0) invert(1); max-width: 150px;">
+              </a>
             </div>
 
             <div class="footer-col">
@@ -621,7 +618,7 @@
               <h4>People</h4>
               <ul class="footer-links-list">
                 <li><a href="alumni-postdoc.html">Staff</a></li>
-                <li><a href="alumni-phd.html">Ph.D. Graduates</a></li>
+                <li><a href="alumni-phd.html">Ph.D. Students</a></li>
                 <li><a href="alumni-masters-ug.html">Masters & Undergraduates</a></li>
               </ul>
             </div>
@@ -772,6 +769,18 @@
         closeDropdownItems();
         closeNavMenu();
       });
+
+      // Header scroll collapse effect
+      const siteHeader = document.querySelector(".site-header");
+      if (siteHeader) {
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 40) {
+            siteHeader.classList.add("scrolled");
+          } else {
+            siteHeader.classList.remove("scrolled");
+          }
+        }, { passive: true });
+      }
     </script>
   </body>
 </html>

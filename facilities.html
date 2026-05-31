@@ -8,7 +8,7 @@
       name="description"
       content="Advanced research facilities and equipment available at Vyoma Lab."
     />
-        <link
+                                                                                <link
       rel="apple-touch-icon"
       sizes="180x180"
       href="./images/favicon_io/apple-touch-icon.png?v=2"
@@ -33,14 +33,41 @@
   <body>
     <div class="site-shell">
       <header class="site-header">
+        <div class="header-brand-row-outer">
+          <div class="container header-brand-row-inner">
+            <a class="brand" href="index.html#home" aria-label="Vyoma Lab home">
+              <img class="brand-mark" src="images/logo-transparent.svg" alt="Vyoma Lab logo" />
+              <span>
+                Vyoma Lab
+                <small>Research &amp; Discovery</small>
+              </span>
+            </a>
+            
+            <div class="header-iitd-brand">
+              <img src="images/funding/iitd-logo.png" alt="IIT Delhi logo" class="iitd-logo" />
+              <span class="iitd-text">Indian Institute of Technology Delhi</span>
+            </div>
+          </div>
+        </div>
+
         <div class="container nav-wrap">
-          <a class="brand" href="index.html#home" aria-label="Vyoma Lab home">
-            <img class="brand-mark" src="images/logo-transparent.svg" alt="Vyoma Lab logo" />
-            <span>
-              Vyoma Lab
-              <small>Research & Discovery</small>
-            </span>
-          </a>
+          <!-- Grouped brands: Vyoma Lab | IIT Delhi — treated as one flex item -->
+          <div class="nav-brands-group">
+            <a class="brand brand-mobile" href="index.html#home" aria-label="Vyoma Lab home">
+              <img class="brand-mark" src="images/logo-transparent.svg" alt="Vyoma Lab logo" />
+              <span>
+                Vyoma Lab
+                <small>Research &amp; Discovery</small>
+              </span>
+            </a>
+
+            <span class="nav-brand-sep" aria-hidden="true">|</span>
+
+            <a class="iitd-nav" href="https://home.iitd.ac.in/" target="_blank" aria-label="IIT Delhi">
+              <img src="images/funding/iitd-logo.png" alt="IIT Delhi logo" class="iitd-nav-logo" />
+              <span class="iitd-nav-text">IIT Delhi</span>
+            </a>
+          </div>
 
           <button
             class="menu-toggle"
@@ -76,33 +103,39 @@
                   <span>Harun Venkatesan</span>
                 </a>
                 <a href="alumni-postdoc.html">
-                  <i class="fa-solid fa-user-graduate" aria-hidden="true"></i>
-                  <span>Postdoctoral Scholars</span>
-                </a>
-                <a href="alumni-phd.html">
-                  <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
-                  <span>Ph.D. Graduates</span>
-                </a>
-                <a href="alumni-masters-ug.html">
-                  <i class="fa-solid fa-user-group" aria-hidden="true"></i>
-                  <span>Masters & Undergraduates</span>
-                </a>
-                <a href="staff.html">
                   <i class="fa-solid fa-user-gear" aria-hidden="true"></i>
                   <span>Staff</span>
                 </a>
-                <a href="photos.html">
-                  <i class="fa-solid fa-camera-retro" aria-hidden="true"></i>
-                  <span>Photos</span>
+                <a href="alumni-phd.html">
+                  <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                  <span>Ph.D. Students</span>
+                </a>
+                <a href="alumni-masters-ug.html">
+                   <i class="fa-solid fa-user-group" aria-hidden="true"></i>
+                   <span>Masters & Undergraduates</span>
                 </a>
               </div>
             </div>
 
-            <div class="nav-item">
-              <a class="nav-link" href="index.html#current-research">
+            <div class="nav-item has-dropdown">
+              <button class="nav-trigger" type="button" aria-expanded="false">
                 <i class="fa-solid fa-flask-vial" aria-hidden="true"></i>
                 <span>Current Research</span>
-              </a>
+              </button>
+              <div class="dropdown">
+                <button class="submenu-back" type="button" aria-label="Go back to main menu">
+                  <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                  <span>Back to Menu</span>
+                </button>
+                <a href="funding-collaboration.html">
+                  <i class="fa-solid fa-handshake" aria-hidden="true"></i>
+                  <span>Funding & Collaboration</span>
+                </a>
+                <a href="research-domains.html">
+                  <i class="fa-solid fa-microscope" aria-hidden="true"></i>
+                  <span>Domain of Research</span>
+                </a>
+              </div>
             </div>
 
             <div class="nav-item">
@@ -161,14 +194,14 @@
             </div>
 
             <div class="nav-item">
-              <a class="nav-link" href="index.html#news">
-                <i class="fa-solid fa-newspaper" aria-hidden="true"></i>
-                <span>News</span>
+              <a class="nav-link" href="photos.html">
+                <i class="fa-solid fa-camera-retro" aria-hidden="true"></i>
+                <span>Gallery</span>
               </a>
             </div>
 
             <div class="nav-item">
-              <a class="nav-link" href="index.html#honours">
+              <a class="nav-link" href="awards-honours.html">
                 <i class="fa-solid fa-award" aria-hidden="true"></i>
                 <span>Honours</span>
               </a>
@@ -203,7 +236,7 @@
             <div class="tour-content">
               <span class="tour-category">01 / Synthesis</span>
               <h2>Supercritical CO₂ Dryer</h2>
-              <p class="tour-desc">A specialized 3L high-pressure system (up to 675 bar) critical for aerogel synthesis. It extracts solvents at supercritical states to preserve the monolith structure with 99%+ porosity.</p>
+              <p class="tour-desc">Critical for aerogel synthesis, this system extracts solvents to preserve the monolith structure with high porosity and minimal shrinkage.</p>
               
               <div class="tour-data">
                 <div class="data-row">
@@ -222,21 +255,21 @@
             </div>
           </section>
 
-          <section id="freeze-dryer" class="tour-section alternate">
+          <section id="vacuum-lyophilizer" class="tour-section alternate">
             <div class="tour-visual">
               <img 
-                src="images/facilities/sm/freeze-dryer.webp"
-                srcset="images/facilities/sm/freeze-dryer.webp 400w, images/facilities/md/freeze-dryer.webp 800w, images/facilities/lg/freeze-dryer.webp 1600w"
+                src="images/facilities/sm/vacuum-lyophilizer.webp"
+                srcset="images/facilities/sm/vacuum-lyophilizer.webp 400w, images/facilities/md/vacuum-lyophilizer.webp 500w, images/facilities/lg/vacuum-lyophilizer.webp 500w"
                 sizes="(max-width: 1024px) 100vw, 60vw"
                 loading="lazy" 
                 onload="this.classList.add('loaded')"
-                alt="Freeze Dryer" 
+                alt="Vacuum Lyophilizer" 
               />
             </div>
             <div class="tour-content">
               <span class="tour-category">01 / Synthesis</span>
               <h2>Vacuum Lyophilizer</h2>
-              <p class="tour-desc">High-precision freeze-drying system for structural preservation. Used in creating hierarchical pore structures via temperature-controlled ice sublimation.</p>
+              <p class="tour-desc">High-precision freeze-drying system for structural preservation. Used in creating hierarchical pore structures through controlled ice sublimation.</p>
               
               <div class="tour-data">
                 <div class="data-row">
@@ -255,27 +288,43 @@
           <section id="fesem" class="tour-section">
             <div class="tour-visual">
               <img 
-                src="images/facilities/sm/fesem-tescan.webp"
-                srcset="images/facilities/sm/fesem-tescan.webp 400w, images/facilities/md/fesem-tescan.webp 800w, images/facilities/lg/fesem-tescan.webp 1600w"
+                src="images/facilities/md/FLEX_SEM.webp"
+                srcset="images/facilities/sm/FLEX_SEM.webp 400w, images/facilities/md/FLEX_SEM.webp 800w, images/facilities/lg/FLEX_SEM.webp 1600w"
                 sizes="(max-width: 1024px) 100vw, 60vw"
                 loading="lazy" 
                 onload="this.classList.add('loaded')"
-                alt="FESEM TESCAN MAGNA" 
+                alt="Hitachi FlexSEM 1000 + EDS" 
               />
             </div>
             <div class="tour-content">
               <span class="tour-category">02 / Imaging</span>
-              <h2>FESEM TESCAN MAGNA</h2>
-              <p class="tour-desc">Ultra-high resolution Field Emission Scanning Electron Microscope. Equipped with a Triglav column for exceptional nanoscale resolution and material contrast.</p>
+              <h2>Hitachi FlexSEM 1000 + EDS</h2>
+              <p class="tour-desc">A compact scanning electron microscope utilizing a tungsten filament electron gun for morphology and elemental analysis. Features a specialized detector for rapid characterization of diverse material surfaces.</p>
               
               <div class="tour-data">
                 <div class="data-row">
                   <span class="data-label">Resolution</span>
-                  <span class="data-value">Sub-nanometer at low kV</span>
+                  <span class="data-value">SE: 4.0 nm, BSE: 5.0 nm @ 20 kV</span>
                 </div>
                 <div class="data-row">
-                  <span class="data-label">Focus</span>
-                  <span class="data-value">In-Beam Detectors (SE/BSE)</span>
+                  <span class="data-label">Voltage</span>
+                  <span class="data-value">0.3 kV to 20 kV</span>
+                </div>
+                <div class="data-row">
+                  <span class="data-label">Magnification</span>
+                  <span class="data-value">6× to 50,000×</span>
+                </div>
+                <div class="data-row">
+                  <span class="data-label">EDS</span>
+                  <span class="data-value">Xplore SDD (30 mm², <129 eV)</span>
+                </div>
+                <div class="data-row">
+                  <span class="data-label">Sample Size</span>
+                  <span class="data-value">Max 15 × 15 × 15 mm</span>
+                </div>
+                <div class="data-row">
+                  <span class="data-label">Coater</span>
+                  <span class="data-value">MC1000 Sputter Coater</span>
                 </div>
               </div>
             </div>
@@ -284,27 +333,35 @@
           <section id="thermal-conductivity" class="tour-section alternate">
             <div class="tour-visual">
               <img 
-                src="images/facilities/sm/thermal-conductivity.webp"
+                src="images/facilities/md/thermal-conductivity.webp"
                 srcset="images/facilities/sm/thermal-conductivity.webp 400w, images/facilities/md/thermal-conductivity.webp 800w, images/facilities/lg/thermal-conductivity.webp 1600w"
                 sizes="(max-width: 1024px) 100vw, 60vw"
                 loading="lazy" 
                 onload="this.classList.add('loaded')"
-                alt="Thermal Conductivity Meter" 
+                alt="C-Therm Trident Thermal Conductivity Meter" 
               />
             </div>
             <div class="tour-content">
               <span class="tour-category">02 / Characterization</span>
-              <h2>Thermal Conductivity</h2>
-              <p class="tour-desc">Steady-state heat flux analysis system. Used to benchmark the extreme thermal insulation performance of fiber-reinforced aerogel composites.</p>
+              <h2>C-Therm Trident Thermal Conductivity Meter</h2>
+              <p class="tour-desc">High-precision system for accurate thermal conductivity measurement across a wide range of materials with minimal sample preparation.</p>
               
               <div class="tour-data">
                 <div class="data-row">
-                  <span class="data-label">Method</span>
-                  <span class="data-value">Standard Heat Flux Method</span>
+                  <span class="data-label">Sensor</span>
+                  <span class="data-value">MTPS (Modified Transient Plane Source)</span>
                 </div>
                 <div class="data-row">
-                  <span class="data-label">Precision</span>
-                  <span class="data-value">Low Thermal Conductivity Range</span>
+                  <span class="data-label">Range</span>
+                  <span class="data-value">0.01 – 500 W/m·K</span>
+                </div>
+                <div class="data-row">
+                  <span class="data-label">Setup</span>
+                  <span class="data-value">Single-sided, rapid analysis</span>
+                </div>
+                <div class="data-row">
+                  <span class="data-label">Capability</span>
+                  <span class="data-value">Solids, Liquids, and Powders</span>
                 </div>
               </div>
             </div>
@@ -313,7 +370,7 @@
           <section id="gas-pycnometer" class="tour-section">
             <div class="tour-visual">
               <img 
-                src="images/facilities/sm/gas-pycnometer.webp"
+                src="images/facilities/md/gas-pycnometer.webp"
                 srcset="images/facilities/sm/gas-pycnometer.webp 400w, images/facilities/md/gas-pycnometer.webp 800w, images/facilities/lg/gas-pycnometer.webp 1600w"
                 sizes="(max-width: 1024px) 100vw, 60vw"
                 loading="lazy" 
@@ -323,8 +380,8 @@
             </div>
             <div class="tour-content">
               <span class="tour-category">02 / Characterization</span>
-              <h2>Gas Pycnometer</h2>
-              <p class="tour-desc">High-precision skeletal volume determination using Helium displacement. Critical for calculating true density and porosity in hybrid porous materials.</p>
+              <h2>AccuPyc 1350 Gas Pycnometer</h2>
+              <p class="tour-desc">High-precision instrument for true (skeletal) density measurement using gas displacement. Features automatic pressure control and rapid analysis with minimal sample preparation, making it suitable for powders, solids, and porous materials.</p>
               
               <div class="tour-data">
                 <div class="data-row">
@@ -332,15 +389,57 @@
                   <span class="data-value">Helium / Nitrogen Gas</span>
                 </div>
                 <div class="data-row">
-                  <span class="data-label">Analysis</span>
-                  <span class="data-value">Skeletal Density Profiling</span>
+                  <span class="data-label">Accuracy</span>
+                  <span class="data-value">±0.02%</span>
+                </div>
+                <div class="data-row">
+                  <span class="data-label">Range</span>
+                  <span class="data-value">0.01 to >100 g/cm³</span>
+                </div>
+                <div class="data-row">
+                  <span class="data-label">Chambers</span>
+                  <span class="data-value">1, 10, and 100 cm³</span>
+                </div>
+                <div class="data-row">
+                  <span class="data-label">Temp Range</span>
+                  <span class="data-value">15–35 °C</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+
+          <section id="liquid-density" class="tour-section alternate">
+            <div class="tour-visual">
+              <img 
+                src="images/facilities/md/liquid-density.webp"
+                srcset="images/facilities/sm/liquid-density.webp 400w, images/facilities/md/liquid-density.webp 800w, images/facilities/lg/liquid-density.webp 1600w"
+                sizes="(max-width: 1024px) 100vw, 60vw"
+                loading="lazy" 
+                onload="this.classList.add('loaded')"
+                alt="Liquid Density Meter" 
+              />
+            </div>
+            <div class="tour-content">
+              <span class="tour-category">02 / Characterization</span>
+              <h2>Anton Paar Liquid Density Meter (DMA)</h2>
+              <p class="tour-desc">High-precision instrument providing rapid and accurate liquid analysis for research and quality control applications.</p>
+              
+              <div class="tour-data">
+                <div class="data-row">
+                  <span class="data-label">Principle</span>
+                  <span class="data-value">Oscillating U-tube</span>
+                </div>
+                <div class="data-row">
+                  <span class="data-label">Application</span>
+                  <span class="data-value">High-precision liquid analysis</span>
                 </div>
               </div>
             </div>
           </section>
 
           <!-- Group 3: Analytical -->
-          <section id="impedance-tube" class="tour-section alternate">
+          <section id="impedance-tube" class="tour-section">
             <div class="tour-visual">
               <img 
                 src="images/facilities/sm/impedance-tube.webp"
@@ -353,78 +452,98 @@
             </div>
             <div class="tour-content">
               <span class="tour-category">03 / Analytical</span>
-              <h2>Impedance Tube</h2>
-              <p class="tour-desc">Acoustic characterization system for measuring sound absorption coefficients and transmission loss in multi-layered functional textiles.</p>
+              <h2>Placid Impedance Tube</h2>
+              <p class="tour-desc">Precision instrument used to measure normal incidence sound absorption, reflection, and acoustic impedance using the transfer function method. Utilizes high-sensitivity microphones with digital signal processing and includes integrated data acquisition for characterizing porous, fibrous, and aerogel-based materials.</p>
               
               <div class="tour-data">
                 <div class="data-row">
-                  <span class="data-label">Scope</span>
-                  <span class="data-value">Acoustical Performance</span>
+                  <span class="data-label">Standards</span>
+                  <span class="data-value">ASTM E1050 / ISO 10534-2</span>
                 </div>
                 <div class="data-row">
                   <span class="data-label">Frequency Range</span>
-                  <span class="data-value">Broadband Acoustic Testing</span>
+                  <span class="data-value">100 Hz to 6,400 Hz</span>
+                </div>
+                <div class="data-row">
+                  <span class="data-label">Capability</span>
+                  <span class="data-value">Samples up to 50 mm thick</span>
                 </div>
               </div>
             </div>
           </section>
 
-          <section id="bulk-density" class="tour-section">
+          <section id="envelope-density" class="tour-section alternate">
             <div class="tour-visual">
               <img 
-                src="images/facilities/sm/bulk-density.webp"
-                srcset="images/facilities/sm/bulk-density.webp 400w, images/facilities/md/bulk-density.webp 800w, images/facilities/lg/bulk-density.webp 1600w"
+                src="images/facilities/md/envelope-density.webp"
+                srcset="images/facilities/sm/envelope-density.webp 400w, images/facilities/md/envelope-density.webp 800w, images/facilities/lg/envelope-density.webp 1600w"
                 sizes="(max-width: 1024px) 100vw, 60vw"
                 loading="lazy" 
                 onload="this.classList.add('loaded')"
-                alt="Bulk Density Meter" 
+                alt="Envelope Density Analyzer" 
               />
             </div>
             <div class="tour-content">
               <span class="tour-category">03 / Characterization</span>
-              <h2>Tapped Density Meter</h2>
-              <p class="tour-desc">Automated mechanical tapping for determining bulk and tap density of porous granules and textile fiber aggregates.</p>
+              <h2>GeoPyc 1365 Envelope Density Analyzer</h2>
+              <p class="tour-desc">Bench-top instrument designed for precise determination of envelope volume and density of solid samples. Features automated analysis, touchscreen control, non-destructive measurement, and optional T.A.P. mode for bulk density evaluation.</p>
               
               <div class="tour-data">
                 <div class="data-row">
-                  <span class="data-label">Standards</span>
-                  <span class="data-value">USP / ASTM Compliant</span>
+                  <span class="data-label">Technology</span>
+                  <span class="data-value">DryFlo Displacement</span>
+                </div>
+                <div class="data-row">
+                  <span class="data-label">Reproducibility</span>
+                  <span class="data-value">≈±1.1%</span>
+                </div>
+                <div class="data-row">
+                  <span class="data-label">Temp Range</span>
+                  <span class="data-value">10–35 °C</span>
+                </div>
+                <div class="data-row">
+                  <span class="data-label">Chambers</span>
+                  <span class="data-value">12.7 to 50.8 mm Diameter</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="ftir-spectrometer" class="tour-section">
+            <div class="tour-visual">
+              <img 
+                src="images/facilities/md/thermo-ftir.webp"
+                srcset="images/facilities/sm/thermo-ftir.webp 400w, images/facilities/md/thermo-ftir.webp 800w, images/facilities/lg/thermo-ftir.webp 1600w"
+                sizes="(max-width: 1024px) 100vw, 60vw"
+                loading="lazy" 
+                onload="this.classList.add('loaded')"
+                alt="Thermo Scientific FTIR with Integrating Sphere" 
+              />
+            </div>
+            <div class="tour-content">
+              <span class="tour-category">03 / Analytical</span>
+              <h2>Thermo Scientific FTIR with Integrating Sphere</h2>
+              <p class="tour-desc">Advanced Fourier Transform Infrared (FTIR) spectrometer equipped with an integrating sphere accessory for highly accurate diffuse reflectance and transmittance measurements of solid, liquid, and powder samples.</p>
+              
+              <div class="tour-data">
+                <div class="data-row">
+                  <span class="data-label">Technology</span>
+                  <span class="data-value">FTIR Spectroscopy</span>
+                </div>
+                <div class="data-row">
+                  <span class="data-label">Accessory</span>
+                  <span class="data-value">Integrating Sphere (Mid-IR/NIR)</span>
+                </div>
+                <div class="data-row">
+                  <span class="data-label">Capabilities</span>
+                  <span class="data-value">Diffuse Reflectance, Transmittance</span>
                 </div>
               </div>
             </div>
           </section>
 
           <!-- Group 4: Specialized Testing & Processing -->
-          <section id="thermal-imaging" class="tour-section alternate">
-            <div class="tour-visual">
-              <img 
-                src="images/facilities/sm/thermal-imaging.webp"
-                srcset="images/facilities/sm/thermal-imaging.webp 400w, images/facilities/md/thermal-imaging.webp 800w, images/facilities/lg/thermal-imaging.webp 1600w"
-                sizes="(max-width: 1024px) 100vw, 60vw"
-                loading="lazy" 
-                onload="this.classList.add('loaded')"
-                alt="Thermal Imaging" 
-              />
-            </div>
-            <div class="tour-content">
-              <span class="tour-category">04 / Performance</span>
-              <h2>Thermal Imaging</h2>
-              <p class="tour-desc">High-sensitivity infrared visualization for real-time monitoring of heat distribution and active cooling in smart textile wearables.</p>
-              
-              <div class="tour-data">
-                <div class="data-row">
-                  <span class="data-label">Resolution</span>
-                  <span class="data-value">High Sensitivity IR Map</span>
-                </div>
-                <div class="data-row">
-                  <span class="data-label">Focus</span>
-                  <span class="data-value">Active Cooling Performance</span>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section id="ball-milling" class="tour-section">
+          <section id="ball-milling" class="tour-section alternate">
             <div class="tour-visual">
               <img 
                 src="images/facilities/sm/ball-milling.webp"
@@ -453,35 +572,6 @@
             </div>
           </section>
 
-          <section id="homogenizer" class="tour-section alternate">
-            <div class="tour-visual">
-              <img 
-                src="images/facilities/sm/high-shear-homogenizer.webp"
-                srcset="images/facilities/sm/high-shear-homogenizer.webp 400w, images/facilities/md/high-shear-homogenizer.webp 800w, images/facilities/lg/high-shear-homogenizer.webp 1600w"
-                sizes="(max-width: 1024px) 100vw, 60vw"
-                loading="lazy" 
-                onload="this.classList.add('loaded')"
-                alt="High Shear Homogenizer" 
-              />
-            </div>
-            <div class="tour-content">
-              <span class="tour-category">04 / Synthesis</span>
-              <h2>High Shear Homogenizer</h2>
-              <p class="tour-desc">High-energy mechanical shear for the creation of stable sub-micron emulsions and uniform dispersion of nanomaterials.</p>
-              
-              <div class="tour-data">
-                <div class="data-row">
-                  <span class="data-label">Technology</span>
-                  <span class="data-value">High Shear Dispersion</span>
-                </div>
-                <div class="data-row">
-                  <span class="data-label">Output</span>
-                  <span class="data-value">Sub-micron stable emulsions</span>
-                </div>
-              </div>
-            </div>
-          </section>
-
         </div>
       </main>
 
@@ -493,10 +583,13 @@
                 <img class="brand-mark" src="images/logo-transparent.svg" alt="Vyoma Lab" style="filter: brightness(0) invert(1); width: 42px;">
                 <span style="color: white; margin-left: 0.75rem; font-weight: 700; font-size: 1.25rem;">Vyoma Lab</span>
               </a>
-              <p>
+              <p style="margin-bottom: 1.5rem;">
                 Leading research in advanced textiles, biomaterials, and energy-efficient cooling solutions. 
                 Pushing boundaries in multifunctional sensors and sustainable technology.
               </p>
+              <a href="https://home.iitd.ac.in/" target="_blank" aria-label="IIT Delhi">
+                <img src="images/logo-iit.png" alt="IIT Delhi Logo" style="filter: brightness(0) invert(1); max-width: 150px;">
+              </a>
             </div>
 
             <div class="footer-col">
@@ -505,8 +598,8 @@
                 <li><a href="index.html#home">Home</a></li>
                 <li><a href="harun-venkatesan.html">Dr. Harun Venkatesan</a></li>
                 <li><a href="index.html#current-research">Current Research</a></li>
-                <li><a href="index.html#news">News & Events</a></li>
-                <li><a href="index.html#honours">Honours</a></li>
+                <li><a href="photos.html">Gallery</a></li>
+                <li><a href="awards-honours.html">Honours</a></li>
               </ul>
             </div>
 
@@ -524,10 +617,9 @@
             <div class="footer-col">
               <h4>People</h4>
               <ul class="footer-links-list">
-                <li><a href="alumni-postdoc.html">Postdoctoral Scholars</a></li>
-                <li><a href="alumni-phd.html">Ph.D. Graduates</a></li>
+                <li><a href="alumni-postdoc.html">Staff</a></li>
+                <li><a href="alumni-phd.html">Ph.D. Students</a></li>
                 <li><a href="alumni-masters-ug.html">Masters & Undergraduates</a></li>
-                <li><a href="index.html#staff">Staff Members</a></li>
               </ul>
             </div>
           </div>
@@ -551,6 +643,7 @@
       const navMenu = document.querySelector(".nav-menu");
       const dropdownItems = Array.from(document.querySelectorAll(".has-dropdown"));
       const dropdownSubgroups = Array.from(document.querySelectorAll(".dropdown-subgroup"));
+      const backButtons = Array.from(document.querySelectorAll(".submenu-back"));
 
       const setTriggerState = (trigger, isOpen) => {
         if (!trigger) return;
@@ -561,9 +654,9 @@
         dropdownSubgroups.forEach((group) => {
           group.classList.remove("open");
           setTriggerState(group.querySelector(".dropdown-subtrigger"), false);
+          const parentDropdown = group.closest(".dropdown");
+          if (parentDropdown) parentDropdown.classList.remove("subgroup-active");
         });
-        // Clear sub-activity
-        document.querySelectorAll(".dropdown.subgroup-active").forEach(d => d.classList.remove("subgroup-active"));
       };
 
       const closeDropdownItems = () => {
@@ -571,13 +664,14 @@
           item.classList.remove("open");
           setTriggerState(item.querySelector(".nav-trigger"), false);
         });
-        navMenu.classList.remove("submenu-active");
+        if (navMenu) navMenu.classList.remove("submenu-active");
         closeDropdownSubgroups();
       };
 
       const closeNavMenu = () => {
         if (!navMenu || !menuToggle) return;
         navMenu.classList.remove("open");
+        navMenu.classList.remove("submenu-active");
         document.body.classList.remove("menu-open");
         setTriggerState(menuToggle, false);
       };
@@ -615,8 +709,8 @@
 
           if (!isOpen) {
             item.classList.add("open");
+            if (navMenu) navMenu.classList.add("submenu-active");
             setTriggerState(trigger, true);
-            navMenu.classList.add("submenu-active");
           }
         });
       });
@@ -629,36 +723,34 @@
         trigger.addEventListener("click", (event) => {
           event.stopPropagation();
           const isOpen = group.classList.contains("open");
-          const parentDropdown = group.closest(".dropdown");
 
           closeDropdownSubgroups();
 
           if (!isOpen) {
             group.classList.add("open");
+            const parentDropdown = group.closest(".dropdown");
+            if (parentDropdown) parentDropdown.classList.add("subgroup-active");
             setTriggerState(trigger, true);
-            if (parentDropdown) {
-              parentDropdown.classList.add("subgroup-active");
-            }
           }
         });
       });
 
       // Handle back buttons
-      document.querySelectorAll(".submenu-back").forEach((btn) => {
-        btn.addEventListener("click", (event) => {
+      backButtons.forEach(button => {
+        button.addEventListener("click", (event) => {
           event.stopPropagation();
-          const subgroup = btn.closest(".dropdown-subgroup");
-          const dropdown = btn.closest(".dropdown");
-          const navItem = btn.closest(".nav-item");
+          const parentSubgroup = button.closest(".dropdown-subgroup");
+          const parentDropdownItem = button.closest(".has-dropdown");
 
-          if (subgroup && subgroup.classList.contains("open")) {
-            subgroup.classList.remove("open");
-            setTriggerState(subgroup.querySelector(".dropdown-subtrigger"), false);
-            if (dropdown) dropdown.classList.remove("subgroup-active");
-          } else if (navItem && navItem.classList.contains("open")) {
-            navItem.classList.remove("open");
-            setTriggerState(navItem.querySelector(".nav-trigger"), false);
-            navMenu.classList.remove("submenu-active");
+          if (parentSubgroup) {
+            parentSubgroup.classList.remove("open");
+            setTriggerState(parentSubgroup.querySelector(".dropdown-subtrigger"), false);
+            const parentDropdown = parentSubgroup.closest(".dropdown");
+            if (parentDropdown) parentDropdown.classList.remove("subgroup-active");
+          } else if (parentDropdownItem) {
+            parentDropdownItem.classList.remove("open");
+            setTriggerState(parentDropdownItem.querySelector(".nav-trigger"), false);
+            if (navMenu) navMenu.classList.remove("submenu-active");
           }
         });
       });
@@ -677,6 +769,18 @@
         closeDropdownItems();
         closeNavMenu();
       });
+
+      // Header scroll collapse effect
+      const siteHeader = document.querySelector(".site-header");
+      if (siteHeader) {
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 40) {
+            siteHeader.classList.add("scrolled");
+          } else {
+            siteHeader.classList.remove("scrolled");
+          }
+        }, { passive: true });
+      }
     </script>
   </body>
 </html>

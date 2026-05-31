@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Postdoctoral Alumni | Vyoma Lab</title>
+    <title>Staff & Scientists | Vyoma Lab</title>
     <meta
       name="description"
       content="Postdoctoral Scholars and Project Scientists alumni of Vyoma Lab."
     />
-                                <link
+                                                                                                        <link
       rel="apple-touch-icon"
       sizes="180x180"
       href="./images/favicon_io/apple-touch-icon.png?v=2"
@@ -33,14 +33,41 @@
   <body>
     <div class="site-shell">
       <header class="site-header">
+        <div class="header-brand-row-outer">
+          <div class="container header-brand-row-inner">
+            <a class="brand" href="index.html#home" aria-label="Vyoma Lab home">
+              <img class="brand-mark" src="images/logo-transparent.svg" alt="Vyoma Lab logo" />
+              <span>
+                Vyoma Lab
+                <small>Research &amp; Discovery</small>
+              </span>
+            </a>
+            
+            <div class="header-iitd-brand">
+              <img src="images/funding/iitd-logo.png" alt="IIT Delhi logo" class="iitd-logo" />
+              <span class="iitd-text">Indian Institute of Technology Delhi</span>
+            </div>
+          </div>
+        </div>
+
         <div class="container nav-wrap">
-          <a class="brand" href="index.html#home" aria-label="Vyoma Lab home">
-            <img class="brand-mark" src="images/logo-transparent.svg" alt="Vyoma Lab logo" />
-            <span>
-              Vyoma Lab
-              <small>Research & Discovery</small>
-            </span>
-          </a>
+          <!-- Grouped brands: Vyoma Lab | IIT Delhi — treated as one flex item -->
+          <div class="nav-brands-group">
+            <a class="brand brand-mobile" href="index.html#home" aria-label="Vyoma Lab home">
+              <img class="brand-mark" src="images/logo-transparent.svg" alt="Vyoma Lab logo" />
+              <span>
+                Vyoma Lab
+                <small>Research &amp; Discovery</small>
+              </span>
+            </a>
+
+            <span class="nav-brand-sep" aria-hidden="true">|</span>
+
+            <a class="iitd-nav" href="https://home.iitd.ac.in/" target="_blank" aria-label="IIT Delhi">
+              <img src="images/funding/iitd-logo.png" alt="IIT Delhi logo" class="iitd-nav-logo" />
+              <span class="iitd-nav-text">IIT Delhi</span>
+            </a>
+          </div>
 
           <button
             class="menu-toggle"
@@ -76,33 +103,39 @@
                   <span>Harun Venkatesan</span>
                 </a>
                 <a href="alumni-postdoc.html">
-                  <i class="fa-solid fa-user-graduate" aria-hidden="true"></i>
-                  <span>Postdoctoral Scholars</span>
-                </a>
-                <a href="alumni-phd.html">
-                  <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
-                  <span>Ph.D. Graduates</span>
-                </a>
-                <a href="alumni-masters-ug.html">
-                  <i class="fa-solid fa-user-group" aria-hidden="true"></i>
-                  <span>Masters & Undergraduates</span>
-                </a>
-                <a href="staff.html">
                   <i class="fa-solid fa-user-gear" aria-hidden="true"></i>
                   <span>Staff</span>
                 </a>
-                <a href="photos.html">
-                  <i class="fa-solid fa-camera-retro" aria-hidden="true"></i>
-                  <span>Photos</span>
+                <a href="alumni-phd.html">
+                  <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                  <span>Ph.D. Students</span>
+                </a>
+                <a href="alumni-masters-ug.html">
+                   <i class="fa-solid fa-user-group" aria-hidden="true"></i>
+                   <span>Masters & Undergraduates</span>
                 </a>
               </div>
             </div>
 
-            <div class="nav-item">
-              <a class="nav-link" href="index.html#current-research">
+            <div class="nav-item has-dropdown">
+              <button class="nav-trigger" type="button" aria-expanded="false">
                 <i class="fa-solid fa-flask-vial" aria-hidden="true"></i>
                 <span>Current Research</span>
-              </a>
+              </button>
+              <div class="dropdown">
+                <button class="submenu-back" type="button" aria-label="Go back to main menu">
+                  <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                  <span>Back to Menu</span>
+                </button>
+                <a href="funding-collaboration.html">
+                  <i class="fa-solid fa-handshake" aria-hidden="true"></i>
+                  <span>Funding & Collaboration</span>
+                </a>
+                <a href="research-domains.html">
+                  <i class="fa-solid fa-microscope" aria-hidden="true"></i>
+                  <span>Domain of Research</span>
+                </a>
+              </div>
             </div>
 
             <div class="nav-item">
@@ -161,14 +194,14 @@
             </div>
 
             <div class="nav-item">
-              <a class="nav-link" href="index.html#news">
-                <i class="fa-solid fa-newspaper" aria-hidden="true"></i>
-                <span>News</span>
+              <a class="nav-link" href="photos.html">
+                <i class="fa-solid fa-camera-retro" aria-hidden="true"></i>
+                <span>Gallery</span>
               </a>
             </div>
 
             <div class="nav-item">
-              <a class="nav-link" href="index.html#honours">
+              <a class="nav-link" href="awards-honours.html">
                 <i class="fa-solid fa-award" aria-hidden="true"></i>
                 <span>Honours</span>
               </a>
@@ -185,25 +218,18 @@
             <div class="content-card alumni-hero-card">
               <div class="alumni-hero-copy">
                 <span class="eyebrow">Alumni</span>
-                <h1>Postdoctoral Scholars & Scientists</h1>
-                <p>
+                <h1>Staff & Scientists</h1>
+                <div class="alumni-details">
                   Explore alumni from advanced research appointments who helped shape high-impact studies,
                   lab systems, and collaborative programs at Vyoma Lab.
-                </p>
+                </div>
               </div>
 
               <div class="alumni-hero-stats" aria-label="Team categories">
-                <a href="staff.html" class="alumni-stat">
-                  <div class="alumni-stat-content">
-                    <strong>Staff</strong>
-                    <span>Current team</span>
-                  </div>
-                  <i class="fa-solid fa-chevron-right alumni-stat-arrow"></i>
-                </a>
                 <article class="alumni-stat active">
                   <div class="alumni-stat-content">
-                    <strong>Postdoctoral</strong>
-                    <span>Legacy scholars</span>
+                    <strong>Staff</strong>
+                    <span>Current team & scholars</span>
                   </div>
                 </article>
                 <a href="alumni-phd.html" class="alumni-stat">
@@ -229,24 +255,55 @@
           <div class="container">
             <div class="alumni-grid">
               <article class="content-card alumni-card">
-                <div class="alumni-photo" style="background-image: url('images/people/alumni/postdoc/placeholder/shama-parveen.webp');">
+                <div class="alumni-photo">
                   <img 
                     src="images/people/alumni/postdoc/sm/shama-parveen.webp" 
                     srcset="images/people/alumni/postdoc/sm/shama-parveen.webp 400w, images/people/alumni/postdoc/md/shama-parveen.webp 800w, images/people/alumni/postdoc/lg/shama-parveen.webp 1600w"
                     sizes="(max-width: 480px) 140px, 180px"
-                    alt="Dr. Ankita Sharma portrait" 
+                    alt="Dr. Shama Parveen portrait" 
                     decoding="async"
                     loading="lazy"
                     onload="this.classList.add('loaded')"
                   />
                 </div>
                 <div class="alumni-card-copy">
-                  <span class="alumni-role">Project Scientist</span>
-                  <h3>Dr. Ankita Sharma</h3>
-                  <p>
-                    Biotechnologist interested in Biomaterial design and synthesis for healthcare applications. Worked on shape memory Bacterial Cellulose Aerogels for Wound Healing.
-                  </p>
-                  <div class="alumni-socials" aria-label="Dr. Ankita Sharma social links">
+                  <span class="alumni-role">Principal Project Scientist</span>
+                  <h3>Dr. Shama Parveen</h3>
+                  <div class="alumni-details">
+                    <div class="research-topic-box"><strong>Topic of research:</strong><span> MXene integrated multifunctional composites.</span></div>
+                    <strong>About:</strong> Dr. Shama Parveen obtained her PhD from the Institute for Polymers and Composites, University of Minho, Portugal, in 2016, where she worked on Microstructure and Mechanical Properties of Nanomaterial-Reinforced Cementitious Composites. She later held a postdoctoral position in the Department of Fashion and Textiles at the University of Huddersfield, UK, from 2018 to 2023. During this period, she was awarded the Seal of Excellence by the European Commission in recognition of her research proposal. She joined as a Principal Project Scientist in the Department of Textile and Fibre Engineering at the Indian Institute of Technology Delhi. Dr. Parveen’s research focuses on the fabrication of multifunctional polymeric composites for thermal management and electromagnetic interference (EMI) shielding applications. Her work involves the synthesis of conductive nanomaterials and aerogels to achieve targeted functional properties. She integrates principles of materials chemistry and interfacial engineering to develop flexible, lightweight, and high-performance materials. She has expertise in evaluating the thermal, mechanical, electrical, and electromagnetic shielding performance of advanced composites.
+                  </div>
+                  <div class="alumni-socials" aria-label="Dr. Shama Parveen social links">
+                    <a href="https://www.linkedin.com/in/drshamap/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                      <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="content-card alumni-card">
+                <div class="alumni-photo">
+                  <img 
+                    src="images/people/alumni/postdoc/sm/n-srikrishna.webp" 
+                    srcset="images/people/alumni/postdoc/sm/n-srikrishna.webp 400w, images/people/alumni/postdoc/md/n-srikrishna.webp 800w, images/people/alumni/postdoc/lg/n-srikrishna.webp 1600w"
+                    sizes="(max-width: 480px) 140px, 180px"
+                    alt="Dr. N. Srikrishna portrait" 
+                    decoding="async"
+                    loading="lazy"
+                    onload="this.classList.add('loaded')"
+                  />
+                </div>
+                <div class="alumni-card-copy">
+                  <span class="alumni-role">Principal Project Scientist</span>
+                  <h3>Dr. N. Srikrishna</h3>
+                  <div class="alumni-details">
+                    <div class="research-topic-box"><strong>Project:</strong><span> Extreme cold weather clothing (ECWC) upgradation through value addition with industry partners and limited numbers production and validation to IIT Delhi under DIA-CoE IIT Delhi (RP04910G)</span></div>
+                    <strong>Qualification:</strong> PhD Textile Technology<br>
+                    <strong>Expertise:</strong> Textile Chemistry<br>
+                    <strong>Publications:</strong> International: 8 papers published in Textile Chemistry, 6 papers as the first author.<br>
+                    <strong>Responsibilities:</strong> Operation of Newton sweating thermal mannequin, donning and doffing of garments, operation of Thermdac software. Coordination with the industries, following up, factory visits to support in scaling up. Testing the samples, interpretation of test results and report writing.
+                  </div>
+                  <div class="alumni-socials" aria-label="Dr. N. Srikrishna social links">
                     <a href="#" target="_blank" rel="noreferrer" aria-label="LinkedIn">
                       <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
                     </a>
@@ -255,7 +312,32 @@
               </article>
 
               <article class="content-card alumni-card">
-                <div class="alumni-photo" style="background-image: url('images/people/alumni/postdoc/placeholder/neha-abbasi.webp');">
+                <div class="alumni-photo">
+                  <img 
+                    src="images/people/alumni/postdoc/dr-pankaj.jpg" 
+                    alt="Dr. Pankaj portrait" 
+                    decoding="async"
+                    loading="lazy"
+                    onload="this.classList.add('loaded')"
+                  />
+                </div>
+                <div class="alumni-card-copy">
+                  <span class="alumni-role">Post-Doctoral Fellow</span>
+                  <h3>Dr. Pankaj</h3>
+                  <div class="alumni-details">
+                    <div class="research-topic-box"><strong>Research Interests:</strong><span> Mechanical Design and Analysis, Machining and Processing of Polymer Composites, Sustainable Polymer Composites from Industrial and Textile Waste, 3D Printing &amp; Nano Composites, Electromagnetic Interference (EMI) Shielding Materials.</span></div>
+                    <strong>About:</strong> Mechanical Design &amp; Polymer Composite Materials expert with 5+ years of integrated experience in R&amp;D, product development, advanced manufacturing, and academic research. Currently a Post-Doctoral Fellow at IIT Delhi, specializing in polymer composites, textile-waste–reinforced materials, EMI-shielding composites, and innovative sustainable materials.<br><br>Skilled in mechanical design, CAD modeling, and FEA using SolidWorks, Autodesk Inventor and ANSYS. Extensive hands-on expertise in composite fabrication, mechanical testing (tensile, flexural, impact, DMA, interlaminar shear strength), SEM characterization, and advanced thermal/structural analysis.<br><br>Strong background in 3D printing for prototype development of flexure-guided stages, nanopositioning systems, and structural components. Experience in technology transfer, industry–academia collaboration, and guiding UG/PG/PhD students.
+                  </div>
+                  <div class="alumni-socials" aria-label="Dr. Pankaj social links">
+                    <a href="https://www.linkedin.com/in/dr-pankaj-53550b41" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                      <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="content-card alumni-card">
+                <div class="alumni-photo">
                   <img 
                     src="images/people/alumni/postdoc/sm/neha-abbasi.webp" 
                     srcset="images/people/alumni/postdoc/sm/neha-abbasi.webp 400w, images/people/alumni/postdoc/md/neha-abbasi.webp 800w, images/people/alumni/postdoc/lg/neha-abbasi.webp 1600w"
@@ -269,11 +351,13 @@
                 <div class="alumni-card-copy">
                   <span class="alumni-role">Sr. Project Scientist</span>
                   <h3>Dr. Neha Abbasi</h3>
-                  <p>
-                    Former Senior Project Scientist focused on high-impact research projects and collaborative systems.
-                  </p>
+                  <div class="alumni-details">
+                    <div class="research-topic-box"><strong>Topic of research:</strong><span> Templated carbon aerogels for humidity sensing applications.</span></div>
+                    <strong>About:</strong> Dr. Neha’s research focuses on porous materials, with prior experience in pollutant adsorption through the rational design of structure and surface chemistry. Her current work centers on the development of carbon aerogels for environmental remediation and sensing applications.<br>
+                    <strong>Achievements:</strong> 2nd Prize in Research project/ idea contest-SilkTech2024.
+                  </div>
                   <div class="alumni-socials" aria-label="Dr. Neha Abbasi social links">
-                    <a href="#" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/in/neha-abbasi/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
                       <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
                     </a>
                   </div>
@@ -281,25 +365,29 @@
               </article>
 
               <article class="content-card alumni-card">
-                <div class="alumni-photo" style="background-image: url('images/people/alumni/postdoc/placeholder/ankita-sharma.webp');">
+                <div class="alumni-photo">
                   <img 
                     src="images/people/alumni/postdoc/sm/ankita-sharma.webp" 
                     srcset="images/people/alumni/postdoc/sm/ankita-sharma.webp 400w, images/people/alumni/postdoc/md/ankita-sharma.webp 800w, images/people/alumni/postdoc/lg/ankita-sharma.webp 1600w"
                     sizes="(max-width: 480px) 140px, 180px"
-                    alt="Dr. Shama Parveen portrait" 
+                    alt="Dr. Ankita Sharma portrait" 
                     decoding="async"
                     loading="lazy"
                     onload="this.classList.add('loaded')"
                   />
                 </div>
                 <div class="alumni-card-copy">
-                  <span class="alumni-role">Principal Project Scientist</span>
-                  <h3>Dr. Shama Parveen</h3>
-                  <p>
-                    Former Principal Project Scientist at Vyoma Lab, contributing to advanced materials research and lab leadership.
-                  </p>
-                  <div class="alumni-socials" aria-label="Dr. Shama Parveen social links">
-                    <a href="#" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                  <span class="alumni-role">Project Scientist</span>
+                  <h3>Dr. Ankita Sharma</h3>
+                  <div class="alumni-details">
+                    <div class="research-topic-box"><strong>Topic of research:</strong><span> Biomaterial design and synthesis for healthcare applications.</span></div>
+                    <strong>About:</strong> Being a Biotechnologist, Dr. Sharma is interested in Biomaterial design and synthesis for healthcare applications. Currently, she is working on shape memory Bacterial Cellulose Aerogels for Wound Healing Applications.
+                  </div>
+                  <div class="alumni-socials" aria-label="Dr. Ankita Sharma social links">
+                    <a href="https://scholar.google.com/citations?user=5Y95YrgAAAAJ&hl=en&oi=ao" target="_blank" rel="noreferrer" aria-label="Google Scholar">
+                      <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ankita-sharma-559115269/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
                       <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
                     </a>
                   </div>
@@ -307,7 +395,63 @@
               </article>
 
               <article class="content-card alumni-card">
-                <div class="alumni-photo" style="background-image: url('images/people/alumni/postdoc/placeholder/sureshwar-thakur.webp');">
+                <div class="alumni-photo">
+                  <img 
+                    src="images/people/alumni/postdoc/sm/lackyasa-nagrajan.webp" 
+                    srcset="images/people/alumni/postdoc/sm/lackyasa-nagrajan.webp 400w, images/people/alumni/postdoc/md/lackyasa-nagrajan.webp 800w, images/people/alumni/postdoc/lg/lackyasa-nagrajan.webp 1600w"
+                    sizes="(max-width: 480px) 140px, 180px"
+                    alt="Lackyasa Nagrajan portrait" 
+                    decoding="async"
+                    loading="lazy"
+                    onload="this.classList.add('loaded')"
+                  />
+                </div>
+                <div class="alumni-card-copy">
+                  <span class="alumni-role">Project Scientist</span>
+                  <h3>Lacksaya Nagarajan</h3>
+                  <div class="alumni-details">
+                    <strong>About:</strong> Lacksaya Nagarajan’s research focuses on advanced functional textiles and aerogel based materials, particularly hybrid aerogels and NBR Foams for thermal insulation applications. She is also an expert in bioengineering and cell culture, with work spanning bioprinting, bone tissue engineering, and the application of deep learning models in bone tissue engineering.
+                  </div>
+                  <div class="alumni-socials" aria-label="Lacksaya Nagarajan social links">
+                    <a href="https://www.linkedin.com/in/lacksaya-nagarajan-a698a2191/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                      <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="content-card alumni-card">
+                <div class="alumni-photo">
+                  <img 
+                    src="images/people/alumni/masters-ug/sm/kumaresan-s.webp" 
+                    srcset="images/people/alumni/masters-ug/sm/kumaresan-s.webp 400w, images/people/alumni/masters-ug/md/kumaresan-s.webp 800w, images/people/alumni/masters-ug/lg/kumaresan-s.webp 1600w"
+                    sizes="(max-width: 480px) 140px, 180px"
+                    alt="Kumaresan S. portrait" 
+                    decoding="async"
+                    loading="lazy"
+                    onload="this.classList.add('loaded')"
+                  />
+                </div>
+                <div class="alumni-card-copy">
+                  <span class="alumni-role">Senior Project Scientist</span>
+                  <h3>Kumaresan S.</h3>
+                  <div class="alumni-details">
+                    <div class="research-topic-box"><strong>Topic of Research:</strong><span> Bio-inspired Janus Textiles for Directional Moisture Transport</span></div>
+                    <strong>About:</strong> Kumaresan’s research focuses on the development of cost-effective advanced Janus textiles for high-performance sportswear and moisture management applications inspired by natural bio-inspired systems. His work primarily explores asymmetric wettability and capillary-driven liquid transport mechanisms for achieving efficient directional moisture transport in textile structures. In addition, he is currently involved in a technology transfer project on extreme cold weather clothing developed at IIT Delhi in collaboration with DRDO.<br><br>
+                    <strong>Achievements:</strong> Indian Patent Filed: “A Dual Gradient Fabric for Efficient Human Perspiration Management and a Process for Preparation Thereof” (Application No.: 202411066951)<br><br>
+                    <strong>Publication:</strong> Kumaresan Subramani, Sollazhagan Nataraj, Porika Anirudh Naik, Rengasamy Raju Seenivasan, and Harun Venkatesan, “Dual Layered Janus Nonwovens with Asymmetric Wettability for Efficient Directional Moisture Transport”, Colloids and Surfaces A: Physicochemical and Engineering Aspects, Article No. 138862.<br><br>
+                    <strong>Book Chapter:</strong> Kumaresan, S., and Rengasamy, R. S. (2025). Comber and Draw Frame. In Developments in Yarn Spinning Technologies (pp. 31-56). Elsevier Science Ltd.
+                  </div>
+                  <div class="alumni-socials" aria-label="Kumaresan S. social links">
+                    <a href="https://www.linkedin.com/in/kumaresan-s-a10b98147" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                      <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="content-card alumni-card">
+                <div class="alumni-photo">
                   <img 
                     src="images/people/alumni/postdoc/sm/sureshwar-thakur.webp" 
                     srcset="images/people/alumni/postdoc/sm/sureshwar-thakur.webp 400w, images/people/alumni/postdoc/md/sureshwar-thakur.webp 800w, images/people/alumni/postdoc/lg/sureshwar-thakur.webp 1600w"
@@ -321,9 +465,9 @@
                 <div class="alumni-card-copy">
                   <span class="alumni-role">Project Assistant</span>
                   <h3>Sureshwar Thakur</h3>
-                  <p>
-                    Contributed to project assistance and laboratory operations at Vyoma Lab.
-                  </p>
+                  <div class="alumni-details">
+                    <strong>About:</strong> Maintaining and handling bills and inventory.
+                  </div>
                   <div class="alumni-socials" aria-label="Sureshwar Thakur social links">
                     <a href="#" target="_blank" rel="noreferrer" aria-label="LinkedIn">
                       <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
@@ -332,31 +476,6 @@
                 </div>
               </article>
 
-              <article class="content-card alumni-card">
-                <div class="alumni-photo" style="background-image: url('images/people/alumni/postdoc/placeholder/lackyasa-nagrajan.webp');">
-                  <img 
-                    src="images/people/alumni/postdoc/sm/lackyasa-nagrajan.webp" 
-                    srcset="images/people/alumni/postdoc/sm/lackyasa-nagrajan.webp 400w, images/people/alumni/postdoc/md/lackyasa-nagrajan.webp 800w, images/people/alumni/postdoc/lg/lackyasa-nagrajan.webp 1600w"
-                    sizes="(max-width: 480px) 140px, 180px"
-                    alt="Lackyasa Nagrajan portrait" 
-                    decoding="async"
-                    loading="lazy"
-                    onload="this.classList.add('loaded')"
-                  />
-                </div>
-                <div class="alumni-card-copy">
-                  <span class="alumni-role">JRF</span>
-                  <h3>Lackyasa Nagrajan</h3>
-                  <p>
-                    Junior Research Fellow involved in foundational research projects and experimental setups.
-                  </p>
-                  <div class="alumni-socials" aria-label="Lackyasa Nagrajan social links">
-                    <a href="#" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-                      <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                </div>
-              </article>
             </div>
           </div>
         </section>
@@ -370,10 +489,13 @@
                 <img class="brand-mark" src="images/logo-transparent.svg" alt="Vyoma Lab" style="filter: brightness(0) invert(1); width: 42px;">
                 <span style="color: white; margin-left: 0.75rem; font-weight: 700; font-size: 1.25rem;">Vyoma Lab</span>
               </a>
-              <p>
+              <p style="margin-bottom: 1.5rem;">
                 Leading research in advanced textiles, biomaterials, and energy-efficient cooling solutions. 
                 Pushing boundaries in multifunctional sensors and sustainable technology.
               </p>
+              <a href="https://home.iitd.ac.in/" target="_blank" aria-label="IIT Delhi">
+                <img src="images/logo-iit.png" alt="IIT Delhi Logo" style="filter: brightness(0) invert(1); max-width: 150px;">
+              </a>
             </div>
 
             <div class="footer-col">
@@ -382,8 +504,8 @@
                 <li><a href="index.html#home">Home</a></li>
                 <li><a href="harun-venkatesan.html">Dr. Harun Venkatesan</a></li>
                 <li><a href="index.html#current-research">Current Research</a></li>
-                <li><a href="index.html#news">News & Events</a></li>
-                <li><a href="index.html#honours">Honours</a></li>
+                <li><a href="photos.html">Gallery</a></li>
+                <li><a href="awards-honours.html">Honours</a></li>
               </ul>
             </div>
 
@@ -401,10 +523,9 @@
             <div class="footer-col">
               <h4>People</h4>
               <ul class="footer-links-list">
-                <li><a href="alumni-postdoc.html">Postdoctoral Scholars</a></li>
-                <li><a href="alumni-phd.html">Ph.D. Graduates</a></li>
+                <li><a href="alumni-postdoc.html">Staff</a></li>
+                <li><a href="alumni-phd.html">Ph.D. Students</a></li>
                 <li><a href="alumni-masters-ug.html">Masters & Undergraduates</a></li>
-                <li><a href="index.html#staff">Staff Members</a></li>
               </ul>
             </div>
           </div>
@@ -428,6 +549,7 @@
       const navMenu = document.querySelector(".nav-menu");
       const dropdownItems = Array.from(document.querySelectorAll(".has-dropdown"));
       const dropdownSubgroups = Array.from(document.querySelectorAll(".dropdown-subgroup"));
+      const backButtons = Array.from(document.querySelectorAll(".submenu-back"));
 
       const setTriggerState = (trigger, isOpen) => {
         if (!trigger) return;
@@ -438,9 +560,9 @@
         dropdownSubgroups.forEach((group) => {
           group.classList.remove("open");
           setTriggerState(group.querySelector(".dropdown-subtrigger"), false);
+          const parentDropdown = group.closest(".dropdown");
+          if (parentDropdown) parentDropdown.classList.remove("subgroup-active");
         });
-        // Clear sub-activity
-        document.querySelectorAll(".dropdown.subgroup-active").forEach(d => d.classList.remove("subgroup-active"));
       };
 
       const closeDropdownItems = () => {
@@ -448,13 +570,14 @@
           item.classList.remove("open");
           setTriggerState(item.querySelector(".nav-trigger"), false);
         });
-        navMenu.classList.remove("submenu-active");
+        if (navMenu) navMenu.classList.remove("submenu-active");
         closeDropdownSubgroups();
       };
 
       const closeNavMenu = () => {
         if (!navMenu || !menuToggle) return;
         navMenu.classList.remove("open");
+        navMenu.classList.remove("submenu-active");
         document.body.classList.remove("menu-open");
         setTriggerState(menuToggle, false);
       };
@@ -492,8 +615,8 @@
 
           if (!isOpen) {
             item.classList.add("open");
+            if (navMenu) navMenu.classList.add("submenu-active");
             setTriggerState(trigger, true);
-            navMenu.classList.add("submenu-active");
           }
         });
       });
@@ -506,36 +629,34 @@
         trigger.addEventListener("click", (event) => {
           event.stopPropagation();
           const isOpen = group.classList.contains("open");
-          const parentDropdown = group.closest(".dropdown");
 
           closeDropdownSubgroups();
 
           if (!isOpen) {
             group.classList.add("open");
+            const parentDropdown = group.closest(".dropdown");
+            if (parentDropdown) parentDropdown.classList.add("subgroup-active");
             setTriggerState(trigger, true);
-            if (parentDropdown) {
-              parentDropdown.classList.add("subgroup-active");
-            }
           }
         });
       });
 
       // Handle back buttons
-      document.querySelectorAll(".submenu-back").forEach((btn) => {
-        btn.addEventListener("click", (event) => {
+      backButtons.forEach(button => {
+        button.addEventListener("click", (event) => {
           event.stopPropagation();
-          const subgroup = btn.closest(".dropdown-subgroup");
-          const dropdown = btn.closest(".dropdown");
-          const navItem = btn.closest(".nav-item");
+          const parentSubgroup = button.closest(".dropdown-subgroup");
+          const parentDropdownItem = button.closest(".has-dropdown");
 
-          if (subgroup && subgroup.classList.contains("open")) {
-            subgroup.classList.remove("open");
-            setTriggerState(subgroup.querySelector(".dropdown-subtrigger"), false);
-            if (dropdown) dropdown.classList.remove("subgroup-active");
-          } else if (navItem && navItem.classList.contains("open")) {
-            navItem.classList.remove("open");
-            setTriggerState(navItem.querySelector(".nav-trigger"), false);
-            navMenu.classList.remove("submenu-active");
+          if (parentSubgroup) {
+            parentSubgroup.classList.remove("open");
+            setTriggerState(parentSubgroup.querySelector(".dropdown-subtrigger"), false);
+            const parentDropdown = parentSubgroup.closest(".dropdown");
+            if (parentDropdown) parentDropdown.classList.remove("subgroup-active");
+          } else if (parentDropdownItem) {
+            parentDropdownItem.classList.remove("open");
+            setTriggerState(parentDropdownItem.querySelector(".nav-trigger"), false);
+            if (navMenu) navMenu.classList.remove("submenu-active");
           }
         });
       });
@@ -554,6 +675,18 @@
         closeDropdownItems();
         closeNavMenu();
       });
+
+      // Header scroll collapse effect
+      const siteHeader = document.querySelector(".site-header");
+      if (siteHeader) {
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 40) {
+            siteHeader.classList.add("scrolled");
+          } else {
+            siteHeader.classList.remove("scrolled");
+          }
+        }, { passive: true });
+      }
     </script>
   </body>
 </html>

@@ -8,7 +8,7 @@
       name="description"
       content="Moments and milestones from Vyoma Lab - research, events, and community."
     />
-        <link
+                                                                                <link
       rel="apple-touch-icon"
       sizes="180x180"
       href="./images/favicon_io/apple-touch-icon.png?v=2"
@@ -33,14 +33,41 @@
   <body>
     <div class="site-shell">
       <header class="site-header">
+        <div class="header-brand-row-outer">
+          <div class="container header-brand-row-inner">
+            <a class="brand" href="index.html#home" aria-label="Vyoma Lab home">
+              <img class="brand-mark" src="images/logo-transparent.svg" alt="Vyoma Lab logo" />
+              <span>
+                Vyoma Lab
+                <small>Research &amp; Discovery</small>
+              </span>
+            </a>
+            
+            <div class="header-iitd-brand">
+              <img src="images/funding/iitd-logo.png" alt="IIT Delhi logo" class="iitd-logo" />
+              <span class="iitd-text">Indian Institute of Technology Delhi</span>
+            </div>
+          </div>
+        </div>
+
         <div class="container nav-wrap">
-          <a class="brand" href="index.html#home" aria-label="Vyoma Lab home">
-            <img class="brand-mark" src="images/logo-transparent.svg" alt="Vyoma Lab logo" />
-            <span>
-              Vyoma Lab
-              <small>Research & Discovery</small>
-            </span>
-          </a>
+          <!-- Grouped brands: Vyoma Lab | IIT Delhi — treated as one flex item -->
+          <div class="nav-brands-group">
+            <a class="brand brand-mobile" href="index.html#home" aria-label="Vyoma Lab home">
+              <img class="brand-mark" src="images/logo-transparent.svg" alt="Vyoma Lab logo" />
+              <span>
+                Vyoma Lab
+                <small>Research &amp; Discovery</small>
+              </span>
+            </a>
+
+            <span class="nav-brand-sep" aria-hidden="true">|</span>
+
+            <a class="iitd-nav" href="https://home.iitd.ac.in/" target="_blank" aria-label="IIT Delhi">
+              <img src="images/funding/iitd-logo.png" alt="IIT Delhi logo" class="iitd-nav-logo" />
+              <span class="iitd-nav-text">IIT Delhi</span>
+            </a>
+          </div>
 
           <button
             class="menu-toggle"
@@ -76,33 +103,39 @@
                   <span>Harun Venkatesan</span>
                 </a>
                 <a href="alumni-postdoc.html">
-                  <i class="fa-solid fa-user-graduate" aria-hidden="true"></i>
-                  <span>Postdoctoral Scholars</span>
-                </a>
-                <a href="alumni-phd.html">
-                  <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
-                  <span>Ph.D. Graduates</span>
-                </a>
-                <a href="alumni-masters-ug.html">
-                  <i class="fa-solid fa-user-group" aria-hidden="true"></i>
-                  <span>Masters & Undergraduates</span>
-                </a>
-                <a href="staff.html">
                   <i class="fa-solid fa-user-gear" aria-hidden="true"></i>
                   <span>Staff</span>
                 </a>
-                <a href="photos.html">
-                  <i class="fa-solid fa-camera-retro" aria-hidden="true"></i>
-                  <span>Photos</span>
+                <a href="alumni-phd.html">
+                  <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                  <span>Ph.D. Students</span>
+                </a>
+                <a href="alumni-masters-ug.html">
+                   <i class="fa-solid fa-user-group" aria-hidden="true"></i>
+                   <span>Masters & Undergraduates</span>
                 </a>
               </div>
             </div>
 
-            <div class="nav-item">
-              <a class="nav-link" href="index.html#current-research">
+            <div class="nav-item has-dropdown">
+              <button class="nav-trigger" type="button" aria-expanded="false">
                 <i class="fa-solid fa-flask-vial" aria-hidden="true"></i>
                 <span>Current Research</span>
-              </a>
+              </button>
+              <div class="dropdown">
+                <button class="submenu-back" type="button" aria-label="Go back to main menu">
+                  <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                  <span>Back to Menu</span>
+                </button>
+                <a href="funding-collaboration.html">
+                  <i class="fa-solid fa-handshake" aria-hidden="true"></i>
+                  <span>Funding & Collaboration</span>
+                </a>
+                <a href="research-domains.html">
+                  <i class="fa-solid fa-microscope" aria-hidden="true"></i>
+                  <span>Domain of Research</span>
+                </a>
+              </div>
             </div>
 
             <div class="nav-item">
@@ -161,14 +194,14 @@
             </div>
 
             <div class="nav-item">
-              <a class="nav-link" href="index.html#news">
-                <i class="fa-solid fa-newspaper" aria-hidden="true"></i>
-                <span>News</span>
+              <a class="nav-link" href="photos.html">
+                <i class="fa-solid fa-camera-retro" aria-hidden="true"></i>
+                <span>Gallery</span>
               </a>
             </div>
 
             <div class="nav-item">
-              <a class="nav-link" href="index.html#honours">
+              <a class="nav-link" href="awards-honours.html">
                 <i class="fa-solid fa-award" aria-hidden="true"></i>
                 <span>Honours</span>
               </a>
@@ -198,6 +231,341 @@
 
             <div class="gallery-grid">
               
+              <!-- BEGIN NEW PHOTOS (Added 2026-04-26) -->
+              
+              <article class="gallery-item" data-category="team">
+                <div class="gallery-card" style="background-image: url('images/gallery/placeholder/team-lunch-coffee-house.webp');">
+                  <img src="images/gallery/sm/team-lunch-coffee-house.webp" 
+                       srcset="images/gallery/sm/team-lunch-coffee-house.webp 400w, images/gallery/md/team-lunch-coffee-house.webp 800w, images/gallery/lg/team-lunch-coffee-house.webp 1600w"
+                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                       data-large-src="images/gallery/lg/team-lunch-coffee-house.webp"
+                       alt="Team Lunch Outing at India Coffee House" 
+                       loading="lazy"
+                       onload="this.classList.add('loaded')" />
+                  <div class="gallery-overlay">
+                    <div class="gallery-content">
+                      <h3>Team Lunch Outing</h3>
+                      <p class="gallery-event">Social Gathering • India Coffee House</p>
+                      <p class="gallery-description">Fostering team spirit and casual collaboration over lunch at the iconic India Coffee House.</p>
+                      <button class="gallery-expand-btn" aria-label="Open in Lightbox">
+                        <i class="fa-solid fa-maximize"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="gallery-item" data-category="events">
+                <div class="gallery-card" style="background-image: url('images/gallery/placeholder/silktech-award-certificate.webp');">
+                  <img src="images/gallery/sm/silktech-award-certificate.webp" 
+                       srcset="images/gallery/sm/silktech-award-certificate.webp 400w, images/gallery/md/silktech-award-certificate.webp 800w, images/gallery/lg/silktech-award-certificate.webp 1600w"
+                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                       data-large-src="images/gallery/lg/silktech-award-certificate.webp"
+                       alt="Certificate of Appreciation at SilkTech-2024" 
+                       loading="lazy"
+                       onload="this.classList.add('loaded')" />
+                  <div class="gallery-overlay">
+                    <div class="gallery-content">
+                      <h3>Certificate of Appreciation</h3>
+                      <p class="gallery-event">SilkTech-2024 • Recognition</p>
+                      <p class="gallery-description">Receiving formal recognition for outstanding contributions to sustainable textile research at SilkTech-2024.</p>
+                      <button class="gallery-expand-btn" aria-label="Open in Lightbox">
+                        <i class="fa-solid fa-maximize"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="gallery-item" data-category="research">
+                <div class="gallery-card" style="background-image: url('images/gallery/placeholder/silktech-presentation.webp');">
+                  <img src="images/gallery/sm/silktech-presentation.webp" 
+                       srcset="images/gallery/sm/silktech-presentation.webp 400w, images/gallery/md/silktech-presentation.webp 800w, images/gallery/lg/silktech-presentation.webp 1600w"
+                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                       data-large-src="images/gallery/lg/silktech-presentation.webp"
+                       alt="SilkTech Conference Presentation" 
+                       loading="lazy"
+                       onload="this.classList.add('loaded')" />
+                  <div class="gallery-overlay">
+                    <div class="gallery-content">
+                      <h3>SilkTech Conference Presentation</h3>
+                      <p class="gallery-event">International Conference • New Delhi</p>
+                      <p class="gallery-description">Delivering a keynote on sustainable innovations and aerogel applications in the silk industry.</p>
+                      <button class="gallery-expand-btn" aria-label="Open in Lightbox">
+                        <i class="fa-solid fa-maximize"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="gallery-item" data-category="team">
+                <div class="gallery-card" style="background-image: url('images/gallery/placeholder/team-silktech-2024.webp');">
+                  <img src="images/gallery/sm/team-silktech-2024.webp" 
+                       srcset="images/gallery/sm/team-silktech-2024.webp 400w, images/gallery/md/team-silktech-2024.webp 800w, images/gallery/lg/team-silktech-2024.webp 1600w"
+                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                       data-large-src="images/gallery/lg/team-silktech-2024.webp"
+                       alt="Vyoma Lab Team at SilkTech-2024" 
+                       loading="lazy"
+                       onload="this.classList.add('loaded')" />
+                  <div class="gallery-overlay">
+                    <div class="gallery-content">
+                      <h3>Team at SilkTech-2024</h3>
+                      <p class="gallery-event">International Conference • Bharat Mandapam</p>
+                      <p class="gallery-description">Vyoma Lab researchers representing the group at the Global Scenario and Sustainable Solutions in Silk Industry conference.</p>
+                      <button class="gallery-expand-btn" aria-label="Open in Lightbox">
+                        <i class="fa-solid fa-maximize"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="gallery-item" data-category="research">
+                <div class="gallery-card" style="background-image: url('images/gallery/placeholder/technical-textile-samples.webp');">
+                  <img src="images/gallery/sm/technical-textile-samples.webp" 
+                       srcset="images/gallery/sm/technical-textile-samples.webp 400w, images/gallery/md/technical-textile-samples.webp 800w, images/gallery/lg/technical-textile-samples.webp 1600w"
+                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                       data-large-src="images/gallery/lg/technical-textile-samples.webp"
+                       alt="Aerogel Textile Samples Display" 
+                       loading="lazy"
+                       onload="this.classList.add('loaded')" />
+                  <div class="gallery-overlay">
+                    <div class="gallery-content">
+                      <h3>Aerogel Textile Samples</h3>
+                      <p class="gallery-event">Research Showcase • Vyoma Lab</p>
+                      <p class="gallery-description">Detailed display of aerogel-coated knitted fabrics and biopolymeric blankets developed in-house.</p>
+                      <button class="gallery-expand-btn" aria-label="Open in Lightbox">
+                        <i class="fa-solid fa-maximize"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="gallery-item" data-category="events">
+                <div class="gallery-card" style="background-image: url('images/gallery/placeholder/national-textiles-mission.webp');">
+                  <img src="images/gallery/sm/national-textiles-mission.webp" 
+                       srcset="images/gallery/sm/national-textiles-mission.webp 400w, images/gallery/md/national-textiles-mission.webp 800w, images/gallery/lg/national-textiles-mission.webp 1600w"
+                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                       data-large-src="images/gallery/lg/national-textiles-mission.webp"
+                       alt="National Technical Textiles Mission Exhibition" 
+                       loading="lazy"
+                       onload="this.classList.add('loaded')" />
+                  <div class="gallery-overlay">
+                    <div class="gallery-content">
+                      <h3>National Technical Textiles Mission</h3>
+                      <p class="gallery-event">Exhibition Showcase • New Delhi</p>
+                      <p class="gallery-description">Vyoma Lab presenting advanced insulation solutions at the National Technical Textiles Mission exhibition.</p>
+                      <button class="gallery-expand-btn" aria-label="Open in Lightbox">
+                        <i class="fa-solid fa-maximize"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="gallery-item" data-category="events">
+                <div class="gallery-card" style="background-image: url('images/gallery/placeholder/agrotech-india-visit.webp');">
+                  <img src="images/gallery/sm/agrotech-india-visit.webp" 
+                       srcset="images/gallery/sm/agrotech-india-visit.webp 400w, images/gallery/md/agrotech-india-visit.webp 800w, images/gallery/lg/agrotech-india-visit.webp 1600w"
+                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                       data-large-src="images/gallery/lg/agrotech-india-visit.webp"
+                       alt="Agrotech India Exhibition Visit" 
+                       loading="lazy"
+                       onload="this.classList.add('loaded')" />
+                  <div class="gallery-overlay">
+                    <div class="gallery-content">
+                      <h3>Agrotech India Exhibition</h3>
+                      <p class="gallery-event">Industry Interaction • New Delhi</p>
+                      <p class="gallery-description">Exploring synergies between advanced textile materials and modern agricultural technology.</p>
+                      <button class="gallery-expand-btn" aria-label="Open in Lightbox">
+                        <i class="fa-solid fa-maximize"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="gallery-item" data-category="research">
+                <div class="gallery-card" style="background-image: url('images/gallery/placeholder/hydrogen-vessel-display.webp');">
+                  <img src="images/gallery/sm/hydrogen-vessel-display.webp" 
+                       srcset="images/gallery/sm/hydrogen-vessel-display.webp 400w, images/gallery/md/hydrogen-vessel-display.webp 800w, images/gallery/lg/hydrogen-vessel-display.webp 1600w"
+                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                       data-large-src="images/gallery/lg/hydrogen-vessel-display.webp"
+                       alt="Hydrogen Vessel Innovation Display" 
+                       loading="lazy"
+                       onload="this.classList.add('loaded')" />
+                  <div class="gallery-overlay">
+                    <div class="gallery-content">
+                      <h3>Hydrogen Vessel Innovation</h3>
+                      <p class="gallery-event">Technical Display • Vyoma Lab</p>
+                      <p class="gallery-description">Showcasing hydrogen pressure vessels utilizing high-strength textile composites and aerogel insulation.</p>
+                      <button class="gallery-expand-btn" aria-label="Open in Lightbox">
+                        <i class="fa-solid fa-maximize"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="gallery-item" data-category="events">
+                <div class="gallery-card" style="background-image: url('images/gallery/placeholder/silktech-experts-panel.webp');">
+                  <img src="images/gallery/sm/silktech-experts-panel.webp" 
+                       srcset="images/gallery/sm/silktech-experts-panel.webp 400w, images/gallery/md/silktech-experts-panel.webp 800w, images/gallery/lg/silktech-experts-panel.webp 1600w"
+                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                       data-large-src="images/gallery/lg/silktech-experts-panel.webp"
+                       alt="Experts Panel at SilkTech-2024" 
+                       loading="lazy"
+                       onload="this.classList.add('loaded')" />
+                  <div class="gallery-overlay">
+                    <div class="gallery-content">
+                      <h3>SilkTech Experts Panel</h3>
+                      <p class="gallery-event">Invited Session • Bharat Mandapam</p>
+                      <p class="gallery-description">Participating in high-level discussions on the future of sustainable textile technologies.</p>
+                      <button class="gallery-expand-btn" aria-label="Open in Lightbox">
+                        <i class="fa-solid fa-maximize"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="gallery-item" data-category="team">
+                <div class="gallery-card" style="background-image: url('images/gallery/placeholder/team-cultural-celebration.webp');">
+                  <img src="images/gallery/sm/team-cultural-celebration.webp" 
+                       srcset="images/gallery/sm/team-cultural-celebration.webp 400w, images/gallery/md/team-cultural-celebration.webp 800w, images/gallery/lg/team-cultural-celebration.webp 1600w"
+                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                       data-large-src="images/gallery/lg/team-cultural-celebration.webp"
+                       alt="Cultural Celebration at Vyoma Lab" 
+                       loading="lazy"
+                       onload="this.classList.add('loaded')" />
+                  <div class="gallery-overlay">
+                    <div class="gallery-content">
+                      <h3>Cultural Celebration</h3>
+                      <p class="gallery-event">Lab Identity • IIT Delhi</p>
+                      <p class="gallery-description">The team coming together in traditional attire to celebrate cultural milestones and diversity.</p>
+                      <button class="gallery-expand-btn" aria-label="Open in Lightbox">
+                        <i class="fa-solid fa-maximize"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="gallery-item" data-category="team">
+                <div class="gallery-card" style="background-image: url('images/gallery/placeholder/team-mural-photo.webp');">
+                  <img src="images/gallery/sm/team-mural-photo.webp" 
+                       srcset="images/gallery/sm/team-mural-photo.webp 400w, images/gallery/md/team-mural-photo.webp 800w, images/gallery/lg/team-mural-photo.webp 1600w"
+                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                       data-large-src="images/gallery/lg/team-mural-photo.webp"
+                       alt="Vibrant Lab Spirit" 
+                       loading="lazy"
+                       onload="this.classList.add('loaded')" />
+                  <div class="gallery-overlay">
+                    <div class="gallery-content">
+                      <h3>Vibrant Lab Spirit</h3>
+                      <p class="gallery-event">Group Outing • New Delhi</p>
+                      <p class="gallery-description">Capturing the energetic and diverse spirit of Vyoma Lab team members during a group event.</p>
+                      <button class="gallery-expand-btn" aria-label="Open in Lightbox">
+                        <i class="fa-solid fa-maximize"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="gallery-item" data-category="team">
+                <div class="gallery-card" style="background-image: url('images/gallery/placeholder/team-dinner-outing.webp');">
+                  <img src="images/gallery/sm/team-dinner-outing.webp" 
+                       srcset="images/gallery/sm/team-dinner-outing.webp 400w, images/gallery/md/team-dinner-outing.webp 800w, images/gallery/lg/team-dinner-outing.webp 1600w"
+                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                       data-large-src="images/gallery/lg/team-dinner-outing.webp"
+                       alt="Annual Lab Dinner celebration" 
+                       loading="lazy"
+                       onload="this.classList.add('loaded')" />
+                  <div class="gallery-overlay">
+                    <div class="gallery-content">
+                      <h3>Annual Lab Dinner</h3>
+                      <p class="gallery-event">Celebration • New Delhi</p>
+                      <p class="gallery-description">Celebrating a year of research success and collaboration with a traditional Rajasthan-themed dinner.</p>
+                      <button class="gallery-expand-btn" aria-label="Open in Lightbox">
+                        <i class="fa-solid fa-maximize"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="gallery-item" data-category="research">
+                <div class="gallery-card" style="background-image: url('images/gallery/placeholder/technical-showcase-team.webp');">
+                  <img src="images/gallery/sm/technical-showcase-team.webp" 
+                       srcset="images/gallery/sm/technical-showcase-team.webp 400w, images/gallery/md/technical-showcase-team.webp 800w, images/gallery/lg/technical-showcase-team.webp 1600w"
+                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                       data-large-src="images/gallery/lg/technical-showcase-team.webp"
+                       alt="Technical Showcase Team members" 
+                       loading="lazy"
+                       onload="this.classList.add('loaded')" />
+                  <div class="gallery-overlay">
+                    <div class="gallery-content">
+                      <h3>Technical Showcase Team</h3>
+                      <p class="gallery-event">Research Exhibition • Vyoma Lab</p>
+                      <p class="gallery-description">Team members presenting their latest breakthroughs in cold-weather clothing and aerogel materials.</p>
+                      <button class="gallery-expand-btn" aria-label="Open in Lightbox">
+                        <i class="fa-solid fa-maximize"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="gallery-item" data-category="team">
+                <div class="gallery-card" style="background-image: url('images/gallery/placeholder/evening-social-event.webp');">
+                  <img src="images/gallery/sm/evening-social-event.webp" 
+                       srcset="images/gallery/sm/evening-social-event.webp 400w, images/gallery/md/evening-social-event.webp 800w, images/gallery/lg/evening-social-event.webp 1600w"
+                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                       data-large-src="images/gallery/lg/evening-social-event.webp"
+                       alt="Evening Social Event for Vyoma Lab" 
+                       loading="lazy"
+                       onload="this.classList.add('loaded')" />
+                  <div class="gallery-overlay">
+                    <div class="gallery-content">
+                      <h3>Evening Social Event</h3>
+                      <p class="gallery-event">Networking • New Delhi</p>
+                      <p class="gallery-description">Team members enjoying a moment of relaxation and networking during an evening social gathering.</p>
+                      <button class="gallery-expand-btn" aria-label="Open in Lightbox">
+                        <i class="fa-solid fa-maximize"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="gallery-item" data-category="team">
+                <div class="gallery-card" style="background-image: url('images/gallery/placeholder/birthday-celebration-lab.webp');">
+                  <img src="images/gallery/sm/birthday-celebration-lab.webp" 
+                       srcset="images/gallery/sm/birthday-celebration-lab.webp 400w, images/gallery/md/birthday-celebration-lab.webp 800w, images/gallery/lg/birthday-celebration-lab.webp 1600w"
+                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                       data-large-src="images/gallery/lg/birthday-celebration-lab.webp"
+                       alt="Birthday Celebration in the Lab" 
+                       loading="lazy"
+                       onload="this.classList.add('loaded')" />
+                  <div class="gallery-overlay">
+                    <div class="gallery-content">
+                      <h3>Birthday Celebration</h3>
+                      <p class="gallery-event">Lab Life • IIT Delhi</p>
+                      <p class="gallery-description">Taking a moment to celebrate personal milestones and birthdays within our close-knit lab community.</p>
+                      <button class="gallery-expand-btn" aria-label="Open in Lightbox">
+                        <i class="fa-solid fa-maximize"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- END NEW PHOTOS -->
+
+              <!-- OLD PHOTOS START -->
               <article class="gallery-item" data-category="research">
                 <div class="gallery-card" style="background-image: url('images/gallery/placeholder/gallery-research-awards.webp');">
                   <img src="images/gallery/sm/gallery-research-awards.webp" 
@@ -468,17 +836,37 @@
         </section>
 
         <!-- Lightbox Modal -->
-        <div id="gallery-lightbox" class="lightbox" aria-hidden="true">
-          <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
-          <div class="lightbox-content">
-            <img id="lightbox-img" src="" alt="" />
-            <div class="lightbox-caption">
-              <h3 id="lightbox-title"></h3>
-              <p id="lightbox-desc"></p>
+        <div id="gallery-lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image viewer">
+
+          <!-- Header bar with close button -->
+          <div class="lightbox-header">
+            <button class="lightbox-close" id="lightbox-close-btn" aria-label="Close lightbox">&times;</button>
+          </div>
+
+          <!-- Nav arrows: fixed to sides of viewport -->
+          <button class="lightbox-prev" id="lightbox-prev-btn" aria-label="Previous image">&#10094;</button>
+          <button class="lightbox-next" id="lightbox-next-btn" aria-label="Next image">&#10095;</button>
+
+          <!-- Swipe hint for mobile -->
+          <div class="lightbox-swipe-hint" id="lightbox-swipe-hint" aria-hidden="true">
+            <i class="fa-solid fa-hand-pointer"></i>
+            <span>Swipe to navigate</span>
+          </div>
+
+          <!-- Main scrollable content area -->
+          <div class="lightbox-inner">
+            <div class="lightbox-content">
+              <!-- Two img slots for smooth crossfade -->
+              <div class="lightbox-img-wrap">
+                <img class="lightbox-img lightbox-img-a active" id="lightbox-img" src="" alt="" />
+                <img class="lightbox-img lightbox-img-b" id="lightbox-img-b" src="" alt="" />
+              </div>
+              <div class="lightbox-caption">
+                <h3 id="lightbox-title"></h3>
+                <p id="lightbox-desc"></p>
+              </div>
             </div>
           </div>
-          <button class="lightbox-prev" aria-label="Previous image">&#10094;</button>
-          <button class="lightbox-next" aria-label="Next image">&#10095;</button>
         </div>
       </main>
 
@@ -490,10 +878,13 @@
                 <img class="brand-mark" src="images/logo-transparent.svg" alt="Vyoma Lab" style="filter: brightness(0) invert(1); width: 42px;">
                 <span style="color: white; margin-left: 0.75rem; font-weight: 700; font-size: 1.25rem;">Vyoma Lab</span>
               </a>
-              <p>
+              <p style="margin-bottom: 1.5rem;">
                 Leading research in advanced textiles, biomaterials, and energy-efficient cooling solutions. 
                 Pushing boundaries in multifunctional sensors and sustainable technology.
               </p>
+              <a href="https://home.iitd.ac.in/" target="_blank" aria-label="IIT Delhi">
+                <img src="images/logo-iit.png" alt="IIT Delhi Logo" style="filter: brightness(0) invert(1); max-width: 150px;">
+              </a>
             </div>
 
             <div class="footer-col">
@@ -502,8 +893,8 @@
                 <li><a href="index.html#home">Home</a></li>
                 <li><a href="harun-venkatesan.html">Dr. Harun Venkatesan</a></li>
                 <li><a href="index.html#current-research">Current Research</a></li>
-                <li><a href="index.html#news">News & Events</a></li>
-                <li><a href="index.html#honours">Honours</a></li>
+                <li><a href="photos.html">Gallery</a></li>
+                <li><a href="awards-honours.html">Honours</a></li>
               </ul>
             </div>
 
@@ -521,10 +912,9 @@
             <div class="footer-col">
               <h4>People</h4>
               <ul class="footer-links-list">
-                <li><a href="alumni-postdoc.html">Postdoctoral Scholars</a></li>
-                <li><a href="alumni-phd.html">Ph.D. Graduates</a></li>
+                <li><a href="alumni-postdoc.html">Staff</a></li>
+                <li><a href="alumni-phd.html">Ph.D. Students</a></li>
                 <li><a href="alumni-masters-ug.html">Masters & Undergraduates</a></li>
-                <li><a href="index.html#staff">Staff Members</a></li>
               </ul>
             </div>
           </div>
@@ -548,6 +938,7 @@
       const navMenu = document.querySelector(".nav-menu");
       const dropdownItems = Array.from(document.querySelectorAll(".has-dropdown"));
       const dropdownSubgroups = Array.from(document.querySelectorAll(".dropdown-subgroup"));
+      const backButtons = Array.from(document.querySelectorAll(".submenu-back"));
 
       const setTriggerState = (trigger, isOpen) => {
         if (!trigger) return;
@@ -558,9 +949,9 @@
         dropdownSubgroups.forEach((group) => {
           group.classList.remove("open");
           setTriggerState(group.querySelector(".dropdown-subtrigger"), false);
+          const parentDropdown = group.closest(".dropdown");
+          if (parentDropdown) parentDropdown.classList.remove("subgroup-active");
         });
-        // Clear sub-activity
-        document.querySelectorAll(".dropdown.subgroup-active").forEach(d => d.classList.remove("subgroup-active"));
       };
 
       const closeDropdownItems = () => {
@@ -568,13 +959,14 @@
           item.classList.remove("open");
           setTriggerState(item.querySelector(".nav-trigger"), false);
         });
-        navMenu.classList.remove("submenu-active");
+        if (navMenu) navMenu.classList.remove("submenu-active");
         closeDropdownSubgroups();
       };
 
       const closeNavMenu = () => {
         if (!navMenu || !menuToggle) return;
         navMenu.classList.remove("open");
+        navMenu.classList.remove("submenu-active");
         document.body.classList.remove("menu-open");
         setTriggerState(menuToggle, false);
       };
@@ -612,8 +1004,8 @@
 
           if (!isOpen) {
             item.classList.add("open");
+            if (navMenu) navMenu.classList.add("submenu-active");
             setTriggerState(trigger, true);
-            navMenu.classList.add("submenu-active");
           }
         });
       });
@@ -626,207 +1018,36 @@
         trigger.addEventListener("click", (event) => {
           event.stopPropagation();
           const isOpen = group.classList.contains("open");
-          const parentDropdown = group.closest(".dropdown");
 
           closeDropdownSubgroups();
 
           if (!isOpen) {
             group.classList.add("open");
+            const parentDropdown = group.closest(".dropdown");
+            if (parentDropdown) parentDropdown.classList.add("subgroup-active");
             setTriggerState(trigger, true);
-            if (parentDropdown) {
-              parentDropdown.classList.add("subgroup-active");
-            }
           }
         });
       });
 
       // Handle back buttons
-      document.querySelectorAll(".submenu-back").forEach((btn) => {
-        btn.addEventListener("click", (event) => {
+      backButtons.forEach(button => {
+        button.addEventListener("click", (event) => {
           event.stopPropagation();
-          const subgroup = btn.closest(".dropdown-subgroup");
-          const dropdown = btn.closest(".dropdown");
-          const navItem = btn.closest(".nav-item");
+          const parentSubgroup = button.closest(".dropdown-subgroup");
+          const parentDropdownItem = button.closest(".has-dropdown");
 
-          if (subgroup && subgroup.classList.contains("open")) {
-            subgroup.classList.remove("open");
-            setTriggerState(subgroup.querySelector(".dropdown-subtrigger"), false);
-            if (dropdown) dropdown.classList.remove("subgroup-active");
-          } else if (navItem && navItem.classList.contains("open")) {
-            navItem.classList.remove("open");
-            setTriggerState(navItem.querySelector(".nav-trigger"), false);
-            navMenu.classList.remove("submenu-active");
+          if (parentSubgroup) {
+            parentSubgroup.classList.remove("open");
+            setTriggerState(parentSubgroup.querySelector(".dropdown-subtrigger"), false);
+            const parentDropdown = parentSubgroup.closest(".dropdown");
+            if (parentDropdown) parentDropdown.classList.remove("subgroup-active");
+          } else if (parentDropdownItem) {
+            parentDropdownItem.classList.remove("open");
+            setTriggerState(parentDropdownItem.querySelector(".nav-trigger"), false);
+            if (navMenu) navMenu.classList.remove("submenu-active");
           }
         });
-      });
-
-      // --- Gallery Functionality ---
-      const filterBtns = document.querySelectorAll(".filter-btn");
-      const galleryItems = document.querySelectorAll(".gallery-item");
-      const lightbox = document.getElementById("gallery-lightbox");
-      const lightboxImg = document.getElementById("lightbox-img");
-      const lightboxTitle = document.getElementById("lightbox-title");
-      const lightboxDesc = document.getElementById("lightbox-desc");
-      const lightboxClose = document.querySelector(".lightbox-close");
-      const lightboxPrev = document.querySelector(".lightbox-prev");
-      const lightboxNext = document.querySelector(".lightbox-next");
-
-      let currentImages = [];
-      let currentIndex = 0;
-
-      // Filtering
-      if (filterBtns.length > 0) {
-        filterBtns.forEach(btn => {
-          btn.addEventListener("click", () => {
-            filterBtns.forEach(b => b.classList.remove("active"));
-            btn.classList.add("active");
-            const filter = btn.getAttribute("data-filter");
-
-            galleryItems.forEach(item => {
-              const category = item.getAttribute("data-category");
-              if (filter === "all" || category === filter) {
-                item.style.display = "block";
-                item.style.animation = "fadeUp 0.5s ease forwards";
-              } else {
-                item.style.display = "none";
-              }
-            });
-          });
-        });
-      }
-
-      // Lightbox logic
-      const updateLightbox = (index) => {
-        const item = currentImages[index];
-        const img = item.querySelector("img");
-        const largeSrc = img.getAttribute("data-large-src");
-        const title = item.querySelector("h3").textContent;
-        const desc = item.querySelector(".gallery-description").textContent;
-
-        lightboxImg.classList.add("loading");
-        
-        lightboxImg.onload = () => {
-          lightboxImg.classList.remove("loading");
-        };
-
-        lightboxImg.src = largeSrc || img.src;
-        lightboxImg.alt = img.alt;
-        lightboxTitle.textContent = title;
-        lightboxDesc.textContent = desc;
-        currentIndex = index;
-      };
-
-      const openLightbox = (item) => {
-        const activeFilterElem = document.querySelector(".filter-btn.active");
-        const activeFilter = activeFilterElem ? activeFilterElem.getAttribute("data-filter") : "all";
-        
-        currentImages = Array.from(galleryItems).filter(i => 
-          activeFilter === "all" || i.getAttribute("data-category") === activeFilter
-        );
-        
-        currentIndex = currentImages.indexOf(item);
-        updateLightbox(currentIndex);
-        lightbox.classList.add("active");
-        lightbox.setAttribute("aria-hidden", "false");
-        document.body.style.overflow = "hidden";
-      };
-
-      // Handle interactions
-      if (galleryItems.length > 0) {
-        galleryItems.forEach((item) => {
-          const expandBtn = item.querySelector(".gallery-expand-btn");
-
-          // Click on the whole item
-          item.addEventListener("click", (e) => {
-            // Detect mobile/touch
-            const isMobile = window.innerWidth <= 768;
-            
-            if (isMobile) {
-              // Check if we clicked the expand button
-              if (expandBtn && (expandBtn.contains(e.target) || e.target === expandBtn)) {
-                openLightbox(item);
-              } else {
-                // Toggle touch-active for the overlay
-                const isActive = item.classList.contains("touch-active");
-                galleryItems.forEach(i => i.classList.remove("touch-active"));
-                if (!isActive) item.classList.add("touch-active");
-              }
-            } else {
-              // Desktop behavior: open lightbox on click
-              openLightbox(item);
-            }
-          });
-        });
-      }
-
-      const closeLightbox = () => {
-        if (lightbox) {
-          lightbox.classList.remove("active");
-          lightbox.setAttribute("aria-hidden", "true");
-          document.body.style.overflow = "";
-        }
-      };
-
-      if (lightboxClose) {
-        lightboxClose.addEventListener("click", closeLightbox);
-      }
-      
-      if (lightbox) {
-        lightbox.addEventListener("click", (e) => {
-          if (e.target === lightbox) closeLightbox();
-        });
-
-        lightbox.addEventListener("touchstart", (e) => {
-          touchStartX = e.changedTouches[0].screenX;
-        }, { passive: true });
-
-        lightbox.addEventListener("touchend", (e) => {
-          touchEndX = e.changedTouches[0].screenX;
-          handleSwipe();
-        }, { passive: true });
-      }
-
-      if (lightboxPrev) {
-        lightboxPrev.addEventListener("click", (e) => {
-          e.stopPropagation();
-          currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
-          updateLightbox(currentIndex);
-        });
-      }
-
-      if (lightboxNext) {
-        lightboxNext.addEventListener("click", (e) => {
-          e.stopPropagation();
-          currentIndex = (currentIndex + 1) % currentImages.length;
-          updateLightbox(currentIndex);
-        });
-      }
-
-      // Swipe support for Lightbox
-      let touchStartX = 0;
-      let touchEndX = 0;
-
-      const handleSwipe = () => {
-        // Only allow swipe navigation on mobile/small screens
-        const isMobile = window.innerWidth <= 768;
-        if (!isMobile) return;
-
-        const swipeThreshold = 50;
-        if (touchEndX < touchStartX - swipeThreshold) {
-          // Swiped Left -> Next
-          if (lightboxNext) lightboxNext.click();
-        }
-        if (touchEndX > touchStartX + swipeThreshold) {
-          // Swiped Right -> Prev
-          if (lightboxPrev) lightboxPrev.click();
-        }
-      };
-
-      document.addEventListener("keydown", (e) => {
-        if (lightbox && !lightbox.classList.contains("active")) return;
-        if (e.key === "Escape") closeLightbox();
-        if (e.key === "ArrowLeft" && lightboxPrev) lightboxPrev.click();
-        if (e.key === "ArrowRight" && lightboxNext) lightboxNext.click();
       });
 
       document.addEventListener("click", (event) => {
@@ -843,6 +1064,248 @@
         closeDropdownItems();
         closeNavMenu();
       });
+
+      // Header scroll collapse effect
+      const siteHeader = document.querySelector(".site-header");
+      if (siteHeader) {
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 40) {
+            siteHeader.classList.add("scrolled");
+          } else {
+            siteHeader.classList.remove("scrolled");
+          }
+        }, { passive: true });
+      }
+    </script>
+
+    <!-- Lightbox JS -->
+    <script>
+      (function () {
+        const lightbox   = document.getElementById('gallery-lightbox');
+        const lbInner    = lightbox.querySelector('.lightbox-inner');
+        const lbImgA     = document.getElementById('lightbox-img');
+        const lbImgB     = document.getElementById('lightbox-img-b');
+        const lbTitle    = document.getElementById('lightbox-title');
+        const lbDesc     = document.getElementById('lightbox-desc');
+        const closeBtn   = document.getElementById('lightbox-close-btn');
+        const prevBtn    = document.getElementById('lightbox-prev-btn');
+        const nextBtn    = document.getElementById('lightbox-next-btn');
+        const swipeHint  = document.getElementById('lightbox-swipe-hint');
+
+        let currentIndex  = 0;
+        let isTransitioning = false;
+        let activeSlot    = 'a'; // which img slot is currently visible
+        let hintShown     = false;
+
+        /* ── helpers ── */
+        function getItems() {
+          return Array.from(document.querySelectorAll('.gallery-item'))
+            .filter(el => el.style.display !== 'none');
+        }
+
+        function isMobile() {
+          return window.matchMedia('(max-width: 768px)').matches;
+        }
+
+        /* ── Show swipe hint once per session ── */
+        function showSwipeHint() {
+          if (hintShown || !isMobile()) return;
+          hintShown = true;
+          swipeHint.classList.add('visible');
+          setTimeout(() => swipeHint.classList.remove('visible'), 2800);
+        }
+
+        /* ── Smooth crossfade between images ── */
+        function loadImage(imgEl, src, alt) {
+          return new Promise(resolve => {
+            if (!src) { resolve(); return; }
+            imgEl.alt = alt || '';
+            const onLoad = () => { imgEl.removeEventListener('load', onLoad); resolve(); };
+            imgEl.addEventListener('load', onLoad);
+            imgEl.src = src;
+          });
+        }
+
+        async function swapImages(src, alt, direction) {
+          if (isTransitioning) return;
+          isTransitioning = true;
+
+          const incoming = activeSlot === 'a' ? lbImgB : lbImgA;
+          const outgoing = activeSlot === 'a' ? lbImgA : lbImgB;
+
+          /* Inactive imgs are position:absolute with base translate(-50%,-50%) */
+          const slideIn  = direction > 0 ? 'translate(calc(-50% + 60px), -50%)' : 'translate(calc(-50% - 60px), -50%)';
+          const slideOut = direction > 0 ? 'translate(calc(-50% - 60px), -50%)' : 'translate(calc(-50% + 60px), -50%)';
+
+          /* Position incoming off-screen in the swipe direction */
+          incoming.style.transition = 'none';
+          incoming.style.transform  = slideIn;
+          incoming.style.opacity    = '0';
+          incoming.src = '';
+
+          await loadImage(incoming, src, alt);
+
+          /* Force reflow so the starting position registers */
+          incoming.getBoundingClientRect();
+
+          /* Slide in incoming, slide out outgoing */
+          incoming.style.transition = 'opacity 0.38s ease, transform 0.38s cubic-bezier(0.23,1,0.32,1)';
+          incoming.style.transform  = 'translateX(0)';
+          incoming.style.opacity    = '1';
+          incoming.classList.add('active');
+
+          outgoing.style.transition = 'opacity 0.3s ease, transform 0.3s cubic-bezier(0.23,1,0.32,1)';
+          outgoing.style.transform  = slideOut;
+          outgoing.style.opacity    = '0';
+          outgoing.classList.remove('active');
+
+          activeSlot = activeSlot === 'a' ? 'b' : 'a';
+
+          setTimeout(() => {
+            outgoing.src       = '';
+            outgoing.style.transform = slideIn;
+            isTransitioning    = false;
+          }, 400);
+        }
+
+        /* ── Open lightbox ── */
+        function openLightbox(index, direction = 0) {
+          const items = getItems();
+          if (!items[index]) return;
+          currentIndex = index;
+
+          const img   = items[index].querySelector('img');
+          const title = items[index].querySelector('h3');
+          const desc  = items[index].querySelector('.gallery-description');
+          const src   = img ? (img.dataset.largeSrc || img.src) : '';
+          const alt   = img ? img.alt : '';
+
+          lbTitle.textContent = title ? title.textContent : '';
+          lbDesc.textContent  = desc  ? desc.textContent  : '';
+
+          const isFirstOpen = !lightbox.classList.contains('open');
+
+          if (isFirstOpen) {
+            /* First open: just set image instantly on the active slot */
+            isTransitioning = false;
+            const active = activeSlot === 'a' ? lbImgA : lbImgB;
+            const inactive = activeSlot === 'a' ? lbImgB : lbImgA;
+            active.src       = src;
+            active.alt       = alt;
+            active.style.cssText = '';
+            active.style.opacity = '1';
+            active.style.transform = 'translateX(0)';
+            active.classList.add('active');
+            inactive.src     = '';
+            inactive.style.opacity = '0';
+            inactive.classList.remove('active');
+
+            lightbox.setAttribute('aria-hidden', 'false');
+            lightbox.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            closeBtn.focus();
+            setTimeout(showSwipeHint, 600);
+          } else {
+            swapImages(src, alt, direction);
+          }
+        }
+
+        function closeLightbox() {
+          lightbox.classList.remove('open');
+          lightbox.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+          /* Reset both slots */
+          [lbImgA, lbImgB].forEach(img => {
+            img.src = '';
+            img.style.cssText = '';
+            img.classList.remove('active');
+          });
+          activeSlot = 'a';
+          lbImgA.classList.add('active');
+          lbImgA.style.opacity = '1';
+        }
+
+        function navigate(dir) {
+          const items = getItems();
+          currentIndex = (currentIndex + dir + items.length) % items.length;
+          openLightbox(currentIndex, dir);
+        }
+
+        /* ── Wire expand buttons ── */
+        document.querySelectorAll('.gallery-expand-btn').forEach(btn => {
+          btn.addEventListener('click', e => {
+            e.stopPropagation();
+            const item  = btn.closest('.gallery-item');
+            const items = getItems();
+            openLightbox(items.indexOf(item), 0);
+          });
+        });
+
+        /* ── Wire gallery card clicks ── */
+        document.querySelectorAll('.gallery-card').forEach(card => {
+          card.addEventListener('click', () => {
+            const item  = card.closest('.gallery-item');
+            const items = getItems();
+            openLightbox(items.indexOf(item), 0);
+          });
+        });
+
+        closeBtn.addEventListener('click', closeLightbox);
+        prevBtn.addEventListener('click', () => navigate(-1));
+        nextBtn.addEventListener('click', () => navigate(+1));
+
+        /* ── Click backdrop to close ── */
+        lightbox.addEventListener('click', e => {
+          if (e.target === lightbox || e.target === lbInner) closeLightbox();
+        });
+
+        /* ── Keyboard navigation ── */
+        document.addEventListener('keydown', e => {
+          if (!lightbox.classList.contains('open')) return;
+          if (e.key === 'Escape')     closeLightbox();
+          if (e.key === 'ArrowLeft')  navigate(-1);
+          if (e.key === 'ArrowRight') navigate(+1);
+        });
+
+        /* ── Touch / swipe support ── */
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let touchDeltaX = 0;
+        let isSwiping   = false;
+        const SWIPE_THRESHOLD = 50;
+        const AXIS_LOCK_THRESHOLD = 10;
+
+        lightbox.addEventListener('touchstart', e => {
+          touchStartX = e.touches[0].clientX;
+          touchStartY = e.touches[0].clientY;
+          touchDeltaX = 0;
+          isSwiping = false;
+        }, { passive: true });
+
+        lightbox.addEventListener('touchmove', e => {
+          if (!e.touches.length) return;
+          const dx = e.touches[0].clientX - touchStartX;
+          const dy = e.touches[0].clientY - touchStartY;
+          touchDeltaX = dx;
+
+          /* Lock to horizontal axis once direction is clear */
+          if (!isSwiping && Math.abs(dx) > AXIS_LOCK_THRESHOLD) {
+            isSwiping = true;
+          }
+          if (isSwiping) {
+            e.preventDefault(); /* prevent page scroll during horizontal swipe */
+          }
+        }, { passive: false });
+
+        lightbox.addEventListener('touchend', () => {
+          if (!isSwiping) return;
+          if (Math.abs(touchDeltaX) >= SWIPE_THRESHOLD) {
+            navigate(touchDeltaX < 0 ? 1 : -1);
+          }
+          isSwiping = false;
+        });
+
+      })();
     </script>
   </body>
 </html>

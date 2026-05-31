@@ -15,38 +15,48 @@ NAV_BLOCK_NEW = '''<nav id="nav-menu" class="nav-menu" aria-label="Primary">
                 <span>People</span>
               </button>
               <div class="dropdown">
+                <button class="submenu-back" type="button" aria-label="Go back to main menu">
+                  <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                  <span>Back to Menu</span>
+                </button>
                 <a href="harun-venkatesan.html">
                   <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
                   <span>Harun Venkatesan</span>
                 </a>
                 <a href="alumni-postdoc.html">
-                  <i class="fa-solid fa-user-graduate" aria-hidden="true"></i>
-                  <span>Postdoctoral Scholars</span>
+                  <i class="fa-solid fa-user-gear" aria-hidden="true"></i>
+                  <span>Staff</span>
                 </a>
                 <a href="alumni-phd.html">
                   <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
                   <span>Ph.D. Graduates</span>
                 </a>
                 <a href="alumni-masters-ug.html">
-                  <i class="fa-solid fa-user-group" aria-hidden="true"></i>
-                  <span>Masters & Undergraduates</span>
-                </a>
-                <a href="staff.html">
-                  <i class="fa-solid fa-user-gear" aria-hidden="true"></i>
-                  <span>Staff</span>
-                </a>
-                <a href="photos.html">
-                  <i class="fa-solid fa-camera-retro" aria-hidden="true"></i>
-                  <span>Photos</span>
+                   <i class="fa-solid fa-user-group" aria-hidden="true"></i>
+                   <span>Masters & Undergraduates</span>
                 </a>
               </div>
             </div>
 
-            <div class="nav-item">
-              <a class="nav-link" href="index.html#current-research">
+            <div class="nav-item has-dropdown">
+              <button class="nav-trigger" type="button" aria-expanded="false">
                 <i class="fa-solid fa-flask-vial" aria-hidden="true"></i>
                 <span>Current Research</span>
-              </a>
+              </button>
+              <div class="dropdown">
+                <button class="submenu-back" type="button" aria-label="Go back to main menu">
+                  <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                  <span>Back to Menu</span>
+                </button>
+                <a href="funding-collaboration.html">
+                  <i class="fa-solid fa-handshake" aria-hidden="true"></i>
+                  <span>Funding & Collaboration</span>
+                </a>
+                <a href="research-domains.html">
+                  <i class="fa-solid fa-microscope" aria-hidden="true"></i>
+                  <span>Domain of Research</span>
+                </a>
+              </div>
             </div>
 
             <div class="nav-item">
@@ -62,12 +72,20 @@ NAV_BLOCK_NEW = '''<nav id="nav-menu" class="nav-menu" aria-label="Primary">
                 <span>Publications</span>
               </button>
               <div class="dropdown">
+                <button class="submenu-back" type="button" aria-label="Go back to main menu">
+                  <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                  <span>Back to Menu</span>
+                </button>
                 <div class="dropdown-subgroup">
                   <button class="dropdown-subtrigger" type="button" aria-expanded="false">
                     <i class="fa-solid fa-journal-whills" aria-hidden="true"></i>
                     <span>Publications</span>
                   </button>
                   <div class="dropdown-submenu" aria-label="Publication years">
+                    <button class="submenu-back" type="button" aria-label="Go back to publication options">
+                      <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                      <span>Back</span>
+                    </button>
                     <a class="dropdown-subitem" href="publications.html">All Publications</a>
                     <a class="dropdown-subitem" href="publications-2025.html">2025 Publications</a>
                     <a class="dropdown-subitem" href="publications-2024.html">2024 Publications</a>
@@ -82,6 +100,10 @@ NAV_BLOCK_NEW = '''<nav id="nav-menu" class="nav-menu" aria-label="Primary">
                     <span>Book Chapters</span>
                   </button>
                   <div class="dropdown-submenu" aria-label="Book Chapter years">
+                    <button class="submenu-back" type="button" aria-label="Go back to publication options">
+                      <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                      <span>Back</span>
+                    </button>
                     <a class="dropdown-subitem" href="book-chapters.html">All Chapters</a>
                     <a class="dropdown-subitem" href="book-chapters-2026.html">2026 Book Chapters</a>
                     <a class="dropdown-subitem" href="book-chapters-2025.html">2025 Book Chapters</a>
@@ -93,14 +115,14 @@ NAV_BLOCK_NEW = '''<nav id="nav-menu" class="nav-menu" aria-label="Primary">
             </div>
 
             <div class="nav-item">
-              <a class="nav-link" href="index.html#news">
-                <i class="fa-solid fa-newspaper" aria-hidden="true"></i>
-                <span>News</span>
+              <a class="nav-link" href="photos.html">
+                <i class="fa-solid fa-camera-retro" aria-hidden="true"></i>
+                <span>Gallery</span>
               </a>
             </div>
 
             <div class="nav-item">
-              <a class="nav-link" href="index.html#honours">
+              <a class="nav-link" href="awards-honours.html">
                 <i class="fa-solid fa-award" aria-hidden="true"></i>
                 <span>Honours</span>
               </a>

@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Funding and Collaboration - Vyoma Lab</title>
+                                                                        <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/favicon_io/apple-touch-icon.png?v=2"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon_io/favicon-32x32.png?v=2" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon_io/favicon-16x16.png?v=2" />
+    <link rel="icon" type="image/x-icon" sizes="any" href="./images/favicon_io/favicon.ico?v=2" />
+    <link rel="shortcut icon" href="./images/favicon_io/favicon.ico?v=2" />
+    <link rel="manifest" href="./images/favicon_io/site.webmanifest?v=2" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* ── Funding & Collaboration: theme-aligned layout ── */
+      .fc-hero {
+        padding: 9rem 0 5rem;
+        background: linear-gradient(135deg, var(--navy-900, #07202f) 0%, var(--sky-800, #0a3f5c) 60%, var(--sky-700, #0f5c85) 100%);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .fc-hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse at 65% 40%, rgba(23,152,205,0.25) 0%, transparent 65%);
+        pointer-events: none;
+      }
+      .fc-hero .eyebrow {
+        color: #ffffff !important;
+        background: rgba(255,255,255,0.15) !important;
+        border: 1px solid rgba(255,255,255,0.4) !important;
+        padding: 0.3rem 1rem !important;
+        border-radius: 2rem !important;
+        font-size: 0.72rem !important;
+        letter-spacing: 0.15em !important;
+        font-weight: 700 !important;
+        display: inline-block !important;
+        margin-bottom: 1.25rem !important;
+        backdrop-filter: blur(4px) !important;
+      }
+      .fc-hero h1 {
+        font-family: var(--font-display, 'Space Grotesk', sans-serif);
+        font-size: clamp(2.4rem, 5vw, 4rem);
+        font-weight: 700;
+        color: #ffffff;
+        margin: 0 0 1.25rem;
+        line-height: 1.15;
+        text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+        text-align: center;
+      }
+      .fc-hero p {
+        color: #ffffff;
+        font-size: 1.15rem;
+        max-width: 640px;
+        margin: 0 auto;
+        line-height: 1.75;
+        opacity: 0.9;
+        text-align: center;
+      }
+
+      .fc-section { padding: 6rem 0; background: #ffffff; }
+      .fc-section.alt { background: var(--sky-050, #f0f9ff); }
+
+      .section-heading {
+        margin: 0 auto 3.5rem !important;
+        text-align: center !important;
+        max-width: 100% !important;
+      }
+      .section-heading h2 {
+        font-family: var(--font-display, 'Space Grotesk', sans-serif);
+        font-size: 2.75rem;
+        color: var(--navy-900, #07202f);
+        margin-bottom: 0.75rem;
+        text-align: center !important;
+        letter-spacing: -0.02em;
+      }
+      .section-heading p {
+        color: #5a7a8e;
+        font-size: 1.1rem;
+        text-align: center !important;
+        max-width: 620px;
+        margin: 0 auto !important;
+        line-height: 1.65;
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+        gap: 2.5rem;
+      }
+      .project-card {
+        background: linear-gradient(145deg, #ffffff, #fafcff);
+        border-radius: var(--radius-lg, 28px);
+        padding: 2.5rem;
+        box-shadow: 0 8px 30px rgba(7,32,47,0.05);
+        border: 1px solid rgba(23,152,205,0.1);
+        display: flex;
+        flex-direction: column;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+        overflow: hidden;
+      }
+      .project-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 16px 45px rgba(7,32,47,0.1);
+        border: 1px solid rgba(23,152,205,0.25);
+      }
+      
+      .status-tag {
+        display: inline-block;
+        padding: 0.35rem 0.85rem;
+        border-radius: 2rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        letter-spacing: 0.05em;
+      }
+      .status-ongoing { background: var(--sky-100, #dff5ff); color: var(--sky-700, #0f5c85); }
+      .status-completed { background: #f0fff4; color: #2f855a; }
+
+      .project-card h3 {
+        font-family: var(--font-display, 'Space Grotesk', sans-serif);
+        font-size: 1.45rem;
+        line-height: 1.4;
+        color: #07202f;
+        margin-bottom: 2rem;
+        flex-grow: 1;
+      }
+
+      .funder-box {
+        margin-top: auto;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--sky-100, #dff5ff);
+      }
+      .funder-logos {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        align-items: stretch;
+      }
+      .funder-logo-item {
+        background: #ffffff;
+        border-radius: 20px;
+        border: 1px solid rgba(23,152,205,0.12);
+        box-shadow: 0 4px 18px rgba(7,32,47,0.07);
+        padding: 1.5rem 1rem 1rem;
+        text-align: center;
+        flex: 1 1 140px;
+        max-width: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        transition: transform 0.28s ease, box-shadow 0.28s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      .funder-logo-item:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 24px rgba(7,32,47,0.1);
+      }
+      .funder-img-box {
+        width: 100%;
+        height: 75px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+      .funder-logo {
+        max-height: 75px;
+        max-width: 100%;
+        width: auto;
+        object-fit: contain;
+        transition: transform 0.28s ease;
+      }
+      .funder-logo-item:hover .funder-logo {
+        transform: scale(1.06);
+      }
+      .funder-logo-name {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #2a4a60;
+        line-height: 1.35;
+        text-align: center;
+        border-top: 1px solid rgba(23,152,205,0.12);
+        padding-top: 0.75rem;
+        width: 100%;
+      }
+
+      /* ── Partners Grid ── */
+      .partners-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 185px);
+        justify-content: center;
+        align-items: stretch;
+        gap: 1.5rem;
+        margin-top: 1rem;
+      }
+      .partner-logo-wrap {
+        background: #ffffff;
+        border-radius: 20px;
+        border: 1px solid rgba(23,152,205,0.12);
+        box-shadow: 0 4px 18px rgba(7,32,47,0.07);
+        padding: 1.75rem 1.25rem 1.25rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        transition: transform 0.28s ease, box-shadow 0.28s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      .partner-logo-wrap:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 14px 36px rgba(7,32,47,0.13);
+      }
+      .partner-logo-wrap .partner-img-box {
+        width: 100%;
+        height: 88px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+      .partner-logo-wrap .partner-img-box img {
+        max-height: 88px;
+        max-width: 100%;
+        width: auto;
+        object-fit: contain;
+        transition: transform 0.28s ease;
+      }
+      .partner-logo-wrap:hover .partner-img-box img {
+        transform: scale(1.06);
+      }
+      .partner-logo-wrap span {
+        display: block;
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: #2a4a60;
+        line-height: 1.4;
+        text-align: center;
+        border-top: 1px solid rgba(23,152,205,0.12);
+        padding-top: 0.75rem;
+        width: 100%;
+      }
+
+      @media (max-width: 900px) {
+        .partners-grid {
+          grid-template-columns: repeat(2, 150px);
+          gap: 1rem;
+        }
+        .partner-logo-wrap { padding: 1.25rem 1rem 1rem; }
+        .partner-logo-wrap .partner-img-box { height: 70px; }
+        .partner-logo-wrap .partner-img-box img { max-height: 70px; }
+      }
+      @media (max-width: 768px) {
+        .fc-hero h1 { font-size: 2.5rem; }
+        .project-grid { grid-template-columns: 1fr; }
+      }
+      @media (max-width: 480px) {
+        .partners-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="header-brand-row-outer">
+          <div class="container header-brand-row-inner">
+            <a class="brand" href="index.html#home" aria-label="Vyoma Lab home">
+              <img class="brand-mark" src="images/logo-transparent.svg" alt="Vyoma Lab logo" />
+              <span>
+                Vyoma Lab
+                <small>Research &amp; Discovery</small>
+              </span>
+            </a>
+            
+            <div class="header-iitd-brand">
+              <img src="images/funding/iitd-logo.png" alt="IIT Delhi logo" class="iitd-logo" />
+              <span class="iitd-text">Indian Institute of Technology Delhi</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="container nav-wrap">
+          <!-- Grouped brands: Vyoma Lab | IIT Delhi — treated as one flex item -->
+          <div class="nav-brands-group">
+            <a class="brand brand-mobile" href="index.html#home" aria-label="Vyoma Lab home">
+              <img class="brand-mark" src="images/logo-transparent.svg" alt="Vyoma Lab logo" />
+              <span>
+                Vyoma Lab
+                <small>Research &amp; Discovery</small>
+              </span>
+            </a>
+
+            <span class="nav-brand-sep" aria-hidden="true">|</span>
+
+            <a class="iitd-nav" href="https://home.iitd.ac.in/" target="_blank" aria-label="IIT Delhi">
+              <img src="images/funding/iitd-logo.png" alt="IIT Delhi logo" class="iitd-nav-logo" />
+              <span class="iitd-nav-text">IIT Delhi</span>
+            </a>
+          </div>
+
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="nav-menu"
+            aria-label="Open menu"
+          >
+            <span class="menu-label">Menu</span>
+            <span class="menu-icon" aria-hidden="true">☰</span>
+          </button>
+
+          <nav id="nav-menu" class="nav-menu" aria-label="Primary">
+            <div class="nav-item">
+              <a class="nav-link" href="index.html#home">
+                <i class="fa-solid fa-house" aria-hidden="true"></i>
+                <span>Home</span>
+              </a>
+            </div>
+
+            <div class="nav-item has-dropdown">
+              <button class="nav-trigger" type="button" aria-expanded="false">
+                <i class="fa-solid fa-users" aria-hidden="true"></i>
+                <span>People</span>
+              </button>
+              <div class="dropdown">
+                <button class="submenu-back" type="button" aria-label="Go back to main menu">
+                  <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                  <span>Back to Menu</span>
+                </button>
+                <a href="harun-venkatesan.html">
+                  <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
+                  <span>Harun Venkatesan</span>
+                </a>
+                <a href="alumni-postdoc.html">
+                  <i class="fa-solid fa-user-gear" aria-hidden="true"></i>
+                  <span>Staff</span>
+                </a>
+                <a href="alumni-phd.html">
+                  <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                  <span>Ph.D. Students</span>
+                </a>
+                <a href="alumni-masters-ug.html">
+                   <i class="fa-solid fa-user-group" aria-hidden="true"></i>
+                   <span>Masters & Undergraduates</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="nav-item has-dropdown">
+              <button class="nav-trigger" type="button" aria-expanded="false">
+                <i class="fa-solid fa-flask-vial" aria-hidden="true"></i>
+                <span>Current Research</span>
+              </button>
+              <div class="dropdown">
+                <button class="submenu-back" type="button" aria-label="Go back to main menu">
+                  <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                  <span>Back to Menu</span>
+                </button>
+                <a href="funding-collaboration.html">
+                  <i class="fa-solid fa-handshake" aria-hidden="true"></i>
+                  <span>Funding & Collaboration</span>
+                </a>
+                <a href="research-domains.html">
+                  <i class="fa-solid fa-microscope" aria-hidden="true"></i>
+                  <span>Domain of Research</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="nav-item">
+              <a class="nav-link" href="facilities.html">
+                <i class="fa-solid fa-microscope" aria-hidden="true"></i>
+                <span>Facilities</span>
+              </a>
+            </div>
+
+            <div class="nav-item has-dropdown">
+              <button class="nav-trigger" type="button" aria-expanded="false">
+                <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                <span>Publications</span>
+              </button>
+              <div class="dropdown">
+                <button class="submenu-back" type="button" aria-label="Go back to main menu">
+                  <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                  <span>Back to Menu</span>
+                </button>
+                <div class="dropdown-subgroup">
+                  <button class="dropdown-subtrigger" type="button" aria-expanded="false">
+                    <i class="fa-solid fa-journal-whills" aria-hidden="true"></i>
+                    <span>Publications</span>
+                  </button>
+                  <div class="dropdown-submenu" aria-label="Publication years">
+                    <button class="submenu-back" type="button" aria-label="Go back to publication options">
+                      <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                      <span>Back</span>
+                    </button>
+                    <a class="dropdown-subitem" href="publications.html">All Publications</a>
+                    <a class="dropdown-subitem" href="publications-2025.html">2025 Publications</a>
+                    <a class="dropdown-subitem" href="publications-2024.html">2024 Publications</a>
+                    <a class="dropdown-subitem" href="publications-2023.html">2023 Publications</a>
+                    <a class="dropdown-subitem" href="publications-2022.html">2022 Publications</a>
+                    <a class="dropdown-subitem" href="publications-2021.html">2021 Publications</a>
+                  </div>
+                </div>
+                <div class="dropdown-subgroup">
+                  <button class="dropdown-subtrigger" type="button" aria-expanded="false">
+                    <i class="fa-solid fa-book" aria-hidden="true"></i>
+                    <span>Book Chapters</span>
+                  </button>
+                  <div class="dropdown-submenu" aria-label="Book Chapter years">
+                    <button class="submenu-back" type="button" aria-label="Go back to publication options">
+                      <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                      <span>Back</span>
+                    </button>
+                    <a class="dropdown-subitem" href="book-chapters.html">All Chapters</a>
+                    <a class="dropdown-subitem" href="book-chapters-2026.html">2026 Book Chapters</a>
+                    <a class="dropdown-subitem" href="book-chapters-2025.html">2025 Book Chapters</a>
+                    <a class="dropdown-subitem" href="book-chapters-2020.html">2020 Book Chapters</a>
+                    <a class="dropdown-subitem" href="book-chapters-2019.html">2019 Book Chapters</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="nav-item">
+              <a class="nav-link" href="photos.html">
+                <i class="fa-solid fa-camera-retro" aria-hidden="true"></i>
+                <span>Gallery</span>
+              </a>
+            </div>
+
+            <div class="nav-item">
+              <a class="nav-link" href="awards-honours.html">
+                <i class="fa-solid fa-award" aria-hidden="true"></i>
+                <span>Honours</span>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <!-- ── Modernized Hero ── -->
+        <section class="fc-hero">
+          <div class="container">
+            <span class="eyebrow">Our Partners</span>
+            <h1>Funding & Collaboration</h1>
+            <p>Empowered by national missions and international research boards to drive next-generation material science innovation.</p>
+          </div>
+        </section>
+
+        <!-- ── Ongoing Projects ── -->
+        <section class="fc-section alt">
+          <div class="container">
+            <div class="section-heading">
+              <h2>Ongoing Projects</h2>
+              <p>Current high-impact research initiatives supported by major funding bodies.</p>
+            </div>
+            
+            <div class="project-grid">
+              <!-- Project 1 -->
+              <div class="project-card">
+                <div>
+                  <span class="status-tag status-ongoing">Ongoing</span>
+                  <h3>Mission for Developing Aerogels Based Textile Material for Civilian, Industrial and Defense Applications</h3>
+                </div>
+              </div>
+
+              <!-- Project 2 -->
+              <div class="project-card">
+                <div>
+                  <span class="status-tag status-ongoing">Ongoing</span>
+                  <h3>Smart Hemostatic Aerogels Based On Silk And Cellulose Composites For Complex Shaped Wounds</h3>
+                </div>
+              </div>
+
+              <!-- Project 3 -->
+              <div class="project-card">
+                <div>
+                  <span class="status-tag status-ongoing">Ongoing</span>
+                  <h3>Extreme cold weather clothing (ECWC) upgradation through value addition</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ── Completed Projects ── -->
+        <section class="fc-section">
+          <div class="container">
+            <div class="section-heading">
+              <h2>Completed Projects</h2>
+              <p>Successfully delivered research milestones contributing to the global scientific community.</p>
+            </div>
+            
+            <div class="project-grid">
+              <div class="project-card completed">
+                <div>
+                  <span class="status-tag status-completed">Successfully Completed</span>
+                  <h3>Development of Sustainable Aerogel Textile for Cold Weather Clothing</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ── Strategic Partners Section ── -->
+        <section class="fc-section alt" style="border-top: 1px solid var(--sky-100);">
+          <div class="container">
+            <div class="section-heading">
+              <h2>Strategic Partners</h2>
+              <p>Collaborating with leading institutions to push the boundaries of discovery.</p>
+            </div>
+            
+            <div class="partners-grid">
+              <div class="partner-logo-wrap">
+                <div class="partner-img-box">
+                  <img src="images/funding/nttm_logo.png" alt="Ministry of Textiles" />
+                </div>
+                <span>Ministry of Textiles</span>
+              </div>
+              <div class="partner-logo-wrap">
+                <div class="partner-img-box">
+                  <img src="images/funding/dhr-logo-new.png" alt="DHR" />
+                </div>
+                <span>Department of Health Research (DHR)</span>
+              </div>
+              <div class="partner-logo-wrap">
+                <div class="partner-img-box">
+                  <img src="images/funding/serb-logo-transparent.png" alt="SERB India" />
+                </div>
+                <span>Science and Engineering Research Board (SERB)</span>
+              </div>
+              <div class="partner-logo-wrap">
+                <div class="partner-img-box">
+                  <img src="images/funding/drdo-logo.png" alt="DRDO" />
+                </div>
+                <span>Defence Research and Development Organisation (DRDO)</span>
+              </div>
+              <div class="partner-logo-wrap">
+                <div class="partner-img-box">
+                  <img src="images/funding/iitd-logo.png" alt="IIT Delhi" />
+                </div>
+                <span>DIA-CoE IIT Delhi</span>
+              </div>
+              <div class="partner-logo-wrap">
+                <div class="partner-img-box">
+                  <img src="images/funding/circot-logo.png" alt="CIRCOT" />
+                </div>
+                <span>ICAR - CIRCOT</span>
+              </div>
+              <div class="partner-logo-wrap">
+                <div class="partner-img-box">
+                  <img src="images/funding/aiims-logo.png" alt="AIIMS Delhi" />
+                </div>
+                <span>AIIMS Delhi</span>
+              </div>
+              <div class="partner-logo-wrap">
+                <div class="partner-img-box">
+                  <img src="images/funding/arrow-logo.png" alt="Arrow Garments" />
+                </div>
+                <span>Arrow Garments</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container">
+          <div class="footer-grid">
+            <div class="footer-brand">
+              <a class="brand" href="index.html#home" style="margin-bottom: 2rem; display: flex;">
+                <img class="brand-mark" src="images/logo-transparent.svg" alt="Vyoma Lab" style="filter: brightness(0) invert(1); width: 42px;">
+                <span style="color: white; margin-left: 0.75rem; font-weight: 700; font-size: 1.25rem;">Vyoma Lab</span>
+              </a>
+              <p style="margin-bottom: 1.5rem;">
+                Leading research in advanced textiles, biomaterials, and energy-efficient cooling solutions. 
+                Pushing boundaries in multifunctional sensors and sustainable technology.
+              </p>
+              <a href="https://home.iitd.ac.in/" target="_blank" aria-label="IIT Delhi">
+                <img src="images/logo-iit.png" alt="IIT Delhi Logo" style="filter: brightness(0) invert(1); max-width: 150px;">
+              </a>
+            </div>
+
+            <div class="footer-col">
+              <h4>Navigation</h4>
+              <ul class="footer-links-list">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="harun-venkatesan.html">Dr. Harun Venkatesan</a></li>
+                <li><a href="index.html#current-research">Current Research</a></li>
+                <li><a href="photos.html">Gallery</a></li>
+                <li><a href="awards-honours.html">Honours</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h4>Research</h4>
+              <ul class="footer-links-list">
+                <li><a href="publications.html">All Publications</a></li>
+                <li><a href="book-chapters.html">Book Chapters</a></li>
+                <li><a href="publications-2025.html">2025 Archive</a></li>
+                <li><a href="publications-2024.html">2024 Archive</a></li>
+                <li><a href="book-chapters-2026.html">2026 Book Chapters</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h4>People</h4>
+              <ul class="footer-links-list">
+                <li><a href="alumni-postdoc.html">Staff</a></li>
+                <li><a href="alumni-phd.html">Ph.D. Students</a></li>
+                <li><a href="alumni-masters-ug.html">Masters & Undergraduates</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <div class="footer-contact">
+              <strong>Department of Textile and Fibre Engineering</strong><br>
+              IIT Campus, Hauz Khas, New Delhi-110016
+            </div>
+            <div class="footer-copyright">
+              Copyright © 2026 Vyoma Lab. All rights reserved.
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      // Navigation functionality
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navMenu = document.querySelector(".nav-menu");
+      const dropdownItems = Array.from(document.querySelectorAll(".has-dropdown"));
+      const dropdownSubgroups = Array.from(document.querySelectorAll(".dropdown-subgroup"));
+      const backButtons = Array.from(document.querySelectorAll(".submenu-back"));
+
+      const setTriggerState = (trigger, isOpen) => {
+        if (!trigger) return;
+        trigger.setAttribute("aria-expanded", String(isOpen));
+      };
+
+      const closeDropdownSubgroups = () => {
+        dropdownSubgroups.forEach((group) => {
+          group.classList.remove("open");
+          setTriggerState(group.querySelector(".dropdown-subtrigger"), false);
+          const parentDropdown = group.closest(".dropdown");
+          if (parentDropdown) parentDropdown.classList.remove("subgroup-active");
+        });
+      };
+
+      const closeDropdownItems = () => {
+        dropdownItems.forEach((item) => {
+          item.classList.remove("open");
+          setTriggerState(item.querySelector(".nav-trigger"), false);
+        });
+        if (navMenu) navMenu.classList.remove("submenu-active");
+        closeDropdownSubgroups();
+      };
+
+      const closeNavMenu = () => {
+        if (!navMenu || !menuToggle) return;
+        navMenu.classList.remove("open");
+        navMenu.classList.remove("submenu-active");
+        document.body.classList.remove("menu-open");
+        setTriggerState(menuToggle, false);
+      };
+
+      if (menuToggle && navMenu) {
+        menuToggle.addEventListener("click", (event) => {
+          event.stopPropagation();
+          const isOpen = navMenu.classList.toggle("open");
+          document.body.classList.toggle("menu-open", isOpen);
+          setTriggerState(menuToggle, isOpen);
+
+          if (!isOpen) {
+            closeDropdownItems();
+          }
+        });
+
+        navMenu.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            closeDropdownItems();
+            closeNavMenu();
+          });
+        });
+      }
+
+      dropdownItems.forEach((item) => {
+        const trigger = item.querySelector(".nav-trigger");
+
+        if (!trigger) return;
+
+        trigger.addEventListener("click", (event) => {
+          event.stopPropagation();
+          const isOpen = item.classList.contains("open");
+
+          closeDropdownItems();
+
+          if (!isOpen) {
+            item.classList.add("open");
+            if (navMenu) navMenu.classList.add("submenu-active");
+            setTriggerState(trigger, true);
+          }
+        });
+      });
+
+      dropdownSubgroups.forEach((group) => {
+        const trigger = group.querySelector(".dropdown-subtrigger");
+
+        if (!trigger) return;
+
+        trigger.addEventListener("click", (event) => {
+          event.stopPropagation();
+          const isOpen = group.classList.contains("open");
+
+          closeDropdownSubgroups();
+
+          if (!isOpen) {
+            group.classList.add("open");
+            const parentDropdown = group.closest(".dropdown");
+            if (parentDropdown) parentDropdown.classList.add("subgroup-active");
+            setTriggerState(trigger, true);
+          }
+        });
+      });
+
+      // Handle back buttons
+      backButtons.forEach(button => {
+        button.addEventListener("click", (event) => {
+          event.stopPropagation();
+          const parentSubgroup = button.closest(".dropdown-subgroup");
+          const parentDropdownItem = button.closest(".has-dropdown");
+
+          if (parentSubgroup) {
+            parentSubgroup.classList.remove("open");
+            setTriggerState(parentSubgroup.querySelector(".dropdown-subtrigger"), false);
+            const parentDropdown = parentSubgroup.closest(".dropdown");
+            if (parentDropdown) parentDropdown.classList.remove("subgroup-active");
+          } else if (parentDropdownItem) {
+            parentDropdownItem.classList.remove("open");
+            setTriggerState(parentDropdownItem.querySelector(".nav-trigger"), false);
+            if (navMenu) navMenu.classList.remove("submenu-active");
+          }
+        });
+      });
+
+      document.addEventListener("click", (event) => {
+        const clickedInsideMenu = navMenu && navMenu.contains(event.target);
+        const clickedMenuToggle = menuToggle && menuToggle.contains(event.target);
+
+        if (clickedInsideMenu || clickedMenuToggle) return;
+        closeDropdownItems();
+        closeNavMenu();
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key !== "Escape") return;
+        closeDropdownItems();
+        closeNavMenu();
+      });
+
+      // Header scroll collapse effect
+      const siteHeader = document.querySelector(".site-header");
+      if (siteHeader) {
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 40) {
+            siteHeader.classList.add("scrolled");
+          } else {
+            siteHeader.classList.remove("scrolled");
+          }
+        }, { passive: true });
+      }
+    </script>
+
+  </body>
+</html>

@@ -25,44 +25,89 @@ HEAD_BLOCK_MASTER = '''    <link
 
 NAV_BLOCK_MASTER = '''<nav id="nav-menu" class="nav-menu" aria-label="Primary">
             <div class="nav-item">
-              <a class="nav-link" href="index.html#home">Home</a>
+              <a class="nav-link" href="index.html#home">
+                <i class="fa-solid fa-house" aria-hidden="true"></i>
+                <span>Home</span>
+              </a>
             </div>
 
             <div class="nav-item has-dropdown">
               <button class="nav-trigger" type="button" aria-expanded="false">
-                People
+                <i class="fa-solid fa-users" aria-hidden="true"></i>
+                <span>People</span>
               </button>
               <div class="dropdown">
-                <a href="harun-venkatesan.html">Harun Venkatesan</a>
-                <div class="dropdown-subgroup">
-                  <button class="dropdown-subtrigger" type="button" aria-expanded="false">
-                    Alumni
-                  </button>
-                  <div class="dropdown-submenu" aria-label="Alumni groups">
-                    <a class="dropdown-subitem" href="alumni-postdoc.html">Postdoctoral Scholars</a>
-                    <a class="dropdown-subitem" href="alumni-phd.html">Ph.D. Graduates</a>
-                    <a class="dropdown-subitem" href="alumni-masters-ug.html">Masters & Undergraduates</a>
-                  </div>
-                </div>
-                <a href="index.html#staff">Staff</a>
-                <a href="photos.html">Photos</a>
+                <button class="submenu-back" type="button" aria-label="Go back to main menu">
+                  <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                  <span>Back to Menu</span>
+                </button>
+                <a href="harun-venkatesan.html">
+                  <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
+                  <span>Harun Venkatesan</span>
+                </a>
+                <a href="alumni-postdoc.html">
+                  <i class="fa-solid fa-user-gear" aria-hidden="true"></i>
+                  <span>Staff</span>
+                </a>
+                <a href="alumni-phd.html">
+                  <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                  <span>Ph.D. Students</span>
+                </a>
+                <a href="alumni-masters-ug.html">
+                   <i class="fa-solid fa-user-group" aria-hidden="true"></i>
+                   <span>Masters & Undergraduates</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="nav-item has-dropdown">
+              <button class="nav-trigger" type="button" aria-expanded="false">
+                <i class="fa-solid fa-flask-vial" aria-hidden="true"></i>
+                <span>Current Research</span>
+              </button>
+              <div class="dropdown">
+                <button class="submenu-back" type="button" aria-label="Go back to main menu">
+                  <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                  <span>Back to Menu</span>
+                </button>
+                <a href="funding-collaboration.html">
+                  <i class="fa-solid fa-handshake" aria-hidden="true"></i>
+                  <span>Funding & Collaboration</span>
+                </a>
+                <a href="research-domains.html">
+                  <i class="fa-solid fa-microscope" aria-hidden="true"></i>
+                  <span>Domain of Research</span>
+                </a>
               </div>
             </div>
 
             <div class="nav-item">
-              <a class="nav-link" href="index.html#current-research">Current Research</a>
+              <a class="nav-link" href="facilities.html">
+                <i class="fa-solid fa-microscope" aria-hidden="true"></i>
+                <span>Facilities</span>
+              </a>
             </div>
 
             <div class="nav-item has-dropdown">
               <button class="nav-trigger" type="button" aria-expanded="false">
-                Publications
+                <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                <span>Publications</span>
               </button>
               <div class="dropdown">
+                <button class="submenu-back" type="button" aria-label="Go back to main menu">
+                  <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                  <span>Back to Menu</span>
+                </button>
                 <div class="dropdown-subgroup">
                   <button class="dropdown-subtrigger" type="button" aria-expanded="false">
-                    Publications
+                    <i class="fa-solid fa-journal-whills" aria-hidden="true"></i>
+                    <span>Publications</span>
                   </button>
                   <div class="dropdown-submenu" aria-label="Publication years">
+                    <button class="submenu-back" type="button" aria-label="Go back to publication options">
+                      <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                      <span>Back</span>
+                    </button>
                     <a class="dropdown-subitem" href="publications.html">All Publications</a>
                     <a class="dropdown-subitem" href="publications-2025.html">2025 Publications</a>
                     <a class="dropdown-subitem" href="publications-2024.html">2024 Publications</a>
@@ -73,9 +118,14 @@ NAV_BLOCK_MASTER = '''<nav id="nav-menu" class="nav-menu" aria-label="Primary">
                 </div>
                 <div class="dropdown-subgroup">
                   <button class="dropdown-subtrigger" type="button" aria-expanded="false">
-                    Book Chapters
+                    <i class="fa-solid fa-book" aria-hidden="true"></i>
+                    <span>Book Chapters</span>
                   </button>
                   <div class="dropdown-submenu" aria-label="Book Chapter years">
+                    <button class="submenu-back" type="button" aria-label="Go back to publication options">
+                      <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                      <span>Back</span>
+                    </button>
                     <a class="dropdown-subitem" href="book-chapters.html">All Chapters</a>
                     <a class="dropdown-subitem" href="book-chapters-2026.html">2026 Book Chapters</a>
                     <a class="dropdown-subitem" href="book-chapters-2025.html">2025 Book Chapters</a>
@@ -87,13 +137,71 @@ NAV_BLOCK_MASTER = '''<nav id="nav-menu" class="nav-menu" aria-label="Primary">
             </div>
 
             <div class="nav-item">
-              <a class="nav-link" href="index.html#news">News</a>
+              <a class="nav-link" href="photos.html">
+                <i class="fa-solid fa-camera-retro" aria-hidden="true"></i>
+                <span>Gallery</span>
+              </a>
             </div>
 
             <div class="nav-item">
-              <a class="nav-link" href="index.html#honours">Honours</a>
+              <a class="nav-link" href="awards-honours.html">
+                <i class="fa-solid fa-award" aria-hidden="true"></i>
+                <span>Honours</span>
+              </a>
             </div>
           </nav>'''
+
+HEADER_BLOCK_MASTER = '''<header class="site-header">
+        <div class="header-brand-row-outer">
+          <div class="container header-brand-row-inner">
+            <a class="brand" href="index.html#home" aria-label="Vyoma Lab home">
+              <img class="brand-mark" src="images/logo-transparent.svg" alt="Vyoma Lab logo" />
+              <span>
+                Vyoma Lab
+                <small>Research &amp; Discovery</small>
+              </span>
+            </a>
+            
+            <div class="header-iitd-brand">
+              <img src="images/funding/iitd-logo.png" alt="IIT Delhi logo" class="iitd-logo" />
+              <span class="iitd-text">Indian Institute of Technology Delhi</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="container nav-wrap">
+          <!-- Grouped brands: Vyoma Lab | IIT Delhi — treated as one flex item -->
+          <div class="nav-brands-group">
+            <a class="brand brand-mobile" href="index.html#home" aria-label="Vyoma Lab home">
+              <img class="brand-mark" src="images/logo-transparent.svg" alt="Vyoma Lab logo" />
+              <span>
+                Vyoma Lab
+                <small>Research &amp; Discovery</small>
+              </span>
+            </a>
+
+            <span class="nav-brand-sep" aria-hidden="true">|</span>
+
+            <a class="iitd-nav" href="https://home.iitd.ac.in/" target="_blank" aria-label="IIT Delhi">
+              <img src="images/funding/iitd-logo.png" alt="IIT Delhi logo" class="iitd-nav-logo" />
+              <span class="iitd-nav-text">IIT Delhi</span>
+            </a>
+          </div>
+
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="nav-menu"
+            aria-label="Open menu"
+          >
+            <span class="menu-label">Menu</span>
+            <span class="menu-icon" aria-hidden="true">☰</span>
+          </button>
+
+          ''' + NAV_BLOCK_MASTER + '''
+        </div>
+      </header>'''
 
 FOOTER_BLOCK_MASTER = '''<footer class="site-footer">
         <div class="container">
@@ -103,10 +211,13 @@ FOOTER_BLOCK_MASTER = '''<footer class="site-footer">
                 <img class="brand-mark" src="images/logo-transparent.svg" alt="Vyoma Lab" style="filter: brightness(0) invert(1); width: 42px;">
                 <span style="color: white; margin-left: 0.75rem; font-weight: 700; font-size: 1.25rem;">Vyoma Lab</span>
               </a>
-              <p>
+              <p style="margin-bottom: 1.5rem;">
                 Leading research in advanced textiles, biomaterials, and energy-efficient cooling solutions. 
                 Pushing boundaries in multifunctional sensors and sustainable technology.
               </p>
+              <a href="https://home.iitd.ac.in/" target="_blank" aria-label="IIT Delhi">
+                <img src="images/logo-iit.png" alt="IIT Delhi Logo" style="filter: brightness(0) invert(1); max-width: 150px;">
+              </a>
             </div>
 
             <div class="footer-col">
@@ -115,8 +226,8 @@ FOOTER_BLOCK_MASTER = '''<footer class="site-footer">
                 <li><a href="index.html#home">Home</a></li>
                 <li><a href="harun-venkatesan.html">Dr. Harun Venkatesan</a></li>
                 <li><a href="index.html#current-research">Current Research</a></li>
-                <li><a href="index.html#news">News & Events</a></li>
-                <li><a href="index.html#honours">Honours</a></li>
+                <li><a href="photos.html">Gallery</a></li>
+                <li><a href="awards-honours.html">Honours</a></li>
               </ul>
             </div>
 
@@ -134,10 +245,9 @@ FOOTER_BLOCK_MASTER = '''<footer class="site-footer">
             <div class="footer-col">
               <h4>People</h4>
               <ul class="footer-links-list">
-                <li><a href="alumni-postdoc.html">Postdoctoral Scholars</a></li>
-                <li><a href="alumni-phd.html">Ph.D. Graduates</a></li>
+                <li><a href="alumni-postdoc.html">Staff</a></li>
+                <li><a href="alumni-phd.html">Ph.D. Students</a></li>
                 <li><a href="alumni-masters-ug.html">Masters & Undergraduates</a></li>
-                <li><a href="index.html#staff">Staff Members</a></li>
               </ul>
             </div>
           </div>
@@ -161,6 +271,7 @@ SCRIPT_BLOCK_MASTER = '''<script>
       const navMenu = document.querySelector(".nav-menu");
       const dropdownItems = Array.from(document.querySelectorAll(".has-dropdown"));
       const dropdownSubgroups = Array.from(document.querySelectorAll(".dropdown-subgroup"));
+      const backButtons = Array.from(document.querySelectorAll(".submenu-back"));
 
       const setTriggerState = (trigger, isOpen) => {
         if (!trigger) return;
@@ -171,6 +282,8 @@ SCRIPT_BLOCK_MASTER = '''<script>
         dropdownSubgroups.forEach((group) => {
           group.classList.remove("open");
           setTriggerState(group.querySelector(".dropdown-subtrigger"), false);
+          const parentDropdown = group.closest(".dropdown");
+          if (parentDropdown) parentDropdown.classList.remove("subgroup-active");
         });
       };
 
@@ -179,12 +292,14 @@ SCRIPT_BLOCK_MASTER = '''<script>
           item.classList.remove("open");
           setTriggerState(item.querySelector(".nav-trigger"), false);
         });
+        if (navMenu) navMenu.classList.remove("submenu-active");
         closeDropdownSubgroups();
       };
 
       const closeNavMenu = () => {
         if (!navMenu || !menuToggle) return;
         navMenu.classList.remove("open");
+        navMenu.classList.remove("submenu-active");
         document.body.classList.remove("menu-open");
         setTriggerState(menuToggle, false);
       };
@@ -222,6 +337,7 @@ SCRIPT_BLOCK_MASTER = '''<script>
 
           if (!isOpen) {
             item.classList.add("open");
+            if (navMenu) navMenu.classList.add("submenu-active");
             setTriggerState(trigger, true);
           }
         });
@@ -240,7 +356,29 @@ SCRIPT_BLOCK_MASTER = '''<script>
 
           if (!isOpen) {
             group.classList.add("open");
+            const parentDropdown = group.closest(".dropdown");
+            if (parentDropdown) parentDropdown.classList.add("subgroup-active");
             setTriggerState(trigger, true);
+          }
+        });
+      });
+
+      // Handle back buttons
+      backButtons.forEach(button => {
+        button.addEventListener("click", (event) => {
+          event.stopPropagation();
+          const parentSubgroup = button.closest(".dropdown-subgroup");
+          const parentDropdownItem = button.closest(".has-dropdown");
+
+          if (parentSubgroup) {
+            parentSubgroup.classList.remove("open");
+            setTriggerState(parentSubgroup.querySelector(".dropdown-subtrigger"), false);
+            const parentDropdown = parentSubgroup.closest(".dropdown");
+            if (parentDropdown) parentDropdown.classList.remove("subgroup-active");
+          } else if (parentDropdownItem) {
+            parentDropdownItem.classList.remove("open");
+            setTriggerState(parentDropdownItem.querySelector(".nav-trigger"), false);
+            if (navMenu) navMenu.classList.remove("submenu-active");
           }
         });
       });
@@ -259,6 +397,18 @@ SCRIPT_BLOCK_MASTER = '''<script>
         closeDropdownItems();
         closeNavMenu();
       });
+
+      // Header scroll collapse effect
+      const siteHeader = document.querySelector(".site-header");
+      if (siteHeader) {
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 40) {
+            siteHeader.classList.add("scrolled");
+          } else {
+            siteHeader.classList.remove("scrolled");
+          }
+        }, { passive: true });
+      }
     </script>'''
 
 def transform_archive_heading(content, filename):
@@ -319,7 +469,7 @@ for filename in files:
             end_idx = content.find('>', end_idx) + 1
             content = content[:start_idx] + HEAD_BLOCK_MASTER + content[end_idx:]
 
-    content = re.sub(r'<nav id="nav-menu".*?>.*?</nav>', NAV_BLOCK_MASTER, content, flags=re.DOTALL)
+    content = re.sub(r'<header\s+class=["\']site-header["\'].*?>.*?</header>', HEADER_BLOCK_MASTER, content, flags=re.DOTALL)
     content = re.sub(r'<footer\s+class=["\'](?:footer|site-footer)["\'].*?>.*?</footer>', FOOTER_BLOCK_MASTER, content, flags=re.DOTALL)
     
     if 'menuToggle' in content:

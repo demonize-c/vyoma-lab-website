@@ -1,0 +1,75 @@
+# Vyoma Lab Website - Extracted Information
+
+## 1. Domain of Research
+
+### Cryogenic Insulation
+- **Description**: Cryogenic insulation is designed to minimize heat transfer at extremely low temperatures, typically below −150 °C, as used in liquefied gases like nitrogen or LNG. It relies on materials with very low thermal conductivity, such as aerogels, vacuum insulation panels, or multilayer insulation (MLI), to reduce conduction, convection, and radiation heat transfer. Effective cryogenic insulation is critical for reducing boil-off losses, improving energy efficiency, and ensuring safe storage and transport of cryogenic fluids.
+- **Asset**: `extracted_assets/research/cryogenic.png`
+
+### Extreme Weather Clothing
+- **Description**: Extreme weather clothing is engineered to protect the human body from harsh environmental conditions such as extreme cold, heat, wind, and moisture. It incorporates advanced materials like aerogel insulation, phase change materials (PCMs), and multilayer systems to regulate heat transfer and maintain thermal comfort. Such clothing is critical for applications in polar expeditions, high-altitude mountaineering, military operations, and cryogenic or industrial environments.
+- **Asset**: `extracted_assets/research/extreme_weather.png`
+
+### Biomedical Applications
+- **Description**: Aerogel materials are highly porous, lightweight structures with large surface area, making them suitable for biomedical applications. They are used in drug delivery, tissue engineering, wound healing, and biosensing due to their tunable properties and biocompatibility. Their unique structure enables controlled release, cell growth support, and efficient interaction with biological systems.
+- **Asset**: `extracted_assets/research/biomedical.png`
+
+### Tactical Applications
+- **Description**: Aerogels are used in tactical applications for lightweight thermal insulation in extreme environments like deserts and Arctic conditions. They enhance protective gear by improving EMI shielding and reducing heat signatures for infrared stealth. Their ultra-low density and high porosity enable multifunctional performance without adding significant weight.
+- **Asset**: `extracted_assets/research/tactical.png`
+
+### Electronic Applications
+- **Description**: Aerogel materials are widely used in electronic applications due to their ultra-low thermal conductivity and lightweight structure. They provide effective thermal management, electrical insulation, batteries, circuits, and electronic devices. Their high porosity and tunable properties enable improved performance, safety, and miniaturization in advanced electronics.
+- **Asset**: `extracted_assets/research/electronic.png`
+
+---
+
+## 2. Funding and Collaboration
+
+### Ongoing Projects
+
+#### Mission for Developing Aerogels Based Textile Material for Civilian, Industrial and Defense Applications
+- **Funded by**: National Technical Textile Mission, Ministry of Textiles, Govt. of India.
+- **Assets**: `extracted_assets/funding/nttm_logo.png`, `extracted_assets/funding/ministry_textiles.jpeg`
+
+#### Smart Hemostatic Aerogels Based On Silk And Cellulose Composites For Complex Shaped Wounds
+- **Funded by**: Department of Health Research (DHR), Indian Council of Medical Research (ICMR).
+- **Asset**: `extracted_assets/funding/dhr_icmr.png`
+
+#### Extreme cold weather clothing (ECWC) upgradation
+- **Description**: Extreme cold weather clothing (ECWC) upgradation through value addition with industry partners and limited numbers production and validation to IIT Delhi under DIA-CoE IIT Delhi.
+- **Note**: Collaborative project with DIA-CoE IIT Delhi.
+
+### Successfully Completed Projects
+
+#### Development of Sustainable Aerogel Textile for Cold Weather Clothing
+- **Funded by**: Science and Engineering Research Board (SERB), India.
+- **Asset**: `extracted_assets/funding/serb.jpeg`
+
+### Industrial Collaboration
+- Mentioned as part of the lab's activities involving industry partners for scale-up and validation (e.g., ECWC project).
+
+---
+
+## 3. Awards/Honours
+
+### Bharat Tex Hackathon 2024
+- **Award**: Secured 2nd position.
+- **Project**: "Advanced Cryogenic Insulation Blanket for LNG Storage and Pipelines."
+- **Asset**: `extracted_assets/awards/bharat_tex.jpg`
+
+### Best Poster Award - IIT Delhi Open House 2025
+- **Recipient**: Sudipto Behera.
+- **Topic**: 'Silica Aerogel-Based Thermal Liners for Cold Weather Clothing’.
+- **Date/Location**: 9th November 2024, Delhi, India.
+- **Asset**: `extracted_assets/awards/iitd_open_house.jpg`
+
+### Best Poster Award - APA International Conference on Polymers for Advanced Technology 2025
+- **Recipient**: Sujaan Kaushik.
+- **Date/Location**: Oct 13th - 15th, Udaipur, Rajasthan, India.
+- **Asset**: `extracted_assets/awards/apa_conf.png`
+
+### Best Poster Award - Sire Symposium 2026
+- **Recipient**: Sujaan Kaushik.
+- **Topic**: 'Ultralight Bio-based aerogels as a sustainable alternative for thermal energy insulative garments'.
+- **Asset**: `extracted_assets/awards/sire_symposium.png`

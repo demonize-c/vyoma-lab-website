@@ -299,7 +299,7 @@
       }
 
       .iitd-nav-logo {
-        height: 34px;
+        height: 60px;
         width: auto;
         display: block;
         object-fit: contain;
@@ -317,9 +317,9 @@
 
       /* On most mobile/tablet screens — show brand name text, smaller size */
       @media (max-width: 640px) {
-        .iitd-nav-logo { height: 26px; }
+        .iitd-nav-logo { height: 45px; }
         .iitd-nav-text { font-size: 0.7rem; }
-        .brand-mobile .brand-mark { width: 1.9rem; height: 1.9rem; }
+        .brand-mobile .brand-mark { width: 2.4rem; height: 2.4rem; }
         .brand-mobile > span { font-size: 0.88rem; }
         .brand-mobile small { display: none; }
       }
@@ -328,8 +328,8 @@
       @media (max-width: 340px) {
         .iitd-nav-text { display: none; }
         .brand-mobile > span { display: none; }
-        .brand-mobile .brand-mark { width: 2rem; height: 2rem; }
-        .iitd-nav-logo { height: 28px; }
+        .brand-mobile .brand-mark { width: 2.5rem; height: 2.5rem; }
+        .iitd-nav-logo { height: 40px; }
       }
 
       .header-iitd-brand {
@@ -339,7 +339,7 @@
       }
 
       .iitd-logo {
-        height: 42px;
+        height: 80px;
         width: auto;
         display: block;
         object-fit: contain;
@@ -359,7 +359,7 @@
           font-size: 0.78rem;
         }
         .iitd-logo {
-          height: 36px;
+          height: 60px;
         }
       }
 
@@ -461,8 +461,8 @@
       }
 
       .brand-mark {
-        width: 2.2rem;
-        height: 2.2rem;
+        width: 3.2rem;
+        height: 3.2rem;
         display: block;
         flex: 0 0 auto;
         border-radius: 0;
@@ -710,7 +710,7 @@
 
       /* ─── Hero ─── */
       .hero {
-        padding: 0 0 4.5rem;
+        padding: 0 0 1.5rem;
         margin-top: 0 !important;
       }
 
@@ -789,7 +789,7 @@
       .hc-heading {
         margin: 0 0 0.75rem;
         font-family: "Space Grotesk", sans-serif;
-        font-size: clamp(2rem, 5.5vw, 3.8rem);
+        font-size: clamp(2.5rem, 7vw, 4.5rem);
         font-weight: 700;
         line-height: 1.05;
         letter-spacing: -0.03em;
@@ -887,7 +887,7 @@
         }
         /* Compact heading */
         .hc-heading {
-          font-size: clamp(1.25rem, 6.5vw, 1.75rem);
+          font-size: clamp(1.75rem, 8vw, 2.25rem);
           margin-bottom: 0.45rem;
           letter-spacing: -0.02em;
         }
@@ -931,7 +931,7 @@
         }
 
         .hc-heading {
-          font-size: clamp(1.6rem, 4vw, 2.4rem);
+          font-size: clamp(2rem, 5.5vw, 3rem);
         }
 
         .hc-sub {
@@ -978,9 +978,9 @@
 
       /* ─── About Section (Unified Header + Two-Column) ─── */
       .about-panel {
-        padding: 6rem 0 8rem;
-        border-top: 1px solid rgba(15, 92, 133, 0.1);
-        margin-top: 2rem;
+        padding: 2.5rem 0 2rem;
+        border-top: none;
+        margin-top: 1rem;
       }
 
       .about-header {
@@ -2441,7 +2441,7 @@
 
       /* ─── Facilities Page ─── */
       .page-header {
-        padding: 6rem 0 4rem;
+        padding: 1.5rem 0 1rem;
         background: radial-gradient(circle at 10% 20%, rgba(122, 211, 247, 0.08) 0%, transparent 60%);
         text-align: center;
       }
@@ -2450,7 +2450,7 @@
         font-family: "Space Grotesk", sans-serif;
         font-size: clamp(2.5rem, 6vw, 4rem);
         font-weight: 800;
-        margin: 0.5rem 0 1rem;
+        margin: 0.25rem 0 0.5rem;
         background: linear-gradient(135deg, var(--navy-900) 0%, var(--sky-700) 100%);
         -webkit-background-clip: text;
         background-clip: text;
@@ -2627,6 +2627,7 @@
 
       /* ─── Faculty Pages ─── */
       .faculty-hero-section {
+        padding-top: 2rem;
         padding-bottom: 2rem;
         padding-left: 1.5rem;
         padding-right: 1.5rem;
@@ -3078,6 +3079,7 @@
 
       /* ─── Alumni Page ─── */
       .alumni-hero-section {
+        padding-top: 2rem;
         padding-bottom: 2rem;
       }
 
@@ -4054,11 +4056,11 @@
 
       /* ─── Modern Footer ─── */
       .site-footer {
-        padding: 6rem 0 4rem;
+        padding: 4rem 0 3rem;
         background: var(--navy-900);
         color: rgba(255, 255, 255, 0.6);
         border-radius: 60px 60px 0 0;
-        margin-top: 6rem;
+        margin-top: 2rem;
         position: relative;
         overflow: hidden;
       }
@@ -4200,6 +4202,12 @@
         flex-wrap: wrap;
         gap: 1.5rem;
         margin-top: 1rem;
+      }
+
+      
+      .gallery-item-wide {
+        flex-basis: 100%;
+        max-width: 100%;
       }
 
       .gallery-item {
@@ -4800,7 +4808,13 @@
       }
 
       @media (max-width: 1024px) {
-        .gallery-item {
+        
+      .gallery-item-wide {
+        flex-basis: 100%;
+        max-width: 100%;
+      }
+
+      .gallery-item {
           height: 320px;
         }
       }
@@ -4811,7 +4825,13 @@
           gap: 1.5rem;
         }
 
-        .gallery-item {
+        
+      .gallery-item-wide {
+        flex-basis: 100%;
+        max-width: 100%;
+      }
+
+      .gallery-item {
           width: 100%;
           flex: none;
           height: auto !important;

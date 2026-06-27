@@ -27,8 +27,6 @@ for a in articles:
         article_dict['shama'] = a
     elif "Srikrishna" in a:
         article_dict['srikrishna'] = a
-    elif "Pankaj" in a:
-        article_dict['pankaj'] = a
     elif "Neha Abbasi" in a:
         article_dict['neha'] = a
     elif "Ankita Sharma" in a:
@@ -40,8 +38,8 @@ for a in articles:
     else:
         article_dict['unknown'] = a
 
-# Requested order: Shama, Srikrishna, Pankaj, Neha, Ankita, Lakshay, Kumaresan(Sureshwar)
-ordered_keys = ['shama', 'srikrishna', 'pankaj', 'neha', 'ankita', 'lakshay', 'sureshwar']
+# Requested order: Shama, Srikrishna, Neha, Ankita, Lakshay, Kumaresan(Sureshwar)
+ordered_keys = ['shama', 'srikrishna', 'neha', 'ankita', 'lakshay', 'sureshwar']
 
 ordered_articles_html = "\n".join([article_dict[k] for k in ordered_keys])
 
